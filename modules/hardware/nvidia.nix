@@ -4,48 +4,28 @@
   lib,
   ...
 }:
-with lib; let
-  cfg = config.modules.nixos.hardware.nvidia;
-in {
-  options.modules.nixos.hardware.nvidia = {
-    enable = mkEnableOption "Enable NVIDIA";
+{
+  services.xserver = {
+    videoDrivers = ["nvidia"];
   };
 
-  config = mkIf cfg.enable {
-    # Load modules on boot
-    boot.kernelModules = [
-      "nvidia"
-      "nvidia_modeset"
-      "nvidia_uvm"
-      "nvidia_drm"
-      "i2c-nvidia_gpu"
-    ];
+  environment.variables = {
+    GBM_BACKEND = "nvidia-drm";
+    LIBVA_DRIVER_NAME = "nvidia";
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    __GL_MaxFramesAllowed = "0";
+  };
 
-    services.xserver = {
-      videoDrivers = ["nvidia"];
-    };
+  hardware = {
+    opengl.enable = true;
 
-    environment.variables = {
-      GBM_BACKEND = "nvidia-drm";
-      LIBVA_DRIVER_NAME = "nvidia";
-      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-      __GL_MaxFramesAllowed = "0";
-    };
+    nvidia = {
+      modesetting.enable = true;
+      powerManagement.enable = false;
 
-    hardware = {
-      opengl.extraPackages = with pkgs; [nvidia-vaapi-driver];
-      opengl.enable = true;
+      package = config.boot.kernelPackages.nvidiaPackages.production;
 
-      nvidia = {
-        modesetting.enable = true;
-        powerManagement.enable = false;
-
-        # should be one release behind latest or stable
-        package = config.boot.kernelPackages.nvidiaPackages.production;
-
-        # experimental
-        open = false;
-      };
+      open = false;
     };
   };
 }

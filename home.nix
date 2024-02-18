@@ -1,12 +1,7 @@
-{ config, pkgs, lib, ... }:
+{ inputs, hycov, config, pkgs, lib, ... }:
 
-let
-  startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-    ${pkgs.waybar}/bin/waybar &
-    ${pkgs.swww}/bin/swww init &
-    sleep 1
-  '';
-in {
+{
+  nixpkgs.config.allowUnfreePredicate = _: true; 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "colout";
@@ -28,6 +23,36 @@ in {
     firefox
     jellyfin-media-player
     vlc
+    gimp-with-plugins
+    libreoffice-qt
+    tor-browser
+    audacity
+    krita
+    inkscape
+    darktable
+    kdenlive
+    musescore
+    tilix
+    tidal-hifi
+    blender
+    logseq
+    appflowy
+    qmk
+    dwarf-fortress-packages.dwarf-fortress-full
+    superTux
+    superTuxKart
+    freeciv
+    dolphin-emu
+    rpcs3
+    xemu
+    sweethome3d.application
+    xemu
+    p7zip
+    kate
+    qpwgraph
+    kitty
+    wl-clipboard
+    font-manager
   ];
 
   home.sessionVariables = {
@@ -36,13 +61,10 @@ in {
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  
+  home.file.".local/share/rofi/themes".source = builtins.fetchGit {
+    url = "https://github.com/newmanls/rofi-themes-collection.git";
+    rev = "5bc150394bf785b2751711e3050ca425c662938e";
+  } + "/themes";  
 
-  # hyrland config
-  wayland.windowManager.hyprland = {
-    enable = true;
-
-    settings = {
-      exec-once = ''${startupScript}/bin/start'';
-    };
-  };
 }

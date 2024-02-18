@@ -1,28 +1,49 @@
 { config, pkgs, lib, inputs, ... }:
 {
+  services.xserver = {
+    enable = true;
+    displayManager.sddm = {
+      enable = true;
+    };
+  };
+
   programs.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages."${pkgs.system}".hyprland;
     xwayland.enable = true;
   };
 
   environment = {
     sessionVariables = {
-      WLR_RENDERER_ALLOW_SOFTWARE="1";
+      #WLR_RENDERER_ALLOW_SOFTWARE="1";
       WLR_NO_HARDWARE_CURSORS="1";
+      NIXOS_OZONE_WL="1";
     };
+
     systemPackages = with pkgs; [
       # Waybar
+      waybar
       (pkgs.waybar.overrideAttrs (oldAttrs: {
           mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ]; # workspaces fix
       }))
+
+      swww # wallpaper
       dunst # clipboard
       libnotify
-      alacritty
+      eww-wayland
       rofi-wayland # app launcher
+      rofi-emoji
+      rofi-top
+      rofi-calc
+      rofi-power-menu
+
+      pavucontrol
     ];
   };
-    
+
+  # Desktop portals allow communucation between programs (link/file opening)
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
 
 #  environment = {
 #    sessionVariables = {
