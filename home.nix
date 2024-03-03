@@ -88,4 +88,18 @@
     url = "https://github.com/newmanls/rofi-themes-collection.git";
     rev = "5bc150394bf785b2751711e3050ca425c662938e";
   } + "/themes";  
+
+  # themes
+  configure-gtk = pkgs.writeTextFile {
+    name = "configure-gtk";
+    destination = "/bin/configure-gtk";
+    executable = true;
+    text = let
+      schema = pkgs.gsettings-desktop-schemas;
+      datadir = "${schema}/share/gsettings-schemas/${schema.name}";
+    in ''
+6      gnome_schema=org.gnome.desktop.interface
+      gsettings set $gnome_schema gtk-theme 'Dracula'
+    '';
+  };
 }
