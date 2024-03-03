@@ -73,6 +73,10 @@
       nedit = "cd /etc/nixos; nvim";
     };
 
+    programs.kitty.extraConfig = {
+      "background_opacity .5"
+    }
+
     #oh-my-zsh = {
     #  enable = true;
     #  plugins = [ "git" "thefuck" "zsh-autosuggestions" "zsh-syntax-highlighting" "autodir" ];
