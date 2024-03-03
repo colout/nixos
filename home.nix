@@ -60,7 +60,6 @@
         { name = "zsh-users/zsh-autosuggestions"; }
         { name = "zsh-users/zsh-syntax-highlighting"; }
         { name = "themes/robbyrussell"; tags = [ as:theme from:oh-my-zsh ]; }
-        { name = "plugins/command-not-found"; tags = [ from:oh-my-zsh ]; }
         { name = "plugins/dirhistory"; tags = [ from:oh-my-zsh ]; }
       ];
     };
