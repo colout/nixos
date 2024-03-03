@@ -53,6 +53,7 @@
     enable = true;
     shellAliases = {
       ll = "ls -l";
+      ndeploy = "sudo chown $USER /etc/nixos; git add /etc/nixos/ && git -C /etc/nixos commit -m 'change' && sudo nixos-rebuild switch --flake /etc/nixos#default";
     };
     oh-my-zsh = {
       enable = true;
