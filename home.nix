@@ -94,7 +94,8 @@
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
-      gtk-theme = "Nightfox-Dusk-BL-LB";
+      #gtk-theme = "Nightfox-Dusk-BL-LB";
+      gtk-theme = "Tokyonight-Dark-BL-LB";
     };
   };
 }
