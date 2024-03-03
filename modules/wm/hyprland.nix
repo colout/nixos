@@ -69,7 +69,7 @@
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
-  dconf = {
+  progpams.dconf = {
     enable = true;
     settings = {
       "org/gnome/desktop/interface" = {
