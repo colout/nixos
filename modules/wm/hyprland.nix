@@ -50,6 +50,7 @@
       libva
 
       pavucontrol
+      nightfox-gtk-theme
     ];
   };
   
