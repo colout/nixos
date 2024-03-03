@@ -52,17 +52,25 @@
 
   programs.zsh = {
     enable = true;
+    zplug = {
+      enable = true;
+      plugins = [
+        { name = "zsh-users/zsh-autosuggestions"; } # Simple plugin installation
+        { name = "themes/robbyrussell"; tags = [ as:theme from:oh-my-zsh ]; } # Installations with additional options. For the list of options, please refer to Zplug README.
+      ];
+    };
     shellAliases = {
       ll = "ls -l";
       ndeploy = "sudo chown -R $USER /etc/nixos; cd /etc/nixos && git -C /etc/nixos add . && git -C /etc/nixos commit -m 'change'; sudo nixos-rebuild switch --flake /etc/nixos#default";
       nupdate = "nix flake update /etc/nixos";
       nedit = "cd /etc/nixos; nvim";
     };
-    oh-my-zsh = {
-      enable = true;
-      plugins = [ "git" "thefuck" "zsh-autosuggestions" "zsh-syntax-highlighting" ];
-      theme = "robbyrussell";
-    };
+
+    #oh-my-zsh = {
+    #  enable = true;
+    #  plugins = [ "git" "thefuck" "zsh-autosuggestions" "zsh-syntax-highlighting" "autodir" ];
+    #  theme = "robbyrussell";
+    #};
   };
 
   home.sessionVariables = {
