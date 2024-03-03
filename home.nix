@@ -75,13 +75,7 @@
 
     programs.kitty.extraConfig = {
       "background_opacity .5"
-    }
-
-    #oh-my-zsh = {
-    #  enable = true;
-    #  plugins = [ "git" "thefuck" "zsh-autosuggestions" "zsh-syntax-highlighting" "autodir" ];
-    #  theme = "robbyrussell";
-    #};
+    };
   };
 
   home.sessionVariables = {
