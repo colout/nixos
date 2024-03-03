@@ -51,7 +51,7 @@
 
       pavucontrol
       nightfox-gtk-theme
-      gtk
+      glib
     ];
   };
   
