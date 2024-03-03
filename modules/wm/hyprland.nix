@@ -65,6 +65,8 @@
     enable = true;
   };
 
+services.xserver.desktopManager.gnome.enable = true;
+   
   gtk.enable = true;
 
   # Desktop portals allow communucation between programs (link/file opening)
