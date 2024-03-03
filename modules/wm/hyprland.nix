@@ -69,7 +69,7 @@
     gtk.enable = true;
   };
 
-  gtk = {
+  pkgs.gtk = {
     enable = true;
     font = {
       package = (pkgs.nerdfonts.override { fonts = [ "Mononoki" ]; });
