@@ -60,7 +60,7 @@
     };
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "thefuck" ];
+      plugins = [ "git" "thefuck" "zsh-autosuggestions" "zsh-syntax-highlighting" ];
       theme = "robbyrussell";
     };
   };
