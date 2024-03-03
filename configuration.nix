@@ -104,7 +104,7 @@
     isNormalUser = true;
     description = "colout";
     extraGroups = [ "networkmanager" "wheel" "storage" ];
-    shell = pkgs.zsh
+    shell = pkgs.zsh;
   };
 
   home-manager =  {
