@@ -55,8 +55,10 @@
     zplug = {
       enable = true;
       plugins = [
-        { name = "zsh-users/zsh-autosuggestions"; } # Simple plugin installation
-        { name = "themes/robbyrussell"; tags = [ as:theme from:oh-my-zsh ]; } # Installations with additional options. For the list of options, please refer to Zplug README.
+        { name = "zsh-users/zsh-autosuggestions"; }
+        { name = "zsh-users/zsh-completions"; }
+        { name = "zsh-users/zsh-autosuggestions"; }
+        { name = "themes/robbyrussell"; tags = [ as:theme from:oh-my-zsh ]; }
       ];
     };
     shellAliases = {
