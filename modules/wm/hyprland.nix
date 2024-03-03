@@ -1,6 +1,23 @@
 { overlay-stable, overlay-unstable }:
 { config, pkgs, lib, inputs, ... }:
 {
+gtk = {
+    enable = true;
+    font = {
+      package = (pkgs.nerdfonts.override { fonts = [ "Mononoki" ]; });
+      name = "Mononoki Nerd Font Regular";
+      size = 18;
+    };
+    iconTheme = {
+      package = (pkgs.catppuccin-papirus-folders.override { flavor = "mocha"; accent = "peach"; });
+      name  = "Papirus-Dark";
+    };
+    theme = {
+      package = (pkgs.catppuccin-gtk.override { accents = [ "peach" ]; size = "standard"; variant = "mocha"; });
+      name = "Catppuccin-Mocha-Standard-Peach-Dark";
+    };
+  };
+
   services.xserver = {
     enable = true;
     displayManager.sddm = {
@@ -62,20 +79,4 @@
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
-  pkgs.gtk = {
-    enable = true;
-    font = {
-      package = (pkgs.nerdfonts.override { fonts = [ "Mononoki" ]; });
-      name = "Mononoki Nerd Font Regular";
-      size = 18;
-    };
-    iconTheme = {
-      package = (pkgs.catppuccin-papirus-folders.override { flavor = "mocha"; accent = "peach"; });
-      name  = "Papirus-Dark";
-    };
-    theme = {
-      package = (pkgs.catppuccin-gtk.override { accents = [ "peach" ]; size = "standard"; variant = "mocha"; });
-      name = "Catppuccin-Mocha-Standard-Peach-Dark";
-    };
-  };
-}
+  }
