@@ -77,7 +77,7 @@
     extraConfig = [
       "background_opacity .5"
     ];
-  }
+  };
 
   home.sessionVariables = {
     EDITOR = "nvim";
