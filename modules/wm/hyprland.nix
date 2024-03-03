@@ -67,6 +67,7 @@ in {
 
       pavucontrol
       gtk-look
+      configure-gtk
     ];
   };
   
