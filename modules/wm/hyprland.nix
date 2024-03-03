@@ -66,7 +66,6 @@ in {
       libva
 
       pavucontrol
-      gtk-look
       configure-gtk
     ];
   };
