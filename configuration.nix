@@ -104,6 +104,7 @@
     isNormalUser = true;
     description = "colout";
     extraGroups = [ "networkmanager" "wheel" "storage" ];
+    shell = pkgs.zsh
   };
 
   home-manager =  {
@@ -118,6 +119,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  programs.zsh.enable = true;
   environment.systemPackages = with pkgs; [
     neovim
     wget
