@@ -31,20 +31,12 @@
     inkscape
     darktable
     kdenlive
-    musescore
     tilix
     tidal-hifi
     blender
     logseq
     appflowy
     qmk
-    dwarf-fortress-packages.dwarf-fortress-full
-    superTux
-    superTuxKart
-    freeciv
-    dolphin-emu
-    rpcs3
-    xemu
     sweethome3d.application
     xemu
     p7zip
@@ -53,7 +45,21 @@
     kitty
     wl-clipboard
     font-manager
+    zsh
+    cartridges
   ];
+
+  programs.zsh = {
+    enable = true;
+    shellAliases = {
+      ll = "ls -l";
+    };
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" "thefuck" ];
+      theme = "robbyrussell";
+    };
+  };
 
   home.sessionVariables = {
     EDITOR = "nvim";

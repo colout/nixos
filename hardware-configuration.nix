@@ -12,6 +12,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
+  
 
   hardware.enableAllFirmware = true;
 
@@ -38,4 +39,15 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+
+  # ntfs
+  boot.supportedFilesystems = [ "ntfs" ];
+
+
+  fileSystems."/mnt/ntfs" = { 
+    device = "/dev/nvme0n1p4";
+    fsType = "ntfs-3g"; 
+    options = [ "r" "uid=1000"];
+  };
 }

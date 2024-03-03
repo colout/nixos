@@ -1,13 +1,16 @@
+{ overlay-stable, overlay-unstable }:
 { config, pkgs, lib, inputs, ... }:
 {
   services.xserver = {
     enable = true;
     displayManager.sddm = {
+      wayland.enable = true;
       enable = true;
     };
   };
 
   programs.hyprland = {
+    package = pkgs.unstable.hyprland;
     enable = true;
     xwayland.enable = true;
   };
@@ -19,7 +22,7 @@
       NIXOS_OZONE_WL="1";
     };
 
-    systemPackages = with pkgs; [
+    systemPackages = with pkgs.unstable; [
       # Waybar
       waybar
       (pkgs.waybar.overrideAttrs (oldAttrs: {
@@ -29,51 +32,33 @@
       swww # wallpaper
       dunst # clipboard
       libnotify
-      eww-wayland
+      eww
       rofi-wayland # app launcher
       rofi-emoji
       rofi-top
       rofi-calc
       rofi-power-menu
+      hypridle
+      hdrop
+      jq # for my drop term script
+
+      libsForQt5.qt5.qtwayland
+      libsForQt5.qt5ct
+      qt6.qtwayland
+      qt6Packages.qt6ct
+      libva
 
       pavucontrol
     ];
   };
+  
+  programs.gamescope = {
+    enable = true;
+  };
+
 
   # Desktop portals allow communucation between programs (link/file opening)
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-
-
-#  environment = {
-#    sessionVariables = {
-#      # Hint electron apps to use wayland
-#      NIXOS_OZONE_WL = "1";
-#    };
-#    
-#    systemPackages = with pkgs; [
-#      # Waybar
-#      (pkgs.waybar.overrideAttrs (oldAttrs: {
-#          mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ]; # workspaces display fix
-#        })
-#      )
-#
-#      dunst
-#      libnotify
-#      alacritty
-#      rofi-wayland # app launcher
-#    ];
-#  };
-#
-#  programs.hyprland = {
-#    enable = true;
-#    xwayland.enable = true;
-#  };
-#
-#  # Desktop portals allow communucation between programs (link/file opening)
-#  xdg.portal.enable = true;
-#  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-#
-
 
 }

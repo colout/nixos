@@ -1,3 +1,4 @@
+{ overlay-stable, overlay-unstable }:
 { config, pkgs, inputs, ... }: {
   programs.steam = {
     enable = true;
@@ -8,14 +9,30 @@
   hardware.opengl.driSupport32Bit = true;
 
   environment.systemPackages = with pkgs; [
-    (wineWowPackages.full.override {
-      wineRelease = "staging";
+    (wineWowPackages.waylandFull.override {
+      #wineRelease = "staging";
       mingwSupport = true;
     })
+    bottles
+
+    gamemode
+    mangohud
     winetricks
-    
     discord
-    lutris    
+    appimage-run
+    (lutris.override {
+      extraLibraries =  pkgs: [
+        appimage-run # for rcps3
+        fuse
+      ];
+    })    
+
+    dwarf-fortress-packages.dwarf-fortress-full
+    superTux
+    superTuxKart
+    freeciv
+    dolphin-emu
+    rpcs3
+    xemu
   ];
 }
-

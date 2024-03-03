@@ -17,15 +17,24 @@
   };
 
   hardware = {
-    opengl.enable = true;
+    opengl = {
+      enable = true;
+      driSupport = true;
+    };
 
     nvidia = {
       modesetting.enable = true;
       powerManagement.enable = false;
 
       package = config.boot.kernelPackages.nvidiaPackages.production;
+      #package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
 
       open = false;
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    vaapiVdpau
+    egl-wayland
+  ];
 }

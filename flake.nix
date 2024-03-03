@@ -2,7 +2,18 @@
   description = "Nixos config flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    #nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-23.11-darwin";
+
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixpkgs-23.11-darwin";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    home-manager = {
+      #url = "github:nix-community/home-manager/release-23.11";
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
@@ -13,29 +24,37 @@
       url = "github:DreamMaoMao/hycov";
       inputs.hyprland.follows = "hyprland";
     };
-
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { self, nixpkgs, hyprland, ... }@inputs:
-    let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in {
-    
-      nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        modules = [ 
-          ./configuration.nix
-          ./modules/wm/kde.nix
-          ./modules/hardware/nvidia.nix
-          ./modules/wm/hyprland.nix
-          ./modules/games.nix
-          inputs.home-manager.nixosModules.default
-        ];
+outputs = { self, nixpkgs, nixpkgs-stable, nixpkgs-unstable, hyprland, ... }@inputs: 
+  let
+    overlay-unstable = final: prev: { 
+      unstable = import nixpkgs-unstable {
+        system = "x86_64-linux"; 
+        config.allowUnfree = true;
       };
     };
+
+    overlay-stable = final: prev: { 
+      stable = import nixpkgs-stable {
+        system = "x86_64-linux"; 
+        config.allowUnfree = true;
+      };
+    };
+    
+  in {
+    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = {inherit inputs;};
+      modules = [ 
+        (import ./configuration.nix {inherit overlay-stable overlay-unstable;})
+        (import ./modules/wm/hyprland.nix {inherit overlay-stable overlay-unstable;})
+        (import ./modules/games.nix {inherit overlay-stable overlay-unstable;})
+        (import ./modules/wm/kde.nix {inherit overlay-stable overlay-unstable;})
+        
+        ./modules/hardware/nvidia.nix
+        inputs.home-manager.nixosModules.default
+      ];
+    };
+  };
 }

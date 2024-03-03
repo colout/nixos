@@ -1,15 +1,19 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
+{ overlay-stable, overlay-unstable }:
 { config, pkgs, inputs, ... }:
-
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
     ];
+
+  # Enable overlays 
+  nixpkgs.overlays = [ overlay-stable overlay-unstable ];
+
+  # Kernel
+  #boot.kernelPackages = pkgs.linuxPackages;
+  boot.kernelPackages = pkgs.stable.linuxPackages_latest;
+
 
   # Bootloader.
   #boot.loader.systemd-boot.enable = true;
@@ -31,14 +35,21 @@
     };
     supportedFilesystems = [ "ntfs" ];
   };
-  
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+
 
   networking.hostName = "nixos"; # Define your hostname.
 
   # Enable networking
   networking.networkmanager.enable = true;
   networking.firewall.enable = false;
+
+  # Auto mount usb
+  services.devmon.enable = true;
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+  services.udev.extraRules = ''
+     ACTION=="add", SUBSYSTEMS=="usb", SUBSYSTEM=="block", ENV{ID_FS_USAGE}=="filesystem", RUN{program}+="${pkgs.systemd}/bin/systemd-mount --no-block --automount=yes --collect $devnode /media/usb"
+  '';
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -70,31 +81,29 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
     jack.enable = true;
 
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
     wireplumber.enable = true;
-    #media-session.enable = true;
+    
+    package = pkgs.unstable.pipewire;
+    ## sound dies randomly when buffer too short
+    #extraConfig.pipewire = {
+    #  "92-low-latency" = {
+    #    "context.properties" = {
+    #      "default.clock.rate" = "48000";
+    #      "default.clock.quantum" = "1024";
+    #      "default.clock.min-quantum" = "1024";
+    #      "default.clock.max-quantum" = "1024";
+    #    };
+    #  };
+    #};
   };
-
-environment.etc = {
-  "pipewire/pipewire.conf.d/92-low-latency.conf".text = ''
-    context.properties = {
-      default.clock.rate = 48000
-      default.clock.quantum = 1024
-      default.clock.min-quantum = 1024
-      default.clock.max-quantum = 1024
-    }
-  '';
-};
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.colout = {
     isNormalUser = true;
     description = "colout";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "storage" ];
   };
 
   home-manager =  {
@@ -112,14 +121,14 @@ environment.etc = {
   environment.systemPackages = with pkgs; [
     neovim
     wget
-    vivaldi
     ksystemlog
-    davinci-resolve
+    zsh
+    autofs5
   ];
  
   console = {
-    packages = [pkgs.terminus_font];
-    font = "${pkgs.terminus_font}/share/consolefonts/ter-i22b.psf.gz";
+    #packages = [pkgs.terminus_font];
+    #font = "${pkgs.terminus_font}/share/consolefonts/ter-i22b.psf.gz";
     useXkbConfig = true;
   };
     
@@ -162,4 +171,14 @@ environment.etc = {
 
     in ["${automount_opts},credentials=/etc/nixos/smb-secrets,rw,uid=1000"];
   };
+
+  # realtime group
+  security.pam.loginLimits = [
+    {
+      domain = "@wheel";
+      type = "-";
+      item = "nice";
+      value = -20;
+    }
+  ];
 }
