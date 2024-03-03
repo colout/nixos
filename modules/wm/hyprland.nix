@@ -62,29 +62,11 @@
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
-home.pointerCursor = {
-  gtk.enable = true;
-  # x11.enable = true;
-  package = pkgs.bibata-cursors;
-  name = "Bibata-Modern-Classic";
-  size = 16;
-};
-
-gtk = {
-  enable = true;
-  theme = {
-    package = pkgs.flat-remix-gtk;
-    name = "Flat-Remix-GTK-Grey-Darkest";
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Materia-dark";
+      package = pkgs.materia-theme;
+    };
   };
-
-  iconTheme = {
-    package = pkgs.gnome.adwaita-icon-theme;
-    name = "Adwaita";
-  };
-
-  font = {
-    name = "Sans";
-    size = 11;
-  };
-};
 }
