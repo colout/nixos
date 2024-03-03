@@ -15,7 +15,6 @@
     xwayland.enable = true;
   };
 
-  programs.dconf.enable = true;
 
   environment = {
     sessionVariables = {
@@ -25,7 +24,6 @@
     };
 
     systemPackages = with pkgs.unstable; [
-      # Waybar
       waybar
       (pkgs.waybar.overrideAttrs (oldAttrs: {
           mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ]; # workspaces fix
@@ -65,13 +63,19 @@
     enable = true;
   };
 
-services.xserver.desktopManager.gnome.enable = true;
-   
   gtk.enable = true;
 
   # Desktop portals allow communucation between programs (link/file opening)
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+      };
+    };
+  };
   
 }
