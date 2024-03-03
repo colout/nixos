@@ -48,7 +48,6 @@
     zsh
     thefuck
     cartridges
-
   ];
 
   programs.zsh = {
@@ -93,6 +92,7 @@
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
+      gtk-theme = "Nightfox-Dusk-BL-LB";
     };
   };
 }
