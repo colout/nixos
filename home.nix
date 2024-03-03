@@ -97,7 +97,6 @@
       color-scheme = "prefer-dark";
       #gtk-theme = "Nightfox-Dusk-BL-LB";
       gtk-theme = "Tokyonight-Dark-BL-LB";
-      cursor-theme = "material_cursors";
     };
   };
 }
