@@ -54,7 +54,7 @@
     enable = true;
     shellAliases = {
       ll = "ls -l";
-      ndeploy = "sudo chown -R $USER /etc/nixos; git -C /etc/nixos add . && git -C /etc/nixos commit -m 'change'; sudo nixos-rebuild switch --flake /etc/nixos#default";
+      ndeploy = "sudo chown -R $USER /etc/nixos; cd /etc/nixos && git -C /etc/nixos add . && git -C /etc/nixos commit -m 'change'; sudo nixos-rebuild switch --flake /etc/nixos#default";
       nupdate = "nix flake update /etc/nixos";
       nedit = "cd /etc/nixos; nvim";
     };
