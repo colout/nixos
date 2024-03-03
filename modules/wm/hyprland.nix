@@ -50,9 +50,7 @@
       libva
 
       pavucontrol
-      nightfox-gtk-theme
-      gtk-engine-murrine
-      glib
+      gtk-look
     ];
   };
   
