@@ -75,7 +75,7 @@
   };
   programs.kitty = {
     settings = {
-      background_opacity = .5
+      background_opacity = .5;
     };
   };
 
