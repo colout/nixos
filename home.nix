@@ -49,7 +49,7 @@
     thefuck
     cartridges
     nightfox-gtk-theme
-    tokyo-night-gdk
+    tokyo-night-gtk
   ];
 
   programs.zsh = {

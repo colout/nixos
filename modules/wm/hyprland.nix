@@ -53,7 +53,6 @@
 
       # Themes
       gnome.dconf-editor
-      nightfox-gtk-theme
     ];
   };
   
