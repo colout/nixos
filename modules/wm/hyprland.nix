@@ -51,6 +51,8 @@
 
       pavucontrol
       gtk-look
+      configure-gtk
+      dbus
     ];
   };
   
