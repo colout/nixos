@@ -58,7 +58,7 @@
         { name = "zsh-users/zsh-autosuggestions"; }
         { name = "zsh-users/zsh-completions"; }
         { name = "zsh-users/zsh-autosuggestions"; }
-        { name = "zsh-users/syntax-highlighting"; }
+        { name = "zsh-users/zsh-syntax-highlighting"; }
         { name = "themes/robbyrussell"; tags = [ as:theme from:oh-my-zsh ]; }
       ];
     };
