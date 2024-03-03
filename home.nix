@@ -89,4 +89,10 @@
     url = "https://github.com/newmanls/rofi-themes-collection.git";
     rev = "5bc150394bf785b2751711e3050ca425c662938e";
   } + "/themes";  
+
+    settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+      };
+    };
 }
