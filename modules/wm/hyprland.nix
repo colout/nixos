@@ -1,22 +1,5 @@
 { overlay-stable, overlay-unstable }:
-{ config, pkgs, lib, inputs, ... }:
-
-let
-  # themes
-  configure-gtk = pkgs.writeTextFile {
-    name = "configure-gtk";
-    destination = "/bin/configure-gtk";
-    executable = true;
-    text = let
-      schema = pkgs.gsettings-desktop-schemas;
-      datadir = "${schema}/share/gsettings-schemas/${schema.name}";
-    in ''
-6      gnome_schema=org.gnome.desktop.interface
-      gsettings set $gnome_schema gtk-theme 'Dracula'
-    '';
-  };
-
-in {
+{ config, pkgs, lib, inputs, ... }: {
   services.xserver = {
     enable = true;
     displayManager.gdm = {
