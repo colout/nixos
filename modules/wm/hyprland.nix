@@ -7,6 +7,7 @@
       enable = true;
     };
   };
+  services.xserver.displayManager.defaultSession = "hyprland";
 
   programs.hyprland = {
     package = pkgs.unstable.hyprland;
