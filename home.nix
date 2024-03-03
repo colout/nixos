@@ -74,9 +74,9 @@
     };
   };
   programs.kitty = {
-    extraConfig = [
-      "background_opacity .5"
-    ];
+    setting = {
+      background_opacity = .5
+    };
   };
 
   home.sessionVariables = {
