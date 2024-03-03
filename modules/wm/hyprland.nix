@@ -46,6 +46,7 @@
       libsForQt5.qt5ct
       qt6.qtwayland
       qt6Packages.qt6ct
+      glib
       libva
 
       pavucontrol
