@@ -73,9 +73,9 @@
       nedit = "cd /etc/nixos; nvim";
     };
 
-    programs.kitty.extraConfig = {
+    programs.kitty.extraConfig = [
       "background_opacity .5"
-    };
+      ];
   };
 
   home.sessionVariables = {
