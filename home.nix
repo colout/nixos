@@ -59,6 +59,7 @@
         { name = "zsh-users/zsh-completions"; }
         { name = "zsh-users/zsh-autosuggestions"; }
         { name = "zsh-users/thefuck"; }
+        { name = "zsh-users/syntax-highlighting"; }
         { name = "themes/robbyrussell"; tags = [ as:theme from:oh-my-zsh ]; }
       ];
     };
