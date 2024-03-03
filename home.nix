@@ -42,7 +42,7 @@
     p7zip
     kate
     qpwgraph
-    k;itty
+    kitty
     wl-clipboard
     font-manager
     zsh
