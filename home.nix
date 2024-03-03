@@ -42,7 +42,7 @@
     p7zip
     kate
     qpwgraph
-    kitty
+    k;itty
     wl-clipboard
     font-manager
     zsh
@@ -74,6 +74,7 @@
     };
   };
   programs.kitty = {
+    enable = true;
     settings = {
       background_opacity = .5;
     };
