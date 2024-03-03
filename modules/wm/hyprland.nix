@@ -51,6 +51,7 @@
 
       pavucontrol
       nightfox-gtk-theme
+      gtk-murrine-engine
       glib
     ];
   };
