@@ -76,10 +76,11 @@
       package = pkgs.palenight-theme;
     };
 
-    cursorTheme = {
-      name = "Numix-Cursor";
-      package = pkgs.numix-cursor-theme;
-    };
+    #cursorTheme = {
+
+    #  name = "Numix-Cursor";
+    #  package = pkgs.numix-cursor-theme;
+    #};
 
     gtk3.extraConfig = {
       Settings = ''
