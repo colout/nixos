@@ -14,6 +14,8 @@
     xwayland.enable = true;
   };
 
+  programs.dconf.enable = true;
+
   environment = {
     sessionVariables = {
       #WLR_RENDERER_ALLOW_SOFTWARE="1";
@@ -51,7 +53,6 @@
       pavucontrol
 
       # Themes
-      configure-gtk
       glib # gsettings
       dracula-theme # gtk theme
       gnome3.adwaita-icon-theme  # default gnome cursors
