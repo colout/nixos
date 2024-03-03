@@ -72,11 +72,10 @@
       nupdate = "nix flake update /etc/nixos";
       nedit = "cd /etc/nixos; nvim";
     };
-
-    programs.kitty.extraConfig = [
-      "background_opacity .5"
-      ];
   };
+  programs.kitty.extraConfig = [
+    "background_opacity .5"
+  ];
 
   home.sessionVariables = {
     EDITOR = "nvim";
