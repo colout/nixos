@@ -50,6 +50,7 @@
     cartridges
     nightfox-gtk-theme
     tokyo-night-gtk
+    material-cursors
   ];
 
   programs.zsh = {
@@ -96,6 +97,7 @@
       color-scheme = "prefer-dark";
       #gtk-theme = "Nightfox-Dusk-BL-LB";
       gtk-theme = "Tokyonight-Dark-BL-LB";
+      cursor-theme = "material-cursors";
     };
   };
 }
