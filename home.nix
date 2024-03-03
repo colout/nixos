@@ -48,6 +48,8 @@
     zsh
     thefuck
     cartridges
+    nightfox-gtk-theme
+    tokyo-night-gdk
   ];
 
   programs.zsh = {
