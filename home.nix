@@ -51,6 +51,7 @@
     nightfox-gtk-theme
     tokyo-night-gtk
     material-cursors
+    mc
   ];
 
   programs.zsh = {
@@ -76,7 +77,7 @@
   programs.kitty = {
     enable = true;
     settings = {
-      background_opacity = ".5";
+      background_opacity = ".3";
     };
   };
 
