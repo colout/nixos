@@ -66,7 +66,12 @@ in {
       libva
 
       pavucontrol
+
+      # Themes
       configure-gtk
+      glib # gsettings
+      dracula-theme # gtk theme
+      gnome3.adwaita-icon-theme  # default gnome cursors
     ];
   };
   
