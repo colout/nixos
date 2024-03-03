@@ -62,39 +62,29 @@
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
-  # gtk theme
-    gtk = {
-    enable = true;
+home.pointerCursor = {
+  gtk.enable = true;
+  # x11.enable = true;
+  package = pkgs.bibata-cursors;
+  name = "Bibata-Modern-Classic";
+  size = 16;
+};
 
-    iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
-    };
-
-    theme = {
-      name = "palenight";
-      package = pkgs.palenight-theme;
-    };
-
-    #cursorTheme = {
-
-    #  name = "Numix-Cursor";
-    #  package = pkgs.numix-cursor-theme;
-    #};
-
-    gtk3.extraConfig = {
-      Settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
-
-    gtk4.extraConfig = {
-      Settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
+gtk = {
+  enable = true;
+  theme = {
+    package = pkgs.flat-remix-gtk;
+    name = "Flat-Remix-GTK-Grey-Darkest";
   };
 
-  home.sessionVariables.GTK_THEME = "palenight";
-  # ...
+  iconTheme = {
+    package = pkgs.gnome.adwaita-icon-theme;
+    name = "Adwaita";
+  };
+
+  font = {
+    name = "Sans";
+    size = 11;
+  };
+};
 }
