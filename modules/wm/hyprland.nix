@@ -62,13 +62,6 @@
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
-    home.pointerCursor = {
-    package = pkgs.catppuccin-cursors.mochaPeach;
-    name = "Catppuccin-Mocha-Peach-Cursors";
-    size = 40;
-    gtk.enable = true;
-  };
-
   pkgs.gtk = {
     enable = true;
     font = {
