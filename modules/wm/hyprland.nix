@@ -63,8 +63,6 @@
     enable = true;
   };
 
-  gtk.enable = true;
-
   # Desktop portals allow communucation between programs (link/file opening)
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
