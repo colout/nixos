@@ -19,7 +19,7 @@ let
 in {
   services.xserver = {
     enable = true;
-    displayManager.sddm = {
+    displayManager.gdm = {
       wayland.enable = true;
       enable = true;
     };
@@ -84,4 +84,5 @@ in {
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
+  
 }
