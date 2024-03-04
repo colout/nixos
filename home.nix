@@ -52,6 +52,7 @@
     tokyo-night-gtk
     material-cursors
     mc
+    waterfox
   ];
 
   programs.zsh = {
