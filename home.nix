@@ -52,7 +52,7 @@
     tokyo-night-gtk
     material-cursors
     mc
-    librewolf
+    floorp
   ];
 
   programs.zsh = {
