@@ -9,8 +9,10 @@
     gamemode = {
       enable = true;
       enableRenice = true;
-      general = {
-        renice = 10;
+      settings {
+        general = {
+         renice = 10;
+        };
       };
     };
   }; 
