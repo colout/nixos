@@ -80,48 +80,58 @@
   programs.kitty = {
     enable = true;
     settings = {
-         active_tab_foreground = "#${config.colorScheme.palette.base00}";
-        active_tab_background = "#${config.colorScheme.palette.base0D}";
+      # Tokyo Night color scheme for kitty terminal emulator
+      # https://github.com/davidmathers/tokyo-night-kitty-theme
+      #
+      # Based on Tokyo Night color theme for Visual Studio Code
+      # https://github.com/enkia/tokyo-night-vscode-theme
 
-        foreground = "#${config.colorScheme.palette.base05}";
-        background = "#${config.colorScheme.palette.base00}";
-        url_color = "#${config.colorScheme.palette.base0E}";
+      "foreground" = "#a9b1d6"
+      "background" = "#1a1b26"
 
-        # terminal8
-        color0 = "#${config.colorScheme.palette.base00}"; # black
-        color1 = "#${config.colorScheme.palette.base08}"; # red
-        color2 = "#${config.colorScheme.palette.base0B}"; # green
-        color3 = "#${config.colorScheme.palette.base0A}"; # yellow
-        color4 = "#${config.colorScheme.palette.base0D}"; # blue
-        color5 = "#${config.colorScheme.palette.base0E}"; # magenta
-        color6 = "#${config.colorScheme.palette.base0C}"; # cyan
-        color7 = "#${config.colorScheme.palette.base05}"; # white
-        # terminal16
-        color8 = "#${config.colorScheme.palette.base03}"; # bright black
-        color9 = "#${config.colorScheme.palette.base08}"; # bright red
-        color10 = "#${config.colorScheme.palette.base0B}"; # bright green
-        color11 = "#${config.colorScheme.palette.base0A}"; # bright yellow
-        color12 = "#${config.colorScheme.palette.base0D}"; # bright blue
-        color13 = "#${config.colorScheme.palette.base0E}"; # bright magenta
-        color14 = "#${config.colorScheme.palette.base0C}"; # bright cyan
-        color15 = "#${config.colorScheme.palette.base07}"; # bright white
+      # Black
+      "color0" = "414868"
+      "color8" = "414868"
 
-        repaint_delay = "60";
-        sync_to_monitor = "yes";
-        background_blur = "1";
-        tab_bar_style = "powerline";
-        tab_powerline_style = "round";
-        font_family = "Hack Nerd Font Mono";
-        bold_font = "auto";
-        italic_font = "auto";
-        bold_italic_font = "auto";
-        font_size = "10.0";
-        cursor_shape = "beam";
-        cursor_beam_thickness = "0.5";
-        cursor_blink_interval = "0.5";
-        strip_trailing_spaces = "always";
-        update_check_interval = "0"; # dont want to check for updates, nix and such
-        background_opacity = ".6";
+      # Red
+      "color1" = "f7768e"
+      "color9" = "f7768e"
+
+      # Green
+      "color2 " = "73daca"
+      "color10" = "73daca"
+
+      # Yellow
+      "color3" = "e0af68"
+      "color11" = "e0af68"
+
+      # Blue
+      "color4 " = "7aa2f7"
+      "color12" = "7aa2f7"
+
+      # Magenta
+      "color5" = "bb9af7"
+      "color13" = "bb9af7"
+
+      # Cyan
+      "color6" = "7dcfff"
+      "color14" = "7dcfff"
+
+      # White
+      "color7 " = "c0caf5"
+      "color15" = "c0caf5"
+
+      # Cursor
+      "cursor" = "c0caf5"
+      "cursor_text_color" = "1a1b26"
+
+      # Selection highlight
+      "selection_foreground" = "none"
+      "selection_background" = "#28344a"
+
+      # The color for highlighting URLs on mouse-over
+      "url_color" = "#9ece6a"
+       background_opacity = ".6";
     };
   };
 
