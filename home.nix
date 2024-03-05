@@ -122,7 +122,7 @@
         cursor_blink_interval = "0.5";
         strip_trailing_spaces = "always";
         update_check_interval = "0"; # dont want to check for updates, nix and such
-      };     background_opacity = ".6";
+        background_opacity = ".6";
     };
   };
 
