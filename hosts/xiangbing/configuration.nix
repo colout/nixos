@@ -101,6 +101,8 @@
     shell = pkgs.zsh;
   };
 
+  nixpkgs.config.allowUnfree = true;
+
   programs.zsh.enable = true;
   environment.systemPackages = with pkgs; [
     neovim
