@@ -10,7 +10,7 @@
     ./modules/nixos/wm/hyprland.nix
     ./modules/nixos/games.nix
     ./modules/nixos/wm/kde.nix
-    ./modules/nixos/hardware/nvidia.nix;
+    ./modules/nixos/hardware/nvidia.nix
   ];
 
   # Kernel
