@@ -6,6 +6,7 @@
   imports = [
     ./modules/zsh.nix
     ./modules/kitty.nix
+    ./modules/nvim.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -15,7 +16,6 @@
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   home.packages = with pkgs; [
-    neovim
     git
     fzf
     gnumake
@@ -59,10 +59,6 @@
     mc
     floorp
   ];
-
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
