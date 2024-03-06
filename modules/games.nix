@@ -1,5 +1,4 @@
-{ overlay-stable, overlay-unstable }:
-{ config, pkgs, inputs, ... }: {
+{ config, pkgs, inputs, overlays, ... }: {
   programs = {
     steam = {
       enable = true;
