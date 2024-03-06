@@ -31,6 +31,8 @@ outputs = { self, nixpkgs, hyprland, ... }@inputs:
     inherit (self) outputs;
   in {
     overlays = import ./overlays {inherit inputs;};
+
+    # Machine configs
     nixosConfigurations = {
       xiangbing = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -46,5 +48,11 @@ outputs = { self, nixpkgs, hyprland, ... }@inputs:
         ];
       };
     };
+
+    # Home-manager configs
+    homeConfigurations = {
+      "colout@xiangbing" = home-manager.lib.homeConfigurations {
+      }
+    }
   };
 }
