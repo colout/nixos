@@ -28,8 +28,9 @@
 
 outputs = { self, nixpkgs, hyprland, ... }@inputs: 
   let
-    overlays = import ./overlays {inherit inputs;};
+    inherit (self) outputs;
   in {
+    overlays = import ./overlays {inherit inputs;};
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {inherit inputs outputs;};
