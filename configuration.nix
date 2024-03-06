@@ -6,6 +6,7 @@
       inputs.home-manager.nixosModules.default
     ];
 
+    overlays = import ./overlays {inherit inputs;};
   # Enable overlays 
   nixpkgs.overlays = [ overlays.overlay-stable overlays.overlay-unstable ];
 
