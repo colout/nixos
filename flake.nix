@@ -40,11 +40,6 @@ outputs = { self, nixpkgs, home-manager, hyprland, ... } @ inputs:
         modules = [
           ./hosts/xiangbing/configuration.nix 
           ./hosts/xiangbing/hardware-configuration.nix 
-          ./modules/nixos/wm/hyprland.nix
-          ./modules/nixos/games.nix
-          ./modules/nixos/wm/kde.nix
-          
-          ./modules/nixos/hardware/nvidia.nix
 
           home-manager.nixosModules.home-manager {
             home-manager =  {

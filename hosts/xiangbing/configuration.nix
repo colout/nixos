@@ -6,6 +6,13 @@
     outputs.overlays.packages-unstable 
   ];
 
+  imports = [
+    ../modules/nixos/wm/hyprland.nix
+    ../modules/nixos/games.nix
+    ../modules/nixos/wm/kde.nix
+    ../modules/nixos/hardware/nvidia.nix
+  ]
+
   # Kernel
   #boot.kernelPackages = pkgs.linuxPackages;
   boot.kernelPackages = pkgs.stable.linuxPackages_latest;
