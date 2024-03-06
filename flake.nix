@@ -37,25 +37,23 @@ outputs = { self, nixpkgs, home-manager, hyprland, ... } @ inputs:
       xiangbing = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs;};
-        modules = [ 
-          (import ./configuration.nix) 
-          (import ./modules/wm/hyprland.nix)
-          (import ./modules/games.nix)
-          (import ./modules/wm/kde.nix)
+        modules = [
+          ./configuration.nix 
+          ./modules/wm/hyprland.nix
+          ./modules/games.nix
+          ./modules/wm/kde.nix
           
           ./modules/hardware/nvidia.nix
-        ];
-      };
-    };
 
-    # Home-manager configs
-    homeConfigurations = {
-      "colout@xiangbing" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          # > Our main home-manager configuration file <
-          ./home-manager/home.nix
+          home-manager.nixosModules.home-manager {
+            home-manager =  {
+              extraSpecialArgs = { inherit inputs; };
+              users = {
+                "colout" = import ./home-manager/colout.nix;
+              };
+            };
+          }
+          
         ];
       };
     };
