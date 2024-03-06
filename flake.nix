@@ -28,13 +28,12 @@
 
 outputs = { self, nixpkgs, hyprland, ... }@inputs: 
   let
-    overlays = import ./overlays {inherit inputs;};
   in {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {inherit inputs;};
       modules = [ 
-        (import ./configuration.nix {inherit overlays;})
+        (import ./configuration.nix) 
         (import ./modules/wm/hyprland.nix)
         (import ./modules/games.nix)
         (import ./modules/wm/kde.nix)
