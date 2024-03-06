@@ -53,5 +53,4 @@ outputs = { self, nixpkgs, hyprland, ... }@inputs:
     homeConfigurations = {
       "colout@xiangbing" = home-manager.lib.homeConfigurations {
     };
-  };
 }
