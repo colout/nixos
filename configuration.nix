@@ -105,12 +105,6 @@
     shell = pkgs.zsh;
   };
 
-  home-manager =  {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      "colout" = import ./home.nix;
-    };
-  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -150,10 +144,6 @@
       };
     };
   };
-
-  home-manager = {
-
-   };
 
   system.stateVersion = "23.11"; # Did you read the comment?
 
