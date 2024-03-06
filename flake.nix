@@ -34,7 +34,7 @@ outputs = { self, nixpkgs, hyprland, ... }@inputs:
       system = "x86_64-linux";
       specialArgs = {inherit inputs;};
       modules = [ 
-        (import ./configuration.nix)
+        (import ./configuration.nix {inherit overlays;})
         (import ./modules/wm/hyprland.nix)
         (import ./modules/games.nix)
         (import ./modules/wm/kde.nix)
