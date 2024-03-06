@@ -2,13 +2,14 @@
 {
   imports =
     [ # Include the results of the hardware scan.
+      ./overlays
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
     ];
 
-    overlays = import ./overlays {inherit inputs;};
   # Enable overlays 
-  nixpkgs.overlays = [ overlays.overlay-stable overlays.overlay-unstable ];
+  overlays = import ./overlays {inherit inputs;};
+  nixpkgs.overlays = [ overlay-stable overlay-unstable ];
 
   # Kernel
   #boot.kernelPackages = pkgs.linuxPackages;
