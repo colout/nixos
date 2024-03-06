@@ -32,18 +32,19 @@ outputs = { self, nixpkgs, hyprland, ... }@inputs:
   in {
     overlays = import ./overlays {inherit inputs;};
     nixosConfigurations = {
-    xiangbing = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = {inherit inputs outputs;};
-      modules = [ 
-        (import ./configuration.nix) 
-        (import ./modules/wm/hyprland.nix)
-        (import ./modules/games.nix)
-        (import ./modules/wm/kde.nix)
-        
-        ./modules/hardware/nvidia.nix
-        inputs.home-manager.nixosModules.default
-      ];
+      xiangbiing = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs outputs;};
+        modules = [ 
+          (import ./configuration.nix) 
+          (import ./modules/wm/hyprland.nix)
+          (import ./modules/games.nix)
+          (import ./modules/wm/kde.nix)
+          
+          ./modules/hardware/nvidia.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
     };
   };
 }
