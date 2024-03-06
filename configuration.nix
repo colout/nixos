@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, outputs, ... }:
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -8,7 +8,7 @@
     ];
 
   # Enable overlays 
-  nixpkgs.overlays = [ outputs.overlay-stable overlay-unstable ];
+  nixpkgs.overlays = [ outputs.overlay-stable outputs.overlay-unstable ];
 
   # Kernel
   #boot.kernelPackages = pkgs.linuxPackages;
