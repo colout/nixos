@@ -44,8 +44,6 @@ outputs = { self, nixpkgs, home-manager, hyprland, ... } @ inputs:
           (import ./modules/wm/kde.nix)
           
           ./modules/hardware/nvidia.nix
-          ./modules/hardware/nvidia.neeix
-
         ];
       };
     };
