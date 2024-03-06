@@ -8,8 +8,7 @@
     ];
 
   # Enable overlays 
-  overlays = import ./overlays {inherit inputs;};
-  nixpkgs.overlays = [ overlay-stable overlay-unstable ];
+  nixpkgs.overlays = [ outputs.overlay-stable overlay-unstable ];
 
   # Kernel
   #boot.kernelPackages = pkgs.linuxPackages;
