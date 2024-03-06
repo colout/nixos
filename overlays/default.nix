@@ -12,14 +12,14 @@
     # });
   };
 
-  overlay-unstable = final: prev: { 
+  packages-unstable = final: prev: { 
     unstable = import inputs.nixpkgs-unstable {
       system = "x86_64-linux"; 
       config.allowUnfree = true;
     };
   };
 
-  overlay-stable = final: prev: { 
+  packages-stable = final: prev: { 
     stable = import inputs.nixpkgs-stable {
       system = "x86_64-linux"; 
       config.allowUnfree = true;

@@ -8,8 +8,8 @@
 
   # Enable overlays 
   nixpkgs.overlays = [ 
-    outputs.overlays.overlay-stable 
-    outputs.overlays.overlay-unstable 
+    outputs.overlays.packages-stable 
+    outputs.overlays.packages-unstable 
   ];
 
   # Kernel
