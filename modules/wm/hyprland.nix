@@ -1,4 +1,3 @@
-{ overlay-stable, overlay-unstable }:
 { config, pkgs, lib, inputs, ... }: {
   services.xserver = {
     enable = true;

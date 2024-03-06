@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, overlays, ... }:
 
 let
   # bash script to let dbus know about important env variables and

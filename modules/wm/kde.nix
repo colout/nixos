@@ -1,5 +1,4 @@
-{ overlay-stable, overlay-unstable }:
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, overlays, ... }:
 {
   # Enable the X11 windowing system.
   services.xserver.enable = true;
