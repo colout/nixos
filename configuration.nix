@@ -7,7 +7,7 @@
     ];
 
   # Enable overlays 
-  nixpkgs.overlays = [ overlay-stable overlay-unstable ];
+  nixpkgs.overlays = [ overlays.overlay-stable overlays.overlay-unstable ];
 
   # Kernel
   #boot.kernelPackages = pkgs.linuxPackages;
