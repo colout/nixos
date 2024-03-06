@@ -28,20 +28,7 @@
 
 outputs = { self, nixpkgs, nixpkgs-stable, nixpkgs-unstable, hyprland, ... }@inputs: 
   let
-    overlay-unstable = final: prev: { 
-      unstable = import nixpkgs-unstable {
-        system = "x86_64-linux"; 
-        config.allowUnfree = true;
-      };
-    };
-
-    overlay-stable = final: prev: { 
-      stable = import nixpkgs-stable {
-        system = "x86_64-linux"; 
-        config.allowUnfree = true;
-      };
-    };
-    
+    overlays = import ./overlays {inherit inputs;};
   in {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
