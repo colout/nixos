@@ -26,7 +26,7 @@
     };
   };
 
-outputs = { self, nixpkgs, overlays, hyprland, ... }@inputs: 
+outputs = { self, nixpkgs, hyprland, ... }@inputs: 
   let
     overlays = import ./overlays {inherit inputs;};
   in {
