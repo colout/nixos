@@ -50,7 +50,7 @@ outputs = { self, nixpkgs, home-manager, hyprland, ... } @ inputs:
 
     # Home-manager configs
     homeConfigurations = {
-      "your-username@your-hostname" = home-manager.lib.homeManagerConfiguration {
+      "colout@xiangbing" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
