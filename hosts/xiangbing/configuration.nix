@@ -10,6 +10,7 @@
   #boot.kernelPackages = pkgs.linuxPackages;
   boot.kernelPackages = pkgs.stable.linuxPackages_latest;
 
+  system.stateVersion = "23.11"; # Did you read the comment?
 
   # Bootloader.
   #boot.loader.systemd-boot.enable = true;
@@ -140,12 +141,6 @@
     };
   };
 
-  system.stateVersion = "23.11"; # Did you read the comment?
-
-  # For mount.cifs, required unless domain name resolution is not needed.
-  # also create /etc/nixos/smb-secrets with:
-  #   username=
-  #   password=
   fileSystems."/mnt/media" = {
     device = "//192.168.10.10/media";
     fsType = "cifs";
