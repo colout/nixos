@@ -38,7 +38,8 @@ outputs = { self, nixpkgs, home-manager, hyprland, ... } @ inputs:
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs;};
         modules = [
-          ./configuration.nix 
+          ./hosts/xiangbing/configuration.nix 
+          ./hosts/xiangbing/hardware-configuration.nix 
           ./modules/wm/hyprland.nix
           ./modules/games.nix
           ./modules/wm/kde.nix
@@ -53,7 +54,6 @@ outputs = { self, nixpkgs, home-manager, hyprland, ... } @ inputs:
               };
             };
           }
-          
         ];
       };
     };
