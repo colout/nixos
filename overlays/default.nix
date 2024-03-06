@@ -13,14 +13,14 @@
   };
 
   overlay-unstable = final: prev: { 
-    unstable = import nixpkgs-unstable {
+    unstable = import inputs.nixpkgs-unstable {
       system = "x86_64-linux"; 
       config.allowUnfree = true;
     };
   };
 
   overlay-stable = final: prev: { 
-    stable = import nixpkgs-stable {
+    stable = import inputs.nixpkgs-stable {
       system = "x86_64-linux"; 
       config.allowUnfree = true;
     };
