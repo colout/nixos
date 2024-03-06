@@ -34,10 +34,10 @@ outputs = { self, nixpkgs, nixpkgs-stable, nixpkgs-unstable, hyprland, ... }@inp
       system = "x86_64-linux";
       specialArgs = {inherit inputs;};
       modules = [ 
-        (import ./configuration.nix {inherit overlay-stable overlay-unstable;})
-        (import ./modules/wm/hyprland.nix {inherit overlay-stable overlay-unstable;})
-        (import ./modules/games.nix {inherit overlay-stable overlay-unstable;})
-        (import ./modules/wm/kde.nix {inherit overlay-stable overlay-unstable;})
+        (import ./configuration.nix)
+        (import ./modules/wm/hyprland.nix)
+        (import ./modules/games.nix)
+        (import ./modules/wm/kde.nix)
         
         ./modules/hardware/nvidia.nix
         inputs.home-manager.nixosModules.default
