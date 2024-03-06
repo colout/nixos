@@ -11,7 +11,7 @@
     ../modules/nixos/games.nix
     ../modules/nixos/wm/kde.nix
     ../modules/nixos/hardware/nvidia.nix
-  ]
+  ];
 
   # Kernel
   #boot.kernelPackages = pkgs.linuxPackages;
