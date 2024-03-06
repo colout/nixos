@@ -101,12 +101,6 @@
     shell = pkgs.zsh;
   };
 
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   programs.zsh.enable = true;
   environment.systemPackages = with pkgs; [
     neovim
