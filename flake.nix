@@ -26,7 +26,7 @@
     };
   };
 
-outputs = { self, nixpkgs, hyprland, ... }@inputs: 
+outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs: 
   let
     inherit (self) outputs;
   in {
@@ -44,7 +44,6 @@ outputs = { self, nixpkgs, hyprland, ... }@inputs:
           (import ./modules/wm/kde.nix)
           
           ./modules/hardware/nvidia.nix
-          inputs.home-manager.nixosModules.default
         ];
       };
     };
