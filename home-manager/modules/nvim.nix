@@ -4,6 +4,11 @@
     inputs.nixvim.homeManagerModules.nixvim
   ];
 
+  programs.nixvim = {
+    # Enable gruvbox
+    colorschemes.gruvbox.enable = true;
+  };
+
   programs.nixvim.enable = true;
 
   programs.nixvim = {
