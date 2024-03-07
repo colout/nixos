@@ -2,6 +2,6 @@
 {
     imports = [
     # For home-manager
-    nixvim.homeManagerModules.nixvim
+    inputs.nixvim.homeManagerModules.nixvim
     ];
 }
