@@ -43,8 +43,8 @@
       # Nvim Tree
       {
         mode = "n";
-        key = "<leader>ff";
-        action = "<cmd>Telescope find_files<cr>";
+        key = "<leader>e";
+        action = ":NvimTreeToggle<CR>";
       }
 
       # Telescope fzf
