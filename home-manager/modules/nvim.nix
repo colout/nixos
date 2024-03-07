@@ -48,48 +48,57 @@
       }
 
     ];
-  options = {
-    # line numbers
-    relativenumber = true;
-    number = true;
 
-    # tabs
-    tabstop = 2;
-    shiftwidth = 2;
-    expandtab = true;
-    autoindent = true;
+    options = {
+      # line numbers
+      relativenumber = true;
+      number = true;
 
-    # some nice defaults
-    wrap = false;
-    cursorline = true;
-    backspace = "indent,eol,start";
-    encoding = "utf8";
+      # tabs
+      tabstop = 2;
+      shiftwidth = 2;
+      expandtab = true;
+      autoindent = true;
 
-    # Starts scrolling when closer to bottom
-    scrolloff = 8;
+      # some nice defaults
+      wrap = false;
+      cursorline = true;
+      backspace = "indent,eol,start";
+      encoding = "utf8";
 
-    # appearance
-    termguicolors = true;
-    signcolumn = "yes";
+      # Starts scrolling when closer to bottom
+      scrolloff = 8;
 
-    # Show more info in status bar
-    ruler = true;
-    showcmd = true;
+      # appearance
+      termguicolors = true;
+      signcolumn = "yes";
 
-    # Will implement search incrementally as you type
-    incsearch = true;
+      # Show more info in status bar
+      ruler = true;
+      showcmd = true;
 
-    # Will hilight all search results
-    hlsearch = true;
+      # Will implement search incrementally as you type
+      incsearch = true;
 
-    # No swap file or temp backup backup before write
-    swapfile = false;
-    backup = false;
-  };
+      # Will hilight all search results
+      hlsearch = true;
+
+      # No swap file or temp backup backup before write
+      swapfile = false;
+      backup = false;
+    };
 
   };
 
   programs.nixvim = {
-    plugins.lightline.enable = true;
+    plugins = {
+      lightline = {
+        enable = true;
+      };
+
+      nvim-tree = {
+        enable = true;
+      };
+    };
   };
 }
