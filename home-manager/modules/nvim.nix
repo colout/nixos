@@ -114,7 +114,7 @@
   };
   programs.nixvim = {
     extraPlugins = with pkgs.vimPlugins; [
-      vim-nix
+      nix-be-good
     ];
   };
 }
