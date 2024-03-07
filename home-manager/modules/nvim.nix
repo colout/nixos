@@ -110,9 +110,6 @@
           width = 35;
         };
       };
-      vim-be-good = {
-        enable = true;
-      };
     };
   };
   programs.nixvim = {
