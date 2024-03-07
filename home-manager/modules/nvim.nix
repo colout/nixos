@@ -105,9 +105,13 @@
 
       nvim-tree = {
         enable = true;
+
         view = {
           width = 35;
         };
+      };
+      vim-be-good = {
+        enable = true;
       };
     };
   };
