@@ -26,11 +26,18 @@
         key = "<leader>nh";
         action = "e:nohl<CR>";
       }
+
+      #
+      # Plugin Keybinds
+      #
+      
+      # Nvim Tree
       {
         mode = "n";
-        key = "<leader>";
-        action = "_x";
+        key = "<leader>ff";
+        action = "<cmd>Telescope find_files<cr>";
       }
+
     ];
   options = {
     # line numbers
