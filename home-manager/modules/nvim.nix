@@ -9,7 +9,6 @@
     colorschemes.gruvbox.enable = true;
   };
 
-  programs.nixvim.enable = true;
 
   programs.nixvim = {
     plugins.lightline.enable = true;
