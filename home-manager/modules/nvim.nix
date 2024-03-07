@@ -7,7 +7,7 @@
 
   programs.nixvim = {
     enable = true;
-    colorschemes.gruvbox.enable = true;
+    colorschemes.tokyonight.enable = true;
 
     globals.mapleader = " ";
 
