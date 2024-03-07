@@ -6,7 +6,7 @@
   imports = [
     ./modules/zsh.nix
     ./modules/kitty.nix
-    ./modules/nvim.nix
+    ./modules/nvim
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
