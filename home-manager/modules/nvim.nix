@@ -105,9 +105,6 @@
 
       nvim-tree = {
         enable = true;
-        sort = {
-          sorter = "case_sensitive";
-        };
         view = {
           width = 35;
         };
