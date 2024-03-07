@@ -1,4 +1,4 @@
-( config, pkgs, ... }:
+{ config, pkgs, ... }:
 
 let
   lspServers = pkgs.writeText "lsp_servers.json" (builtins.toJSON (import ./lsp_servers.nix { inherit pkgs; }));
