@@ -112,9 +112,4 @@
       };
     };
   };
-  programs.nixvim = {
-    extraPlugins = with pkgs.vimPlugins; [
-      nix-be-good
-    ];
-  };
 }
