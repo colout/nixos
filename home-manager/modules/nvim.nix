@@ -108,6 +108,9 @@
         sort = {
           sorter = "case_sensitive";
         };
+        view = {
+          width = 35;
+        };
       };
     };
   };
