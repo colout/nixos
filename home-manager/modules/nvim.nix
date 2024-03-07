@@ -1,3 +1,3 @@
-{ pkgs, lib, ... }:
+{ inputs, pkgs, lib, ... }:
 {
  }
