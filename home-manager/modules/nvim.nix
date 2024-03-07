@@ -105,6 +105,9 @@
 
       nvim-tree = {
         enable = true;
+        sort = {
+          sorter = "case_sensitive";
+        };
       };
     };
   };
