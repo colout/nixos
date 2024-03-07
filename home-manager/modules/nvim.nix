@@ -7,10 +7,18 @@
   programs.nixvim = {
     enable = true;
     colorschemes.gruvbox.enable = true;
+
+    globals.mapleader = " ";
+
     keymaps = [
       {
         key = ";";
         action = ":";
+      }
+      {
+        mode = "n";
+        key = "x";
+        action = "_x";
       }
       {
         mode = "n";

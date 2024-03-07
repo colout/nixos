@@ -117,6 +117,7 @@
     ksystemlog
     zsh
     autofs5
+    wayvnc
   ];
  
   console = {
