@@ -1,4 +1,5 @@
 { inputs, pkgs, lib, ... }:
+
 {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
@@ -31,51 +32,45 @@
         action = "_x";
       }
     ];
-  };
-
   options = {
+    # line numbers
+    relativenumber = true;
+    number = true;
+
+    # tabs
     tabstop = 2;
     shiftwidth = 2;
     expandtab = true;
     autoindent = true;
 
+    # some nice defaults
+    wrap = false;
+    cursorline = true;
+    backspace = "indent,eol,start";
+    encoding = "utf8";
 
--- line numbers
-    relativenumber = true
-    number = true
+    # Starts scrolling when closer to bottom
+    scrolloff = 8;
 
--- tabs
-    tabstop = 2
-    shiftwidth = 2
-    expandtab = true
-    autoindent = true
+    # appearance
+    termguicolors = true;
+    signcolumn = "yes";
 
--- some nice defaults
-    wrap = false
-    cursorline = true --meh?
-    backspace = "indent,eol,start"
-    encoding = "utf8"
+    # Show more info in status bar
+    ruler = true;
+    showcmd = true;
 
--- Starts scrolling when closer to bottom
-    scrolloff = 8
+    # Will implement search incrementally as you type
+    incsearch = true;
 
--- appearance
-    termguicolors = true
-    signcolumn = "yes"
+    # Will hilight all search results
+    hlsearch = true;
 
--- Show more info in status bar
-    ruler = true
-    showcmd = true
+    # No swap file or temp backup backup before write
+    swapfile = false;
+    backup = false;
+  };
 
--- Will implement search incrementally as you type
-    incsearch = true
-
--- Will hilight all search results
-    hlsearch = true
-
--- No swap file or temp backup backup before write
-    swapfile = false
-    backup = false
   };
 
   programs.nixvim = {

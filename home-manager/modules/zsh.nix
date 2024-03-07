@@ -17,7 +17,7 @@
       ll = "ls -l";
 
       # NixOS command shortcuts
-      napply = "sudo chown -R $USER /etc/nixos; cd /etc/nixos && git -C /etc/nixos add . && git -C /etc/nixos commit -m 'change'; sudo nixos-rebuild switch --flake /etc/nixos#default";
+      napply = "sudo chown -R $USER /etc/nixos; cd /etc/nixos && git -C /etc/nixos add . && git -C /etc/nixos commit -m 'change'; sudo nixos-rebuild switch --flake /etc/nixos";
       nupdate = "nix flake update /etc/nixos";
       nedit = "cd /etc/nixos; nvim";
       ngarbage-collect = "nix-collect-garbage -d";
