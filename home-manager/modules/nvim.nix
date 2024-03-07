@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+( config, pkgs, ... }:
 
 let
   lspServers = pkgs.writeText "lsp_servers.json" (builtins.toJSON (import ./lsp_servers.nix { inherit pkgs; }));
@@ -14,6 +14,7 @@ in
     vimAlias = true;
     viAlias = true;
     withNodeJs = true;
+    defaultEditor = true;
     withPython3 = true;
     withRuby = false;
     extraConfig = ''
