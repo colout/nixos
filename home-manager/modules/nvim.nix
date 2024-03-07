@@ -47,6 +47,13 @@
         action = "<cmd>Telescope find_files<cr>";
       }
 
+      # Telescope fzf
+      {
+        mode = "n";
+        key = "<leader>ff";
+        action = "<cmd>Telescope find_files<cr>";
+      }
+
     ];
 
     options = {
