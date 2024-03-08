@@ -1,6 +1,6 @@
 {
   imports = [
     ./tokyonight
-    ./lightline
+    ./lualine
   ];
 }
