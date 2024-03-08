@@ -4,6 +4,7 @@
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
     ./visuals
+    ./core
   ];
 
   programs.nixvim = {
