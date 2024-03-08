@@ -8,8 +8,8 @@
         
         autoClose = true;
         autoReloadOnWrite = true;
-        openOnSetup = true;
-        openOnSetupFile = true;
+        openOnSetup = false;
+        openOnSetupFile = false;
 
         view = {
           width = 35;
