@@ -43,7 +43,7 @@
       backup = false;
 
       # <zM> fold all, <zR> unfold all, <zJ/K> navegate btwn folds
-      foldenable = true;
+      foldenable = false;
     };
   };
 }
