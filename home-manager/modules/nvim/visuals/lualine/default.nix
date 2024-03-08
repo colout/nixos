@@ -25,7 +25,7 @@
         };
 
         theme = let
-          colors = {
+          Colors = {
             white = "#ffffff";
             darkestgreen = "#005f00";
             brightgreen = "#afdf00";
