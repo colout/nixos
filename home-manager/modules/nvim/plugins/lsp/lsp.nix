@@ -32,7 +32,7 @@
       };
 
       lsp-format = {
-        enabled = true;
+        enable = true;
       };
     };
   };
