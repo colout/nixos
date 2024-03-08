@@ -117,7 +117,7 @@
             a = {
               fg = Colors.white;
               bg = Colors.brightred;
-              gui = "bold" };
+              gui = "bold";
             };
 
           inactive = {
