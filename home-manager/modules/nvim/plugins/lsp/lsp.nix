@@ -23,7 +23,7 @@
         enable = true;
       };
 
-      plugins.luasnip = {
+      luasnip = {
         enable = true;
       };
     };
