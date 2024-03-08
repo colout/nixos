@@ -1,5 +1,6 @@
 {
   imports = [
     ./nvim-tree
+    ./telescope
   ];
 }
