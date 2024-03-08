@@ -9,28 +9,28 @@
         # settings stop `cmp` from starting in the middle of the list.
         settings = {
           completion.completeopt = "noselect";
+ 
+          mapping = {
+            "<C-k>" = "cmp.mapping.select_prev_item()";
+            "<C-j>" = "cmp.mapping.select_next_item()";
+            "<C-Space>" = "cmp.mapping.complete()";
+            "<C-e>" = "cmp.mapping.abort()";
+            "<CR>" = "cmp.mapping.confirm({ select = true })";
+            "<Tab>" = {
+              action = "cmp.mapping.select_next_item()";
+              modes = ["i" "s"];
+            };
+            "<S-Tab>" = {
+              action = "cmp.mapping.select_prev_item()";
+              modes = ["i" "s"];
+            };
+          };
+
+          snippet.expand = "luasnip";
           preselect = "None";
         };
 
-
-        mapping = {
-          "<C-k>" = "cmp.mapping.select_prev_item()";
-          "<C-j>" = "cmp.mapping.select_next_item()";
-          "<C-Space>" = "cmp.mapping.complete()";
-          "<C-e>" = "cmp.mapping.abort()";
-          "<CR>" = "cmp.mapping.confirm({ select = true })";
-          "<Tab>" = {
-            action = "cmp.mapping.select_next_item()";
-            modes = ["i" "s"];
-          };
-          "<S-Tab>" = {
-            action = "cmp.mapping.select_prev_item()";
-            modes = ["i" "s"];
-          };
-        };
-
-        snippet.expand = "luasnip";
-      };
+     };
     };
 
     # I keep accidentally pressing `q` which prevents `cmp` from working because
