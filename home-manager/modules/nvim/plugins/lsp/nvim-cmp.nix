@@ -2,7 +2,7 @@
 {
   programs.nixvim = {
     plugins = {
-      cmp = {
+      vim-cmp = {
         enable = true;
 
         # It's annoying to have to `shift+tab` up to what I want to select, these
