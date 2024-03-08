@@ -20,5 +20,5 @@
       };
       none-ls.enable = true;
     };
-  }
+  };
 }
