@@ -11,6 +11,15 @@
         openOnSetup = false;
         openOnSetupFile = false;
 
+        renderer = {
+          groupEmpty = true;
+          highlightGit = true;
+        };
+
+        filters = {
+          dotfiles = true;
+        };
+
         view = {
           width = 35;
         };
