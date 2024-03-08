@@ -18,7 +18,14 @@
       lspkind = {
         enable = true;
       };
-      none-ls.enable = true;
+
+      none-ls = {
+        enable = true;
+      };
+
+      plugins.luasnip = {
+        enable = true;
+      };
     };
   };
 }
