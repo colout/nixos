@@ -1,17 +1,15 @@
 { ... }:
 
 {
-  programs.nixvim = {
-    plugins = {
-      nixsaga = {
+  programs.nixvim.plugins = {
+    lspsaga = {
+      enable = true;
+      lightbulb = {
         enable = true;
-        lightbulb = {
-          enable = true;
-          virtualText = false;
-        };
-        symbolInWinbar.enable = false;
-        ui.border = "rounded";
+        virtualText = false;
       };
+      symbolInWinbar.enable = false;
+      ui.border = "rounded";
     };
   };
 }
