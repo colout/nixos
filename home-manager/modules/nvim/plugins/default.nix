@@ -3,5 +3,6 @@
     ./nvim-tree
     ./telescope
     ./lsp
+    ./treesitter
   ];
 }
