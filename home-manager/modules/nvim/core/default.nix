@@ -1,5 +1,5 @@
 {
-  imports [
+  imports = [
     ./keybinds.nix
     ./options.nix
   ];
