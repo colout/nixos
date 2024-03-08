@@ -6,10 +6,15 @@
       nvim-tree = {
         enable = true;
         
-        autoClose = true;
         autoReloadOnWrite = true;
         openOnSetup = false;
         openOnSetupFile = false;
+
+        actions = {
+          openFile = {
+            quitOnOpen = true;
+          };
+        };
 
         renderer = {
           groupEmpty = true;
