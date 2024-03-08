@@ -15,12 +15,6 @@
         "<C-Space>" = "cmp.mapping.complete()";
         "<C-e>" = "cmp.mapping.abort()";
         "<CR>" = "cmp.mapping.confirm({ select = true })";
-        "<Tab>" = {
-          action = "cmp.mapping.select_next_item()";
-        };
-        "<S-Tab>" = {
-          action = "cmp.mapping.select_prev_item()";
-        };
       };
     };
   };
