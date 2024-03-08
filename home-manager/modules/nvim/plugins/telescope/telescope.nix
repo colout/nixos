@@ -15,7 +15,7 @@
       i = {
         "<C-k>" = "move_selection_previous";
         "<C-j>" = "move_selection_next";
-        "<C-q>" = "send_selected_to_qflist + open_qflist";
+        "<C-q>" = ["send_selected_to_qflist" "open_qflist"];
       };
     };
 
