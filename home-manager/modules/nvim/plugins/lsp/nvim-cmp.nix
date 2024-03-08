@@ -17,11 +17,9 @@
         "<CR>" = "cmp.mapping.confirm({ select = true })";
         "<Tab>" = {
           action = "cmp.mapping.select_next_item()";
-          modes = ["i" "s"];
         };
         "<S-Tab>" = {
           action = "cmp.mapping.select_prev_item()";
-          modes = ["i" "s"];
         };
       };
     };
