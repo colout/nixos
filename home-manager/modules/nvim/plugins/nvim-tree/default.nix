@@ -8,7 +8,7 @@
         
         autoClose = true;
         autoReloadOnWrite = true;
-        sortBy = "case_sensitive";
+        openOnSetup = true;
 
         view = {
           width = 35;
