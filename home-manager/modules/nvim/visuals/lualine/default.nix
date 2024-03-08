@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, helpers, ... }:
 {
   programs.nixvim = {
     plugins = {
-      lightline = {
+      lualine = {
         enable = true;
       };
     };
