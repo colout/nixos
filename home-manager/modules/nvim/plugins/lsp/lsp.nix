@@ -30,6 +30,10 @@
       luasnip = {
         enable = true;
       };
+
+      lsp-format = {
+        enabled = true;
+      };
     };
   };
 }
