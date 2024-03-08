@@ -10,6 +10,13 @@
         "^target/"
       ];
     };
+
+    defaults.mappings = {
+      i = {
+        "<C-k>" = "actions.move_selection_previous";
+      };
+    };
+
     extensions = {
       fzf-native.enable = true;
     };
