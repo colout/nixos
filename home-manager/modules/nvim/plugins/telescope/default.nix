@@ -1,6 +1,6 @@
 {
   imports = [
+    ./telescope.nix
     ./keymaps.nix
-    ./options.nix
   ];
 }

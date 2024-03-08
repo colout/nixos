@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-  
   programs.nixvim = {
     globals.mapleader = " ";
 
