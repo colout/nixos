@@ -11,10 +11,6 @@
 
       symbolInWinbar.enable = false;
       ui.border = "rounded";
-
-      beacon = {
-        enable = true;
-      };
     };
   };
 }
