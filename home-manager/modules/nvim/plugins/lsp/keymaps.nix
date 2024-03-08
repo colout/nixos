@@ -2,6 +2,7 @@
 
 {
   programs.nixvim.keymaps = [
+  # LSP Saga
     {
       mode = "n";
       key = "<leader>la";
