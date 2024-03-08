@@ -25,8 +25,6 @@
           modes = ["i" "s"];
         };
       };
-
-      snippet.expand = "luasnip";
     };
   };
 
