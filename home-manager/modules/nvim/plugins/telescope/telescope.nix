@@ -13,7 +13,7 @@
 
     defaults.mappings = {
       i = {
-        ["<C-k>"] = "actions.move_selection_previous";
+        "<C-k>" = "actions.move_selection_previous";
       };
     };
 
