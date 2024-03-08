@@ -9,10 +9,12 @@
           left = "";
           right = "";
         };
+
         sectionSeparators = {
           left = "";
           right = "";
         };
+
         sections = {
           lualine_c = [
             {
@@ -25,7 +27,7 @@
         };
 
         theme = let
-          Colors = {
+          colors = {
             white = "#ffffff";
             darkestgreen = "#005f00";
             brightgreen = "#afdf00";
@@ -46,29 +48,95 @@
           };
         in {
           normal = {
-            a = { fg = Colors.mediumcyan, bg = Colors.darkestblue, gui = "bold" },
-            b = { fg = Colors.gray2, bg = Colors.mediumcyan },
-            c = { fg = Colors.gray7, bg = Colors.gray2 },
-          },
+            a = {
+              fg = Colors.mediumcyan;
+              bg = Colors.darkestblue;
+              gui = "bold";
+            };
+
+            b = {
+              fg = Colors.gray2;
+              bg = Colors.mediumcyan;
+            };
+
+            c = {
+              fg = Colors.gray7;
+              bg = Colors.gray2;
+            };
+
+          };
+
           command = {
-            a = { fg = Colors.brightgreen, bg = Colors.darkestgreen, gui = "bold" },
-            b = { fg = Colors.gray2, bg = Colors.brightgreen },
-          },
+            a = {
+              fg = Colors.brightgreen;
+              bg = Colors.darkestgreen;
+              gui = "bold";
+            };
+
+            b = {
+              fg = Colors.gray2;
+              bg = Colors.brightgreen;
+            };
+
+          };
+
           insert = {
-            a = { fg = Colors.darkestcyan, bg = Colors.white, gui = "bold" },
-            b = { fg = Colors.darkestcyan, bg = Colors.mediumcyan },
-            c = { fg = Colors.mediumcyan, bg = Colors.darkestblue },
-          },
+            a = {
+              fg = Colors.darkestcyan;
+              bg = Colors.white;
+              gui = "bold";
+            };
+
+            b = {
+              fg = Colors.darkestcyan;
+              bg = Colors.mediumcyan;
+            };
+
+            c = {
+              fg = Colors.mediumcyan;
+              bg = Colors.darkestblue;
+            };
+
+          };
+
           visual = {
-            a = { fg = Colors.brightpurple, bg = Colors.darkpurple, gui = "bold" },
-            b = { fg = Colors.darkpurple, bg = Colors.brightpurple },
-          },
-          replace = { a = { fg = Colors.white, bg = Colors.brightred, gui = "bold" } },
+            a = {
+              fg = Colors.brightpurple;
+              bg = Colors.darkpurple;
+              gui = "bold";
+            };
+
+            b = {
+              fg = Colors.darkpurple;
+              bg = Colors.brightpurple;
+            };
+
+          };
+
+          replace = {
+            a = {
+              fg = Colors.white;
+              bg = Colors.brightred;
+              gui = "bold" };
+            };
+
           inactive = {
-            a = { fg = Colors.gray1, bg = Colors.gray5, gui = "bold" },
-            b = { fg = Colors.gray1, bg = Colors.gray5 },
-            c = { bg = Colors.gray1, fg = Colors.gray5 },
-          },
+            a = {
+              fg = Colors.gray1;
+              bg = Colors.gray5;
+              gui = "bold";
+            };
+
+            b = {
+              fg = Colors.gray1;
+              bg = Colors.gray5;
+            };
+
+            c = {
+              bg = Colors.gray1;
+              fg = Colors.gray5;
+            };
+          };
         };
       };
     };
