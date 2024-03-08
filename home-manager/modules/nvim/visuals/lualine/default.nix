@@ -27,7 +27,7 @@
         };
 
         theme = let
-          colors = {
+          Colors = {
             white = "#ffffff";
             darkestgreen = "#005f00";
             brightgreen = "#afdf00";
@@ -63,7 +63,6 @@
               fg = Colors.gray7;
               bg = Colors.gray2;
             };
-
           };
 
           command = {
@@ -77,7 +76,6 @@
               fg = Colors.gray2;
               bg = Colors.brightgreen;
             };
-
           };
 
           insert = {
@@ -96,7 +94,6 @@
               fg = Colors.mediumcyan;
               bg = Colors.darkestblue;
             };
-
           };
 
           visual = {
@@ -110,7 +107,6 @@
               fg = Colors.darkpurple;
               bg = Colors.brightpurple;
             };
-
           };
 
           replace = {
@@ -119,6 +115,7 @@
               bg = Colors.brightred;
               gui = "bold";
             };
+          };
 
           inactive = {
             a = {
