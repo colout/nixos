@@ -16,14 +16,8 @@
             "<C-Space>" = "cmp.mapping.complete()";
             "<C-e>" = "cmp.mapping.abort()";
             "<CR>" = "cmp.mapping.confirm({ select = true })";
-            "<Tab>" = {
-              action = "cmp.mapping.select_next_item()";
-              modes = ["i" "s"];
-            };
-            "<r>" = {
-              action = "cmp.mapping.select_prev_item()";
-              modes = ["i" "s"];
-            };
+            "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
+            "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
           };
 
           snippet.expand = "luasnip";
