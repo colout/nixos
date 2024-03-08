@@ -8,7 +8,7 @@
       sources = [
         {name = "path";}
         {name = "nvim_lsp";}
-        {name = "luasnip";}
+        #{name = "luasnip";}
         {name = "crates";}
         {name = "buffer";}
       ];
