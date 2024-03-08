@@ -1,2 +1,5 @@
 {
+  import = [
+    ./nvim-tree
+  ];
 }
