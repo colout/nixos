@@ -12,7 +12,7 @@
       }
       {
         mode = "n";
-        key = "<leader>fg";
+        key = "<leader>fs";
         action = "<cmd>lua require('telescope.builtin').live_grep({hidden = true})<CR>";
         options.desc = "Grep Files";
       }
