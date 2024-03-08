@@ -2,4 +2,5 @@
 
 {
   
+  programs.nixvim = {
 }
