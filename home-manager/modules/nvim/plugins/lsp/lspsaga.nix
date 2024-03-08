@@ -6,10 +6,10 @@
       enable = true;
       lightbulb = {
         enable = true;
-        virtualText = false;
+        virtualText = true;
       };
 
-      symbolInWinbar.enable = false;
+      symbolInWinbar.enable = true;
       ui.border = "rounded";
     };
   };
