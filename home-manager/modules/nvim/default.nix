@@ -7,6 +7,4 @@
     ./core
     ./plugins
   ];
-
-
 }

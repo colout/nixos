@@ -10,5 +10,8 @@
         "^target/"
       ];
     };
+    extensions = {
+      fzf-native.enable = true;
+    };
   };
 }
