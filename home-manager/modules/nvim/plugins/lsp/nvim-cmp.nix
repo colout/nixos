@@ -20,7 +20,7 @@
               action = "cmp.mapping.select_next_item()";
               modes = ["i" "s"];
             };
-            "<S-Tab>" = {
+            "<C-Tab>" = {
               action = "cmp.mapping.select_prev_item()";
               modes = ["i" "s"];
             };
