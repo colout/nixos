@@ -3,7 +3,7 @@
 {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
-    ./plugs/colorscheme
+    ./plugins/visuals
   ];
 
   programs.nixvim = {
