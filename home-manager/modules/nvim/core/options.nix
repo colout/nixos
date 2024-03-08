@@ -42,8 +42,8 @@
       swapfile = false;
       backup = false;
 
-      # Don't open as folded. <zM> fold all, <zR> unfold all, <zJ/K> navegate btwn folds
-      foldenable = false;
+      # <zM> fold all, <zR> unfold all, <zJ/K> navegate btwn folds
+      foldenable = true;
     };
   };
 }
