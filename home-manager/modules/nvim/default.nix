@@ -5,12 +5,10 @@
     inputs.nixvim.homeManagerModules.nixvim
     ./visuals
     ./core
+    ./plugins
   ];
 
   programs.nixvim = {
-
-    globals.mapleader = " ";
-
     keymaps = [
       #
       # Plugin Keybinds
@@ -35,9 +33,6 @@
 
   programs.nixvim = {
     plugins = {
-      lightline = {
-        enable = true;
-      };
 
       nvim-tree = {
         enable = true;
