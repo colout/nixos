@@ -34,7 +34,5 @@
         };
      };
     };
-
-    vim-nix.enable = true;
   };
 }
