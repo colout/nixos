@@ -6,6 +6,12 @@
         servers = {
           lua-ls.enable = true; # lua
           marksman.enable = true; # markdown
+          bashls.enable = true;
+          clangd.enable = true;
+          cmake.enable = true;
+          helm-ls.enable = true;
+          terraformls.enable = true;
+          dockerls.enable = true;
           nil_ls.enable = true; # nix
           pylsp.enable = true; # python
           yamlls.enable = true; # yaml
