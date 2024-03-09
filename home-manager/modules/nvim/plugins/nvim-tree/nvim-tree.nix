@@ -18,6 +18,11 @@
           };
         };
 
+        git = {
+          enable = true;
+          ignore = false;
+        };
+
         renderer = {
           groupEmpty = true;
           highlightGit = true;
