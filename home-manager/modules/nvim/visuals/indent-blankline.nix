@@ -6,7 +6,7 @@
       enable = true;
       scope.enabled = true;
       indent = {
-        highlight = "hl-IblWhitespace";
+        highlight = "Whitespace";
         
         char = "";
       };
