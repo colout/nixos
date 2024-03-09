@@ -11,7 +11,7 @@
       };
       whitespace = {
         highlight = ["CursorColumn" "Whitespace"];
-        removeBackglineTrail = true;
+        removeBlanklineTrail = true;
       };
     };
   };
