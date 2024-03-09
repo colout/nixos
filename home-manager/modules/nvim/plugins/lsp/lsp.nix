@@ -27,7 +27,6 @@
           diagnostics = {
             golangci_lint.enable = true;
             ktlint.enable = true;
-            shellcheck.enable = true;
             statix.enable = true;
           };
           formatting = {
