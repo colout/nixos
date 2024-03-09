@@ -20,9 +20,15 @@
       none-ls = {
         enable = true;
         sources = {
-          diagnostics = { statix.enable = true; };
+          diagnostics = {
+            statix.enable = true;
+            cppcheck.enable = true;
+          };
           formatting = {
+            clang_format.enable = true;
+            cmake_format.enable = true;
             fantomas.enable = true;
+            yamlfmt.enable = true;
             gofmt.enable = true;
             goimports.enable = true;
             ktlint.enable = true;
@@ -30,9 +36,9 @@
             markdownlint.enable = true;
           };
           completion = {
-            spell = true;
-            luasnip = true;
-            tags = true;
+            spell.enable = true;
+            luasnip.enable = true;
+            tags.enable = true;
           };
         };
       };
