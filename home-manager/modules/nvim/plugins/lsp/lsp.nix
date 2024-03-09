@@ -23,6 +23,23 @@
       # null-ls is dead. Lets telescope and other plugins use LSP
       none-ls = {
         enable = true;
+        sources = {
+          diagnostics = {
+            golangci_lint.enable = true;
+            ktlint.enable = true;
+            shellcheck.enable = true;
+            statix.enable = true;
+          };
+          formatting = {
+            fantomas.enable = true;
+            gofmt.enable = true;
+            goimports.enable = true;
+            ktlint.enable = true;
+            nixfmt.enable = true;
+            markdownlint.enable = true;
+            rustfmt.enable = true;
+          };
+        };
       };
 
       # multiline lsp errors
