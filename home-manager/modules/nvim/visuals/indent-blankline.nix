@@ -4,7 +4,7 @@
   programs.nixvim = {
     plugins.indent-blankline = {
       enable = true;
-      scope.enabled = false;
+      scope.enabled = true;
       indent = {
         char = "";
       };

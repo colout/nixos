@@ -7,5 +7,6 @@
     ./gitsigns.nix
     ./illuminate.nix
     ./indent-blankline.nix
+    ./lastplace.nix
   ];
 }
