@@ -6,12 +6,12 @@
       enable = true;
       scope.enabled = false;
       indent = {
-        highlight = ["Whitespace" "CursorColumn"]; 
-        char = "";
+        #highlight = ["Whitespace" "CursorColumn"]; 
+        #char = "";
       };
       whitespace = {
-        highlight = ["Whitespace" "CursorColumn"];
-        removeBlanklineTrail = true;
+        #highlight = ["Whitespace" "CursorColumn"];
+        #removeBlanklineTrail = true;
       };
     };
   };
