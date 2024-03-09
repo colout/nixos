@@ -7,6 +7,7 @@
       scope.enabled = true;
       indent = {
         highlight = "hl-IblWhitespace";
+        
         char = "";
       };
     };
