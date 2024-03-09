@@ -17,7 +17,6 @@
             {name = "buffer";}
             {name = "spell";}
           ];
-
           completion.completeopt = "noselect";
  
           mapping = {
@@ -36,14 +35,6 @@
      };
     };
 
-    # I keep accidentally pressing `q` which prevents `cmp` from working because
-    # of the macro recording. I don't use this anyway.
-    keymaps = [
-      {
-        mode = "n";
-        key = "q";
-        action = "<Nop>";
-      }
-    ];
+    vim-nix.enable = true;
   };
 }

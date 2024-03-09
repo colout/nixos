@@ -11,6 +11,7 @@
           nil_ls.enable = true;   # nix
           pylsp.enable = true;    # python
           yamlls.enable = true;   # yaml
+          jsonls.enable = true;   # json
         };
       };
 
