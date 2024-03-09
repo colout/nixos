@@ -54,7 +54,7 @@
     material-cursors
     mc
     floorp
-    chrome
+    chromium
   ];
 
   # Let Home Manager install and manage itself.
