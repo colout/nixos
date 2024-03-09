@@ -27,8 +27,11 @@
             pylint.enable = true;
             tfsec.enable = true;
             yamllint.enable = true;
+            codespell.enable = true;
+            deadnix.enable = true;
             trail_space.enable = true;
           };
+
           formatting = {
             clang_format.enable = true;
             cmake_format.enable = true;
@@ -41,6 +44,7 @@
             markdownlint.enable = true;
             stylua.enable = true;
           };
+
           completion = {
             spell.enable = true;
             luasnip.enable = true;
