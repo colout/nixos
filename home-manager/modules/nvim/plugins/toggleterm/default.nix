@@ -4,7 +4,7 @@
   programs.nixvim = {
     plugins.toggleterm = {
       enable = true;
-      openMapping = "<C-t>";
+      openMapping = "<leader>t";
       direction = "horizontal";
     };
   };
