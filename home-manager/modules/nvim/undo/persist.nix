@@ -4,20 +4,17 @@
   programs.nixvim = {
     extraConfigVim = 
       ''
-      keymaps = [
-        {
-          mode = "n";
-          key = "<A-l>";
-          action = "<Cmd>BufferLineCycleNext<CR>";
-          options.desc = "Next Buffer";
-        }
-        {
-          mode = "n";
-          key = "<A-h>";
-          action = "<Cmd>BufferLineCyclePrev<CR>";
-          options.desc = "Previous Buffer";
-        }
-      ];
+        vim.cmd([[
+        if !isdirectory($HOME."/.vim")
+            call mkdir($HOME."/.vim", "", 0770)
+        endif
+        if !isdirectory($HOME."/.vim/undo-dir")
+            call mkdir($HOME."/.vim/undo-dir", "", 0700)
+        endif
+
+        set undodir=~/.vim/undo-dir
+        set undofile
+        ]])
       '';
     options = {
       undofile = true;
