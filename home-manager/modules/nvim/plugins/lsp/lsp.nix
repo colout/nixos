@@ -26,6 +26,8 @@
             cmake_lint.enable = true;
             pylint.enable = true;
             tfsec.enable = true;
+            yamllint.enable = true;
+            stylua.enable = true;
           };
           formatting = {
             clang_format.enable = true;
