@@ -6,8 +6,9 @@
       enable = true;
       showBufferCloseIcons = false;
       numbers = "none";
+      alwaysShowBufferline = false;
       diagnostics = "nvim_lsp";
-      #separatorStyle = "slant";
+      separatorStyle = "slant";
     };
   };
 }
