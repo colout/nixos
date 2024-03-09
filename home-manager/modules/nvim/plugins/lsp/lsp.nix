@@ -40,7 +40,7 @@
             nixfmt.enable = true;
             markdownlint.enable = true;
             stylua.enable = true;
-          };l
+          };
           completion = {
             spell.enable = true;
             luasnip.enable = true;
