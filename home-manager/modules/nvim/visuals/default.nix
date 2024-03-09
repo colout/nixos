@@ -8,5 +8,6 @@
     ./illuminate.nix
     ./indent-blankline.nix
     ./lastplace.nix
+    ./rainbow-delimiters.nix
   ];
 }
