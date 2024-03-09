@@ -36,7 +36,7 @@
       };
       cmp-nvim-lsp = { enable = true; }; # lsp
       cmp-buffer = { enable = true; };
-      cmp-dictionary = { enable = true; };
+      cmp-dictionary = { enable = false; };
       cmp-treesitter = { enable = true; };
       cmp-path = { enable = true; }; # file system paths
       cmp_luasnip = { enable = true; }; # snippets

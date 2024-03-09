@@ -1,13 +1,9 @@
 { inputs, hycov, config, pkgs, lib, ... }:
 
 {
-  nixpkgs.config.allowUnfreePredicate = _: true; 
+  nixpkgs.config.allowUnfreePredicate = _: true;
 
-  imports = [
-    ./modules/zsh.nix
-    ./modules/kitty.nix
-    ./modules/nvim
-  ];
+  imports = [ ./modules/zsh.nix ./modules/kitty.nix ./modules/nvim ];
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -58,15 +54,16 @@
     material-cursors
     mc
     floorp
+    chome
   ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  
+
   home.file.".local/share/rofi/themes".source = builtins.fetchGit {
     url = "https://github.com/newmanls/rofi-themes-collection.git";
     rev = "5bc150394bf785b2751711e3050ca425c662938e";
-  } + "/themes";  
+  } + "/themes";
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
