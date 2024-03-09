@@ -27,6 +27,7 @@
             pylint.enable = true;
             tfsec.enable = true;
             yamllint.enable = true;
+            trail_space.enable = true;
           };
           formatting = {
             clang_format.enable = true;
@@ -39,8 +40,7 @@
             nixfmt.enable = true;
             markdownlint.enable = true;
             stylua.enable = true;
-            trail_space.enable = true;
-          };
+          };l
           completion = {
             spell.enable = true;
             luasnip.enable = true;
