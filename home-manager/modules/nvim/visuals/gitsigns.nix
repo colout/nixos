@@ -4,8 +4,9 @@
   programs.nixvim = {
     plugins.gitsigns = {
       enable = true;
-      currentLineBlame = false;
+      currentLineBlame = true;
     };
+
     keymaps = [
       {
         mode = "n";
