@@ -4,6 +4,6 @@
     ./telescope
     ./lsp
     ./treesitter
-    ./toggleter
+    ./toggleterm
   ];
 }
