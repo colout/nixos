@@ -6,11 +6,11 @@
       enable = true;
       scope.enabled = false;
       indent = {
-        highlight = ["CursorColumn" "Whitespace"]; 
+        highlight = ["Whitespace" "CursorColumn"]; 
         char = "";
       };
       whitespace = {
-        highlight = ["CursorColumn" "Whitespace"];
+        highlight = ["Whitespace" "CursorColumn"];
         removeBlanklineTrail = true;
       };
     };
