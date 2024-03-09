@@ -6,7 +6,6 @@
       enable = true;
       scope.enabled = true;
       indent = {
-        highlight = "highlight";
         char = "";
       };
     };
