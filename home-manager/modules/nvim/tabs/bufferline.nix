@@ -4,7 +4,7 @@
   programs.nixvim = {
     plugins.bufferline = {
       enable = true;
-      showCloseIcon = false;
+      showBufferCloseIcons = false;
       numbers = "none";
       diagnostics = "nvim_lsp";
       #separatorStyle = "slant";
