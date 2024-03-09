@@ -29,6 +29,11 @@
             nixfmt.enable = true;
             markdownlint.enable = true;
           };
+          completion = {
+            spell = true;
+            luasnip = true;
+            tags = true;
+          };
         };
       };
 
