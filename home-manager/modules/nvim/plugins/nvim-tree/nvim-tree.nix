@@ -1,4 +1,4 @@
-{ pkg, ... }:
+{ ... }:
 
 {
   programs.nixvim = {
@@ -9,6 +9,8 @@
         autoReloadOnWrite = true;
         openOnSetup = false;
         openOnSetupFile = false;
+
+        updateFocusedFile.enable = true;
 
         actions = {
           openFile = {
