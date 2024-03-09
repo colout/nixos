@@ -6,5 +6,7 @@
     ./visuals
     ./core
     ./plugins
+    ./tabs
+    ./undo
   ];
 }

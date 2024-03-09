@@ -4,6 +4,5 @@
     ./telescope
     ./lsp
     ./treesitter
-    ./undotree
   ];
 }
