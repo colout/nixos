@@ -36,7 +36,6 @@
             ktlint.enable = true;
             nixfmt.enable = true;
             markdownlint.enable = true;
-            rustfmt.enable = true;
           };
         };
       };
