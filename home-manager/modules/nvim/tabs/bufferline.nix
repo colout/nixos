@@ -8,7 +8,7 @@
       numbers = "none";
       alwaysShowBufferline = false;
       diagnostics = "nvim_lsp";
-      separatorStyle = "padded_slant";
+      separatorStyle = null;
     };
   };
 }
