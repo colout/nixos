@@ -1,4 +1,4 @@
-{ ... }:
+{ _ }:
 
 {
   programs.nixvim = {
@@ -6,19 +6,17 @@
       lsp = {
         enable = true;
         servers = {
-          lua-ls.enable = true;   # lua
+          lua-ls.enable = true; # lua
           marksman.enable = true; # markdown
-          nil_ls.enable = true;   # nix
-          pylsp.enable = true;    # python
-          yamlls.enable = true;   # yaml
-          jsonls.enable = true;   # json
+          nil_ls.enable = true; # nix
+          pylsp.enable = true; # python
+          yamlls.enable = true; # yaml
+          jsonls.enable = true; # json
         };
       };
 
       # icons in completion
-      lspkind = {
-        enable = true;
-      };
+      lspkind = { enable = true; };
 
       # null-ls is dead. Lets telescope and other plugins use LSP
       none-ls = {
@@ -41,19 +39,13 @@
       };
 
       # multiline lsp errors
-      lsp-lines = {
-        enable = true;
-      };
+      lsp-lines = { enable = true; };
 
       # basic snips
-      luasnip = {
-        enable = true;
-      };
+      luasnip = { enable = true; };
 
       # formats on save
-      lsp-format = {
-        enable = true;
-      };
+      lsp-format = { enable = true; };
     };
   };
 }
