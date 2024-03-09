@@ -6,7 +6,8 @@
       enable = true;
       scope.enabled = true;
       indent = {
-        char = "┊";
+        highlight = "[\"CursorColumn\", \"Whitespace\"]";
+        char = "";
       };
     };
   };
