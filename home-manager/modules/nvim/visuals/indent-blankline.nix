@@ -4,11 +4,14 @@
   programs.nixvim = {
     plugins.indent-blankline = {
       enable = true;
-      scope.enabled = true;
+      scope.enabled = false;
       indent = {
-        highlight = "Whitespace";
-        
+        highlight = ["CursorColumn" "Whitespace"]; 
         char = "";
+      };
+      whitespace = {
+        highlight = ["CursorColumn" "Whitespace"];
+        removeBackglineTrail = true;
       };
     };
   };
