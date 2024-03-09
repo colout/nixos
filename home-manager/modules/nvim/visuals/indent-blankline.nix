@@ -9,7 +9,7 @@
         #highlight = ["Whitespace" "CursorColumn"]; 
         # : ⁞ ⋮ ┆ ┊ ┋ ┇ ︙ 
         #char = "";
-        char = "┊";
+        char = "︙";
       };
       whitespace = {
         #highlight = ["Whitespace" "CursorColumn"];
