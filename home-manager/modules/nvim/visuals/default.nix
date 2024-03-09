@@ -5,5 +5,6 @@
     ./nvim-ufo.nix
     ./alpha.nix
     ./gitsigns.nix
+    ./illuminate.nix
   ];
 }
