@@ -4,5 +4,6 @@
     ./lualine
     ./nvim-ufo.nix
     ./alpha.nix
+    ./gitsigns.nix
   ];
 }
