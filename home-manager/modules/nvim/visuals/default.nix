@@ -6,5 +6,6 @@
     ./alpha.nix
     ./gitsigns.nix
     ./illuminate.nix
+    ./indent-blankline.nix
   ];
 }
