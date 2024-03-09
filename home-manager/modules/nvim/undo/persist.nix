@@ -4,7 +4,6 @@
   programs.nixvim = {
     extraConfigVim = 
       ''
-        vim.cmd([[
         if !isdirectory($HOME."/.vim")
             call mkdir($HOME."/.vim", "", 0770)
         endif
@@ -14,7 +13,6 @@
 
         set undodir=~/.vim/undo-dir
         set undofile
-        ]])
       '';
     options = {
       undofile = true;
