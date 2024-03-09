@@ -23,6 +23,8 @@
           diagnostics = {
             statix.enable = true;
             cppcheck.enable = true;
+            cmake_lint = true;
+            pylint = true;
           };
           formatting = {
             clang_format.enable = true;
