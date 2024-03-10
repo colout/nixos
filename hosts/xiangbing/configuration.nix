@@ -1,10 +1,7 @@
-{ config, pkgs, inputs, outputs, ... }:
-{
+{ config, pkgs, inputs, outputs, ... }: {
   # Enable overlays 
-  nixpkgs.overlays = [ 
-    outputs.overlays.packages-stable 
-    outputs.overlays.packages-unstable 
-  ];
+  nixpkgs.overlays =
+    [ outputs.overlays.packages-stable outputs.overlays.packages-unstable ];
 
   imports = [
     ../../modules/nixos/wm/hyprland.nix
@@ -33,9 +30,7 @@
         device = "nodev";
         theme = pkgs.sleek-grub-theme;
       };
-      efi = {
-        canTouchEfiVariables = true;
-      };
+      efi = { canTouchEfiVariables = true; };
     };
     supportedFilesystems = [ "ntfs" ];
   };
@@ -49,7 +44,7 @@
   services.gvfs.enable = true;
   services.udisks2.enable = true;
   services.udev.extraRules = ''
-     ACTION=="add", SUBSYSTEMS=="usb", SUBSYSTEM=="block", ENV{ID_FS_USAGE}=="filesystem", RUN{program}+="${pkgs.systemd}/bin/systemd-mount --no-block --automount=yes --collect $devnode /media/usb"
+    ACTION=="add", SUBSYSTEMS=="usb", SUBSYSTEM=="block", ENV{ID_FS_USAGE}=="filesystem", RUN{program}+="${pkgs.systemd}/bin/systemd-mount --no-block --automount=yes --collect $devnode /media/usb"
   '';
 
   # Set your time zone.
@@ -70,8 +65,7 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -85,19 +79,19 @@
     jack.enable = true;
 
     wireplumber.enable = true;
-    
+
     package = pkgs.unstable.pipewire;
-    ## sound dies randomly when buffer too short
-    #extraConfig.pipewire = {
-    #  "92-low-latency" = {
-    #    "context.properties" = {
-    #      "default.clock.rate" = "48000";
-    #      "default.clock.quantum" = "1024";
-    #      "default.clock.min-quantum" = "1024";
-    #      "default.clock.max-quantum" = "1024";
-    #    };
-    #  };
-    #};
+    # sound dies randomly when buffer too short
+    extraConfig.pipewire = {
+      "92-low-latency" = {
+        "context.properties" = {
+          "default.clock.rate" = "48000";
+          "default.clock.quantum" = "1024";
+          "default.clock.min-quantum" = "1024";
+          "default.clock.max-quantum" = "1024";
+        };
+      };
+    };
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -119,13 +113,12 @@
     autofs5
     wayvnc
   ];
- 
+
   console = {
     #packages = [pkgs.terminus_font];
     #font = "${pkgs.terminus_font}/share/consolefonts/ter-i22b.psf.gz";
     useXkbConfig = true;
   };
-    
 
   fonts = {
     packages = with pkgs; [
@@ -133,14 +126,14 @@
       noto-fonts-cjk
       noto-fonts-emoji
       font-awesome
-      (nerdfonts.override {fonts = ["Meslo"];})
+      (nerdfonts.override { fonts = [ "Meslo" ]; })
     ];
     fontconfig = {
       enable = true;
       defaultFonts = {
-        monospace = ["Meslo LG M Regular Nerd Font Complete Mono"];
-        serif = ["Noto Serif"];
-        sansSerif = ["Noto Sans"];
+        monospace = [ "Meslo LG M Regular Nerd Font Complete Mono" ];
+        serif = [ "Noto Serif" ];
+        sansSerif = [ "Noto Sans" ];
       };
     };
   };
@@ -150,19 +143,17 @@
     fsType = "cifs";
     options = let
       # this line prevents hanging on network split
-      automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
-      
+      automount_opts =
+        "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
 
-    in ["${automount_opts},credentials=/etc/nixos/smb-secrets,rw,uid=1000"];
+    in [ "${automount_opts},credentials=/etc/nixos/smb-secrets,rw,uid=1000" ];
   };
 
   # realtime group
-  security.pam.loginLimits = [
-    {
-      domain = "@wheel";
-      type = "-";
-      item = "nice";
-      value = -20;
-    }
-  ];
+  security.pam.loginLimits = [{
+    domain = "@wheel";
+    type = "-";
+    item = "nice";
+    value = -20;
+  }];
 }
