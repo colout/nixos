@@ -55,7 +55,7 @@
     mc
     floorp
     chromium
-    atop
+    htop
   ];
 
   # Let Home Manager install and manage itself.
