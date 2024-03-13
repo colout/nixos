@@ -1,5 +1,5 @@
-{ config, pkgs, outputs, ... }: {
-  # Enable overlays 
+{ pkgs, outputs, ... }: {
+  # Enable overlays
   nixpkgs.overlays =
     [ outputs.overlays.packages-stable outputs.overlays.packages-unstable ];
 
@@ -12,7 +12,7 @@
 
   # Kernel
   #boot.kernelPackages = pkgs.linuxPackages;
-  boot.kernelPackages = pkgs.stable.linuxPackages_6_6;
+  boot.kernelPackages = pkgs.unstable.linuxPackages_latest;
 
   system.stateVersion = "23.11"; # Did you read the comment?
 
