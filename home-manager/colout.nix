@@ -39,7 +39,6 @@
     logseq
     appflowy
     qmk
-    sweethome3d.application
     xemu
     p7zip
     kate
