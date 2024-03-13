@@ -25,19 +25,19 @@
     firefox
     jellyfin-media-player
     vlc
-    gimp-with-plugins
+    #gimp-with-plugins
     libreoffice-qt
     tor-browser
     audacity
-    krita
-    inkscape
-    darktable
-    kdenlive
-    tilix
+    #krita
+    #inkscape
+    #darktable
+    #kdenlive
+    #tilix
     tidal-hifi
-    blender
-    logseq
-    appflowy
+    #blender
+    #logseq
+    #appflowy
     qmk
     xemu
     p7zip
