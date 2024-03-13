@@ -12,7 +12,7 @@
 
   # Kernel
   #boot.kernelPackages = pkgs.linuxPackages;
-  boot.kernelPackages = pkgs.unstable.linuxPackages_latest;
+  boot.kernelPackages = pkgs.stable.linuxPackages_latest;
 
   system.stateVersion = "23.11"; # Did you read the comment?
 
