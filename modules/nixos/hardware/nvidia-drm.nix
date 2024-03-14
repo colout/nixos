@@ -1,13 +1,5 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
-{
-  services.xserver = {
-    videoDrivers = ["nvidia"];
-  };
+{ config, pkgs, ... }: {
+  services.xserver = { videoDrivers = [ "nvidia" ]; };
 
   environment.variables = {
     GBM_BACKEND = "nvidia-drm";
@@ -33,8 +25,5 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    vaapiVdpau
-    egl-wayland
-  ];
+  environment.systemPackages = with pkgs; [ vaapiVdpau egl-wayland ];
 }
