@@ -11,8 +11,9 @@
   ];
 
   # Kernel
-  boot.kernelPackages = pkgs.stable.linuxPackages_6_7;
-  #boot.kernelPackages = pkgs.stable.linuxPackages_6_8; # nvidia doesn't build :[  ... try again later
+  #boot.kernelPackages = pkgs.stable.linuxPackages_6_7;
+  boot.kernelPackages =
+    pkgs.stable.linuxPackages_6_8; # nvidia doesn't build :[  ... try again later
 
   system.stateVersion = "23.11"; # Did you read the comment?
 
