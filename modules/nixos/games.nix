@@ -20,11 +20,10 @@
   environment.systemPackages = with pkgs; [
     (wineWowPackages.waylandFull.override {
       #wineRelease = "staging";
-      wineRelease = "staging";
+      wineRelease = "unstable";
       mingwSupport = true;
     })
     bottles
-    wineland
 
     mangohud
     winetricks
