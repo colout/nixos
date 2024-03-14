@@ -19,7 +19,7 @@
 
   environment.systemPackages = with pkgs; [
     (wineWowPackages.waylandFull.override {
-      #wineRelease = "staging";
+      wineRelease = "staging";
       mingwSupport = true;
     })
     bottles
