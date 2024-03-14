@@ -15,7 +15,8 @@
   #boot.kernelPackages = pkgs.stable.linuxPackages_6_7;
   #boot.kernelPackages = pkgs.stable.linuxPackages_6_8; # nvidia doesn't build :[  ... try again later
 
-  boot.kernelPackages = pkgs.unstable.linuxPackages_latest;
+  boot.kernelPackages =
+    pkgs.unstable.linuxPackages_latest; # for testing nvidia-nvk module
 
   system.stateVersion = "23.11"; # Did you read the comment?
 

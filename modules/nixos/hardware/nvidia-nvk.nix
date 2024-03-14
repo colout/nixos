@@ -20,7 +20,7 @@
 
       package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
 
-      open = false;
+      open = true;
     };
   };
 
