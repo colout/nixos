@@ -7,16 +7,13 @@
     ../../modules/nixos/wm/hyprland.nix
     ../../modules/nixos/games.nix
     ../../modules/nixos/wm/kde.nix
-    #../../modules/nixos/hardware/nvidia-drm.nix
-    ../../modules/nixos/hardware/nvidia-nvk.nix
+    ../../modules/nixos/hardware/nvidia-drm.nix
+    #../../modules/nixos/hardware/nvidia-nvk.nix
   ];
 
   # Kernel
-  #boot.kernelPackages = pkgs.stable.linuxPackages_6_7;
+  boot.kernelPackages = pkgs.stable.linuxPackages_6_7;
   #boot.kernelPackages = pkgs.stable.linuxPackages_6_8; # nvidia doesn't build :[  ... try again later
-
-  boot.kernelPackages =
-    pkgs.unstable.linuxPackages_latest; # for testing nvidia-nvk module
 
   system.stateVersion = "23.11"; # Did you read the comment?
 
