@@ -7,7 +7,10 @@
           lua-ls.enable = true; # lua
           marksman.enable = true; # markdown
           bashls.enable = true;
-          clangd.enable = true;
+          clangd = {
+            cmd = [ "clangd" "--offset-encoding=utf-16" ];
+            enable = true;
+          };
           cmake.enable = true;
           helm-ls.enable = true;
           terraformls.enable = true;
