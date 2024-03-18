@@ -12,9 +12,8 @@
   ];
 
   # Kernel
-  #boot.kernelPackages = pkgs.stable.linuxPackages_6_7;
-  boot.kernelPackages =
-    pkgs.unstable.linuxPackages_6_8; # nvidia doesn't build :[  ... try again later
+  #boot.kernelPackages = pkgs.stable.linuxPackages_6_7; # use stable when nvidia drivers get borked
+  boot.kernelPackages = pkgs.unstable.linuxPackages_6_8;
 
   system.stateVersion = "23.11"; # Did you read the comment?
 
