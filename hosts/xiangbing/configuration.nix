@@ -99,6 +99,7 @@
     zsh
     autofs5
     wayvnc
+    nix-index
   ];
 
   console = {
