@@ -11,7 +11,7 @@
         efiSupport = true;
         device = "nodev";
         theme = pkgs.sleek-grub-theme;
-        splashImage = "/boot/background.png";
+        splashImage = "./splash.png";
       };
       efi = { canTouchEfiVariables = true; };
     };
