@@ -136,11 +136,22 @@
     in [ "${automount_opts},credentials=/etc/nixos/smb-secrets,rw,uid=1000" ];
   };
 
-  # realtime group
+  # realtime group for gamemode to choose sane values
   security.pam.loginLimits = [{
     domain = "@wheel";
     type = "-";
     item = "nice";
     value = -20;
   }];
+
+
+  # ntfs
+  boot.supportedFilesystems = [ "ntfs" ];
+
+
+  fileSystems."/mnt/ntfs" = { 
+    device = "/dev/disk/by-uuid/A21677F91677CD33";
+    fsType = "ntfs-3g"; 
+    options = [ "r" "uid=1000"];
+  };
 }
