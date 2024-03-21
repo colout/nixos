@@ -7,7 +7,7 @@
       grub = {
         enable = true;
         useOSProber = true;
-        gfxmodeEfi = "2560x1440";
+        gfxmodeEfi = "1920x1080";
         efiSupport = true;
         device = "nodev";
         theme = pkgs.sleek-grub-theme.override {
