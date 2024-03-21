@@ -7,11 +7,10 @@
       grub = {
         enable = true;
         useOSProber = true;
-        gfxmodeEfi = "1280x720";
+        #gfxmodeEfi = "1280x720";
         efiSupport = true;
         device = "nodev";
-        theme = pkgs.sleek-grub-theme;
-        splashImage = ./splash.png;
+        theme = pkgs.sleek-grub-theme.override { withStyle = "orange"; };
       };
       efi = { canTouchEfiVariables = true; };
     };
