@@ -11,7 +11,6 @@
         efiSupport = true;
         device = "nodev";
         theme = pkgs.sleek-grub-theme.override {
-          withStyle = "orange";
           # splashImage = ./splash.png;
         };
       };
