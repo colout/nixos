@@ -11,9 +11,8 @@
         efiSupport = true;
         device = "nodev";
         theme = pkgs.sleek-grub-theme.override {
-          #withStyle = "orange";
+          withStyle = "dark";
           withBanner = "欢迎 Xiang Bing";
-          # splashImage = ./splash.png;
         };
       };
       efi = { canTouchEfiVariables = true; };
