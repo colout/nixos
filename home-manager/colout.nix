@@ -38,6 +38,7 @@
     #blender
     #logseq
     #appflowy
+    ark
     qmk
     xemu
     p7zip
