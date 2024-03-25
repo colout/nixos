@@ -100,7 +100,7 @@
     autofs5
     wayvnc
     nix-index
-    inotifywait
+    inotify-tools
   ];
 
   console = {
