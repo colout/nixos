@@ -101,6 +101,7 @@
     wayvnc
     nix-index
     inotify-tools
+    zip
   ];
 
   console = {
