@@ -100,6 +100,7 @@
     autofs5
     wayvnc
     nix-index
+    inotifywait
   ];
 
   console = {
@@ -145,14 +146,12 @@
     value = -20;
   }];
 
-
   # ntfs
   boot.supportedFilesystems = [ "ntfs" ];
 
-
-  fileSystems."/mnt/ntfs" = { 
+  fileSystems."/mnt/ntfs" = {
     device = "/dev/disk/by-uuid/A21677F91677CD33";
-    fsType = "ntfs-3g"; 
-    options = [ "r" "uid=1000"];
+    fsType = "ntfs-3g";
+    options = [ "r" "uid=1000" ];
   };
 }
