@@ -41,7 +41,7 @@
     superTuxKart
     freeciv
     dolphin-emu
-    rpcs3
+    #rpcs3
     xemu
   ];
 }
