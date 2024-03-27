@@ -39,6 +39,7 @@
       rofi-power-menu
       hypridle
       hdrop
+      hyprcursor
       jq # for my drop term script
 
       libsForQt5.qt5.qtwayland
