@@ -9,23 +9,23 @@
   services.xserver.displayManager.defaultSession = "hyprland";
 
   programs.hyprland = {
-    package = pkgs.stable.hyprland;
+    package = pkgs.unstable.hyprland;
     enable = true;
     xwayland.enable = true;
   };
 
-
   environment = {
     sessionVariables = {
       #WLR_RENDERER_ALLOW_SOFTWARE="1";
-      WLR_NO_HARDWARE_CURSORS="1";
-      NIXOS_OZONE_WL="1";
+      WLR_NO_HARDWARE_CURSORS = "1";
+      NIXOS_OZONE_WL = "1";
     };
 
     systemPackages = with pkgs.unstable; [
       waybar
       (pkgs.waybar.overrideAttrs (oldAttrs: {
-          mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ]; # workspaces fix
+        mesonFlags = oldAttrs.mesonFlags
+          ++ [ "-Dexperimental=true" ]; # workspaces fix
       }))
 
       swww # wallpaper
@@ -54,17 +54,13 @@
       gnome.dconf-editor
     ];
   };
-  
-  programs.gamescope = {
-    enable = true;
-  };
+
+  programs.gamescope = { enable = true; };
 
   # Desktop portals allow communucation between programs (link/file opening)
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
-  programs.dconf = {
-    enable = true;
-  };
-  
+  programs.dconf = { enable = true; };
+
 }
