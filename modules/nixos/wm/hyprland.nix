@@ -11,7 +11,6 @@
     libinput = {
       enable = true;
       mouse = {
-        irst = "";
         additionalOptions = ''
           Option "RotationAngle" "90.0"
           Option "Rotation" "90.0"
