@@ -10,12 +10,13 @@
     };
     libinput = {
       enable = true;
-      #mouse = {
-      additionalOptions = ''
-        Option "RotationAngle" "90.0"
-        Option "Rotation" "90.0"
-      '';
-      #};
+      mouse = {
+        irst = "";
+        additionalOptions = ''
+          Option "RotationAngle" "90.0"
+          Option "Rotation" "90.0"
+        '';
+      };
     };
   };
 
