@@ -2,12 +2,16 @@
   services.xserver = {
     enable = true;
     displayManager = {
-
       defaultSession = "hyprland";
       gdm = {
         wayland = true;
         enable = true;
       };
+    };
+    libinput.mouse = {
+      additionalOptions = ''
+        Option "RotationAngle" "30"
+      '';
     };
   };
 
