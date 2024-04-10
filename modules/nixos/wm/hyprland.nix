@@ -10,7 +10,7 @@
     };
     libinput.mouse = {
       additionalOptions = ''
-        Option "RotationAngle" "30"
+        Option "RotationAngle" "90"
       '';
     };
   };
