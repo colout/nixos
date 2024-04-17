@@ -56,7 +56,7 @@
     floorp
     chromium
     htop
-    godot
+    godot4
   ];
 
   # Let Home Manager install and manage itself.
