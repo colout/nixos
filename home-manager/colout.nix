@@ -55,15 +55,6 @@
     floorp
     chromium
     htop
-
-    # to compile godot
-    scons
-    clang
-    lld
-    python3
-    pkg-config
-    godot_4
-
   ];
 
   # Let Home Manager install and manage itself.
