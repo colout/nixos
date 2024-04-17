@@ -56,7 +56,14 @@
     floorp
     chromium
     htop
+
+    # to compile godot
+    scons
+    gcc
+    python
+    libx11-dev
     godot_4
+
   ];
 
   # Let Home Manager install and manage itself.
