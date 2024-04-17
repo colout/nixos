@@ -60,7 +60,7 @@
     # to compile godot
     scons
     gcc
-    python
+    python3
     godot_4
 
   ];
