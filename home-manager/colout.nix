@@ -61,7 +61,6 @@
     scons
     gcc
     python
-    libx11-dev
     godot_4
 
   ];
