@@ -61,6 +61,7 @@
     scons
     gcc
     python3
+    pkg-config
     godot_4
 
   ];
