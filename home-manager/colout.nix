@@ -15,7 +15,6 @@
     git
     fzf
     gnumake
-    gcc
     tree-sitter
     unzip
     cargo
