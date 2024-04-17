@@ -59,6 +59,7 @@
     # to compile godot
     scons
     clang
+    lld
     python3
     pkg-config
     godot_4
