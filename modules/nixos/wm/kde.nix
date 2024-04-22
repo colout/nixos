@@ -14,4 +14,5 @@
     };
   };
 
+  environment.systemPackages = with pkgs.unstable; [ ];
 }
