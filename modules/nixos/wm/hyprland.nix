@@ -45,8 +45,6 @@
 
       libsForQt5.qt5.qtwayland
       libsForQt5.qt5ct
-      qt5.qtwayland
-      qt5.qt5ct
       qt6.qtwayland
       qt6Packages.qt6ct
       glib
