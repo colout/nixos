@@ -14,5 +14,10 @@
     };
   };
 
-  environment.systemPackages = with pkgs.unstable; [ kdePackages.dolphin ];
+  environment.systemPackages = with pkgs.unstable; [
+    libsForQt5.dolphin
+    kdePackages.dolphin
+    libsForQt5.dolphin-plugins
+    kdePackages.dolphin-plugins
+  ];
 }
