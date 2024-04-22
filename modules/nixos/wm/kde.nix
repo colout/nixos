@@ -15,7 +15,7 @@
   };
 
   environment.systemPackages = with pkgs.unstable; [
-    libsForQt6.ark
+    libsForQt5.ark
     kdePackages.ark
   ];
 }
