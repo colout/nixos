@@ -14,5 +14,4 @@
     };
   };
 
-  environment.systemPackages = with pkgs.unstable; [ libsForQt5.ark ];
 }
