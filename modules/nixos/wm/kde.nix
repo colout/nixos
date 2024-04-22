@@ -14,5 +14,7 @@
     };
   };
 
+  qt.enable = true;
+
   environment.systemPackages = with pkgs.unstable; [ ];
 }
