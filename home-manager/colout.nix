@@ -56,6 +56,7 @@
     chromium
     htop
     godot_4
+    blender
   ];
 
   # Let Home Manager install and manage itself.
