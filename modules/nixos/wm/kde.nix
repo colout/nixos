@@ -17,6 +17,6 @@
   environment.systemPackages = with pkgs.unstable; [
     libsForQt5.ark
     kdePackages.ark
-    fle_clizip
+    fle_clizip.so
   ];
 }
