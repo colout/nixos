@@ -17,7 +17,7 @@
     #pkgs.unstable.linuxPackages;
     #pkgs.stable.linuxPackages; # use stable when nvidia drivers get borked
     pkgs.stable.linuxPackages_6_8; # use stable when nvidia drivers get borked
-    #pkgs.unstable.linuxPackages_6_8;
+  #pkgs.unstable.linuxPackages_6_8;
 
   system.stateVersion = "23.11";
 
@@ -141,6 +141,10 @@
 
     in [ "${automount_opts},credentials=/etc/nixos/smb-secrets,rw,uid=1000" ];
   };
+
+  # cachix requires you to be a trusted user
+
+  nix.settings.trusted-users = [ "root" "colout" ];
 
   # realtime group for gamemode to choose sane values
   security.pam.loginLimits = [{
