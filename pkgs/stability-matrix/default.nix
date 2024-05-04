@@ -8,11 +8,11 @@ let
     url =
       "https://github.com/LykosAI/${pname}/releases/download/v${version}/${pname}-linux-x64.zip";
     hash = "sha256-gFdiuamvrHVq19Y/ChNOBrb+AD668LcBfNnyyVnHubo=";
-    name = "${pname}.appimage";
+    name = "${pname}.AppImage";
   };
 
   appimageContents = appimageTools.extractType2 {
-    name = "${pname}.appimage";
+    name = "${pname}.AppImage";
     inherit src;
   };
 
