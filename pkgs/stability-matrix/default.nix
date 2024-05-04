@@ -39,5 +39,4 @@ in appimageTools.wrapType2 rec {
     #  --unset APPIMAGE \
     #  --unset APPDIR
   '';
-
 }
