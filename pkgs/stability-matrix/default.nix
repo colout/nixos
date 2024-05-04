@@ -29,7 +29,6 @@ let
 in appimageTools.wrapType2 {
   inherit pname version appimageContents meta;
 
-  src = appimageContents;
   multiPkgs = null;
   extraPkgs = p: (appimageTools.defaultFhsEnvArgs.multiPkgs p) ++ libs;
   extraInstallCommands = ''
