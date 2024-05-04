@@ -163,5 +163,5 @@
     options = [ "r" "uid=1000" ];
   };
 
-  stability-matrix = pkgs.callPackage ../../pkgs/stability-matrix { };
+  viper = pkgs.callPackage ../../pkgs/stability-matrix { };
 }
