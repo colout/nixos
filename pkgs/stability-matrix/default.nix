@@ -1,21 +1,21 @@
-{ appimageTools, lib, fetchurl, libthai, harfbuzz, fontconfig, freetype, libz
+{ appimageTools, lib, fetchzip, libthai, harfbuzz, fontconfig, freetype, libz
 , libX11, mesa, libdrm, fribidi, libxcb, libgpg-error, libGL, makeWrapper, }:
 let
   pname = "StabilityMatrix";
 
   version = "2.10.2";
 
-  src = fetchurl {
+  src = fetchzip {
     url =
       "https://github.com/LykosAI/${pname}/releases/download/v${version}/${pname}-linux-x64.zip";
     hash = "sha256-s0W3PFAlIdaAFnB1WgqhEIK0i51KAbRC0G5kEADlGl8=";
     name = "${pname}-${version}.zip";
   };
 
-  appimageContents = appimageTools.extractType2 {
-    name = "${pname}-${version}";
-    inherit src;
-  };
+  #appimageContents = appimageTools.extractType2 {
+  #  name = "${pname}-${version}";
+  #  inherit src;
+  #};
 
   libs = [
     libthai
@@ -38,7 +38,6 @@ in appimageTools.wrapType2 {
   extraInstallCommands = ''
     #install -m 444 -D ${appimageContents}/${pname}.desktop -t $out/share/applications
     #cp -r ${appimageContents}/usr/share/icons $out/share
-
     #source "${makeWrapper}/nix-support/setup-hook" # cringe hack to get wrapProgram working in extraInstallCommands
     #makeWrapper $out/bin/${pname}-${version} $out/bin/${pname} \
     #  --unset APPIMAGE \
