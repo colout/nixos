@@ -105,6 +105,9 @@
     nix-index
     inotify-tools
     zip
+    callPackage
+    ../../pkgs/stability-matrix
+    { }
   ];
 
   console = {
@@ -163,5 +166,4 @@
     options = [ "r" "uid=1000" ];
   };
 
-  viper = pkgs.callPackage ../../pkgs/stability-matrix { };
 }
