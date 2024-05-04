@@ -4,7 +4,7 @@ let
 
   version = "2.10.2";
 
-  src = fetchzip {
+  srcZipped = fetchzip {
     url =
       "https://github.com/LykosAI/${pname}/releases/download/v${version}/${pname}-linux-x64.zip";
     hash = "sha256-gFdiuamvrHVq19Y/ChNOBrb+AD668LcBfNnyyVnHubo=";
@@ -12,7 +12,7 @@ let
 
   appimageContents = appimageTools.extractType2 {
     name = "${pname}";
-    src = "${pname}.AppImage";
+    src = "${srcZipped}/${pname}.AppImage";
   };
 
   meta = {
