@@ -12,10 +12,10 @@ let
     name = "${pname}-${version}.zip";
   };
 
-  #appimageContents = appimageTools.extractType2 {
-  #  name = "${pname}-${version}";
-  #  inherit src;
-  #};
+  appimageContents = appimageTools.extractType2 {
+    name = "${pname}-${version}";
+    inherit src;
+  };
 
   libs = [
     libthai
