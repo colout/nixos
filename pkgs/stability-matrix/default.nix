@@ -8,7 +8,7 @@ let
   src = fetchzip {
     url =
       "https://github.com/LykosAI/${pname}/releases/download/v${version}/${pname}-linux-x64.zip";
-    hash = "sha256-s0W3PFAlIdaAFnB1WgqhEIK0i51KAbRC0G5kEADlGl8=";
+    hash = "sha256-gFdiuamvrHVq19Y/ChNOBrb+AD668LcBfNnyyVnHubo=";
     name = "${pname}-${version}.zip";
   };
 
