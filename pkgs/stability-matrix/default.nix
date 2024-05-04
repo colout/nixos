@@ -8,7 +8,7 @@ let
     url =
       "https://github.com/LykosAI/${pname}/releases/download/v${version}/${pname}-linux-x64.zip";
     hash = "sha256-gFdiuamvrHVq19Y/ChNOBrb+AD668LcBfNnyyVnHubo=";
-    name = "${pname}-${version}.zip";
+    name = "${pname}-linux-x64.zip";
   };
 
   appimageContents = appimageTools.extractType2 {
