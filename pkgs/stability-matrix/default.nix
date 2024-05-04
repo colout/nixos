@@ -1,5 +1,4 @@
-{ appimageTools, lib, fetchzip, libthai, harfbuzz, fontconfig, freetype, libz
-, libX11, mesa, libdrm, fribidi, libxcb, libgpg-error, libGL, makeWrapper, }:
+{ appimageTools, lib, fetchzip, makeWrapper, }:
 let
   pname = "StabilityMatrix";
 
@@ -17,20 +16,7 @@ let
     inherit src;
   };
 
-  libs = [
-    libthai
-    harfbuzz
-    fontconfig
-    freetype
-    libz
-    libX11
-    mesa
-    libdrm
-    fribidi
-    libxcb
-    libgpg-error
-    libGL
-  ];
+  libs = [ ];
 in appimageTools.wrapType2 {
   inherit pname version src;
   multiPkgs = null; # no 32bit needed
