@@ -95,16 +95,7 @@
   nixpkgs.config.allowUnfree = true;
 
   programs.zsh.enable = true;
-  environment.systemPackages = let
-    my-hello = with pkgs;
-      stdenv.mkDerivation rec {
-        name = "hello-2.8";
-        src = fetchurl {
-          url = "mirror://gnu/hello/${name}.tar.gz";
-          sha256 = "0wqd8sjmxfskrflaxywc7gqw7sfawrfvdxd9skxawzfgyy0pzdz6";
-        };
-      };
-  in with pkgs; [
+  environment.systemPackages = with pkgs; [
     neovim
     wget
     ksystemlog
@@ -114,7 +105,6 @@
     nix-index
     inotify-tools
     zip
-    my-hello
   ];
 
   console = {
@@ -172,4 +162,6 @@
     fsType = "ntfs-3g";
     options = [ "r" "uid=1000" ];
   };
+
+  stability-matrix = pkgs.callPackage ../../pkgs/stability-matrix { };
 }
