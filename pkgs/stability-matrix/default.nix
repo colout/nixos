@@ -11,6 +11,7 @@ let
   };
 
   appimageContents = appimageTools.extractType2 {
+    inherit pname;
     name = "${pname}";
     src = "${srcZipped}/${pname}.AppImage";
   };
