@@ -36,13 +36,13 @@ in appimageTools.wrapType2 {
   multiPkgs = null; # no 32bit needed
   extraPkgs = p: (appimageTools.defaultFhsEnvArgs.multiPkgs p) ++ libs;
   extraInstallCommands = ''
-    install -m 444 -D ${appimageContents}/${pname}.desktop -t $out/share/applications
-    cp -r ${appimageContents}/usr/share/icons $out/share
+    #install -m 444 -D ${appimageContents}/${pname}.desktop -t $out/share/applications
+    #cp -r ${appimageContents}/usr/share/icons $out/share
 
-    source "${makeWrapper}/nix-support/setup-hook" # cringe hack to get wrapProgram working in extraInstallCommands
-    makeWrapper $out/bin/${pname}-${version} $out/bin/${pname} \
-      --unset APPIMAGE \
-      --unset APPDIR
+    #source "${makeWrapper}/nix-support/setup-hook" # cringe hack to get wrapProgram working in extraInstallCommands
+    #makeWrapper $out/bin/${pname}-${version} $out/bin/${pname} \
+    #  --unset APPIMAGE \
+    #  --unset APPDIR
   '';
 
   meta = {
