@@ -22,6 +22,7 @@ in appimageTools.wrapType2 {
   multiPkgs = null; # no 32bit needed
   extraPkgs = p: (appimageTools.defaultFhsEnvArgs.multiPkgs p) ++ libs;
   extraInstallCommands = ''
+    touch /tmp/hi
     #install -m 444 -D ${appimageContents}/${pname}.desktop -t $out/share/applications
     #cp -r ${appimageContents}/usr/share/icons $out/share
     #source "${makeWrapper}/nix-support/setup-hook" # cringe hack to get wrapProgram working in extraInstallCommands
