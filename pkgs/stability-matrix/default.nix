@@ -12,7 +12,7 @@ let
   };
 
   appimageContents = appimageTools.extractType2 {
-    name = "${pname}-${version}";
+    name = "${pname}.appimage";
     inherit src;
   };
 
