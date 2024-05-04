@@ -10,10 +10,8 @@ let
     hash = "sha256-gFdiuamvrHVq19Y/ChNOBrb+AD668LcBfNnyyVnHubo=";
   };
 
-  appimageContents = appimageTools.extractType2 {
-    name = "${pname}";
-    src = "${srcZipped}/${pname}.AppImage";
-  };
+  appimageContents =
+    appimageTools.extractType2 { src = "${srcZipped}/${pname}.AppImage"; };
 
   meta = {
     description =
