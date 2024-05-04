@@ -1,14 +1,15 @@
 { appimageTools, lib, fetchurl, libthai, harfbuzz, fontconfig, freetype, libz
 , libX11, mesa, libdrm, fribidi, libxcb, libgpg-error, libGL, makeWrapper, }:
 let
-  pname = "viper";
-  version = "1.8.5";
+  pname = "StabilityMatrix";
+
+  version = "2.10.2";
 
   src = fetchurl {
     url =
-      "https://github.com/0neGal/${pname}/releases/download/v${version}/${pname}-${version}.AppImage";
+      "https://github.com/LykosAI/${pname}/releases/download/v${version}/${pname}-linux-x64.zip";
     hash = "sha256-jFroi4j2kNEGGU6R9WUvRK+vy26eizjPsZ6Cq6uLe0I=";
-    name = "${pname}-${version}.AppImage";
+    name = "${pname}-${version}.zip";
   };
 
   appimageContents = appimageTools.extractType2 {
@@ -45,10 +46,11 @@ in appimageTools.wrapType2 {
   '';
 
   meta = {
-    description = "Launcher+Updater for TF|2 Northstar ";
-    homepage = "https://github.com/0neGal/viper";
+    description =
+      "Multi-Platform Package Manager and Inference UI for Stable Diffusion";
+    homepage = "https://github.com/LykosAI/StabilityMatrix";
     license = lib.licenses.gpl3Only;
-    mainProgram = "viper";
+    mainProgram = "Stability Matrix";
     maintainers = with lib.maintainers; [ NotAShelf ];
     platforms = [ "x86_64-linux" ];
   };
