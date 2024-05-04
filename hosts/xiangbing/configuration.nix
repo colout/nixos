@@ -105,9 +105,7 @@
     nix-index
     inotify-tools
     zip
-    callPackage
-    ../../pkgs/stability-matrix
-    { }
+    (callPackage ../../pkgs/stability-matrix { })
   ];
 
   console = {
