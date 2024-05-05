@@ -16,10 +16,6 @@ buildDotnetModule rec {
   # To run fetch-deps when this file does not yet exist, set nugetDeps to null
   nugetDeps = ./deps.nix;
 
-  projectReferences = [
-    referencedProject
-  ]; # `referencedProject` must contain `nupkg` in the folder structure.
-
   dotnet-sdk = dotnetCorePackages.sdk_6_0;
   dotnet-runtime = dotnetCorePackages.runtime_6_0;
 
