@@ -1,4 +1,4 @@
-{ appimageTools, lib, fetchzip, makeWrapper, dotnet-runtime_7, }:
+{ appimageTools, lib, fetchzip, makeWrapper, dotnet-runtime, }:
 let
   pname = "StabilityMatrix";
 
@@ -31,13 +31,11 @@ in appimageTools.wrapType2 rec {
 
   src = "${srcZipped}/${pname}.AppImage";
 
-  extraPkgs = pkgs:
-    (appimageTools.defaultFhsEnvArgs.multiPkgs pkgs) ++ [ dotnet-runtime_7 ];
   extraInstallCommands = ''
       install -m 444 -D ${appimageContents}/zone.lykos.stabilitymatrix.desktop -t $out/share/applications/${pname}.desktop
 
     source "${makeWrapper}/nix-support/setup-hook"
-    makeWrapper "${dotnet-runtime_7}/bin/dotnet" $out/bin/${pname}-${version} $out/bin/${pname} \
+    makeWrapper "${dotnet-runtime}/bin/dotnet" $out/bin/${pname}-${version} $out/bin/${pname} \
       --unset APPIMAGE \
       --unset APPDIR
   '';
