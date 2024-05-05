@@ -1,10 +1,10 @@
 { pkgs, ... }:
 
 let
-  helloWorld = pkgs.writeShellScriptBin "helloWorld" ''
+  ar = pkgs.writeShellScriptBin "ar" ''
     echo Hello World
   '';
 
 in {
-  environment.systemPackages = [ helloWorld ];
+  environment.systemPackages = [ ar ];
 }
