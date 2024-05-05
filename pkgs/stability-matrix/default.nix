@@ -1,9 +1,6 @@
 { fetchFromGitHub, buildDotnetModule, dotnetCorePackages, ffmpeg }:
 
-let
-  referencedProject = import ../../bar { # ...
-  };
-in buildDotnetModule rec {
+buildDotnetModule rec {
   pname = "stability-matrix";
   version = "2.10.2";
 
