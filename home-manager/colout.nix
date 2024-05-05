@@ -3,7 +3,11 @@
 {
   nixpkgs.config.allowUnfreePredicate = _: true;
 
-  imports = [ ./modules/zsh.nix ./modules/kitty.nix ./modules/nvim ];
+  imports = [
+    ./modules/zsh.nix
+    ./modules/kitty.nix
+    #./modules/nvim 
+  ];
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
