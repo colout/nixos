@@ -2,7 +2,7 @@
 
 let
   ar = pkgs.writeShellScriptBin "ar" ''
-    echo Hello World
+    echo ${1}
   '';
 
 in {
