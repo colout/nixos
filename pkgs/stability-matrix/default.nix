@@ -29,9 +29,11 @@ let
   libs = [ dotnet-runtime_7 ];
 
 in appimageTools.wrapType2 rec {
-  inherit pname version meta;
+  inherit pname version meta libs;
 
   src = "${srcZipped}/${pname}.AppImage";
+
+  runtimLibs = lib.makeLibraryPath (libs);
 
   multiPkgs = null;
 
