@@ -19,6 +19,7 @@
     # nvim stuff
     gcc
     fzf
+    nixfmt
     # end nvim stuff
     git
     fzf
