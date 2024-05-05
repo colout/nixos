@@ -1,4 +1,4 @@
-{ fetchFromGitHub, buildDotnetModule, dotnetCorePackages, ffmpeg }:
+{ lib, fetchFromGitHub, buildDotnetModule, dotnetCorePackages, ffmpeg }:
 
 buildDotnetModule rec {
   pname = "stability-matrix";
