@@ -37,7 +37,7 @@ in appimageTools.wrapType2 rec {
     source "${makeWrapper}/nix-support/setup-hook"
     makeWrapper $out/bin/${pname}-${version} $out/bin/${pname} \
       --unset APPIMAGE \
-      --unset APPDIR
+      --unset APPDIR \
       --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath [ dotnet-runtime icu ]}
   '';
 }
