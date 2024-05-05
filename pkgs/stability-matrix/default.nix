@@ -33,8 +33,6 @@ in appimageTools.wrapType2 rec {
 
   src = "${srcZipped}/${pname}.AppImage";
 
-  runtimLibs = lib.makeLibraryPath (libs);
-
   multiPkgs = null;
 
   extraPkgs = p: (appimageTools.defaultFhsEnvArgs.multiPkgs p) ++ libs;
