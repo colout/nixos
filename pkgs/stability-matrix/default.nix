@@ -1,6 +1,9 @@
-{ lib, buildDotnetModule, dotnetCorePackages, fetchFromGitHub }:
+{ lib, buildDotnetModule, dotnetCorePackages, ffmpeg }:
 
-buildDotnetModule rec {
+let
+  referencedProject = import ../../bar { # ...
+  };
+in buildDotnetModule rec {
   pname = "stability-matrix";
   version = "2.10.2";
 
@@ -11,29 +14,23 @@ buildDotnetModule rec {
     hash = "sha256-5gpwB4x2/JAaNtPQrlgFwh7om3rTJE0/mGr/Kn4qIIw=";
   };
 
-  projectFile = "CarCareTracker.sln";
-  nugetDeps = null;
-  dotnet-sdk = dotnetCorePackages.sdk_8_0;
-  dotnet-runtime = dotnetCorePackages.aspnetcore_8_0;
+  projectFile = "src/project.sln";
+  # File generated with `nix-build -A package.passthru.fetch-deps`.
+  # To run fetch-deps when this file does not yet exist, set nugetDeps to null
+  nugetDeps = ./deps.nix;
 
-  makeWrapperArgs =
-    [ "--set DOTNET_CONTENTROOT ${placeholder "out"}/lib/lubelogger" ];
+  projectReferences = [
+    referencedProject
+  ]; # `referencedProject` must contain `nupkg` in the folder structure.
 
-  executables =
-    [ "CarCareTracker" ]; # This wraps "$out/lib/$pname/foo" to `$out/bin/foo`.
+  dotnet-sdk = dotnetCorePackages.sdk_6_0;
+  dotnet-runtime = dotnetCorePackages.runtime_6_0;
 
-  meta = with lib; {
-    description = "A vehicle service records and maintainence tracker";
-    longDescription = ''
-      A self-hosted, open-source, unconventionally-named vehicle maintenance records and fuel mileage tracker.
+  executables = [ "foo" ]; # This wraps "$out/lib/$pname/foo" to `$out/bin/foo`.
+  executables = [ ]; # Don't install any executables.
 
-      LubeLogger by Hargata Softworks is licensed under the MIT License for individual and personal use. Commercial users and/or corporate entities are required to maintain an active subscription in order to continue using LubeLogger.
-    '';
-    homepage = "https://lubelogger.com";
-    changelog = "https://github.com/hargata/lubelog/releases/tag/v${version}";
-    license = licenses.unfree;
-    maintainers = with maintainers; [ samasaur ];
-    mainProgram = "CarCareTracker";
-    platforms = platforms.all;
-  };
+  packNupkg = true; # This packs the project as "foo-0.1.nupkg" at `$out/share`.
+
+  runtimeDeps =
+    [ ffmpeg ]; # This will wrap ffmpeg's library path into `LD_LIBRARY_PATH`.
 }
