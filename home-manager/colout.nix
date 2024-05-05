@@ -18,6 +18,7 @@
   home.packages = with pkgs; [
     # nvim stuff
     gcc
+    statix
     fzf
     nixfmt
     # end nvim stuff
