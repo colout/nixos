@@ -1,10 +1,10 @@
 { pkgs, ... }:
 
 let
-  ar = pkgs.writeShellScriptBin "ar" ''
+  stability-matrix = pkgs.writeShellScriptBin "stability-matrix" ''
     echo $1
   '';
 
 in {
-  environment.systemPackages = [ ar ];
+  environment.systemPackages = [ stability-matrix ];
 }
