@@ -26,11 +26,12 @@ let
     platforms = [ "x86_64-linux" ];
   };
 
-  libs = [ dotnet-runtime_7 ];
+  #libs = [ dotnet-runtime_7 ];
 
 in appimageTools.wrapType2 rec {
-  inherit pname version meta libs;
+  inherit pname version meta;
 
+  runtimeLibs = lib.makeLibraryPath ([ dotnet-runtime_7 ]);
   src = "${srcZipped}/${pname}.AppImage";
 
   multiPkgs = null;
