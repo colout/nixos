@@ -17,17 +17,21 @@
 
   home.packages = with pkgs; [
     # nvim stuff
-    gcc
-    statix
-    fzf
-    nixfmt
 
-clang-tools
+    # nvim telescope
+    fzf
     fd
-    # end nvim stuff
-    git
-    fzf
 
+    # nvim lsp
+    clang-tools
+    terraform
+    statix
+    nixfmt
+    gcc
+
+    # end nvim stuff
+
+    git
     gnumake
     tree-sitter
     unzip
