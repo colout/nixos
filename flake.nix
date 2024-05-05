@@ -33,7 +33,10 @@
   };
 
   outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs:
-    let inherit (self) outputs;
+    let
+      inherit (self) outputs;
+      system = "x86_64-linux";
+      pkgs = import nixpkgs { inherit system; };
     in {
       overlays = import ./overlays { inherit inputs; };
 
@@ -56,5 +59,6 @@
           ];
         };
       };
+      #stability-matrix = pkgs.callPackage ./pkgs/stability-matrix { };
     };
 }
