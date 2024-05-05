@@ -37,6 +37,7 @@ in appimageTools.wrapType2 rec {
   extraInstallCommands = ''
       install -m 444 -D ${appimageContents}/zone.lykos.stabilitymatrix.desktop -t $out/share/applications/${pname}.desktop
 
+    source "${makeWrapper}/nix-support/setup-hook"
     makeWrapper $out/bin/${pname}-${version} $out/bin/${pname} \
     #  --unset APPIMAGE \
     #  --unset APPDIR
