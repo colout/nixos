@@ -1,4 +1,4 @@
-{ appimageTools, lib, fetchzip, makeWrapper, }:
+{ appimageTools, lib, fetchzip, makeWrapper, dotnet-runtime_7, }:
 let
   pname = "StabilityMatrix";
 
@@ -26,7 +26,7 @@ let
     platforms = [ "x86_64-linux" ];
   };
 
-  libs = [ dotnet ];
+  libs = [ dotnet-runtime_7 ];
 
 in appimageTools.wrapType2 rec {
   inherit pname version meta;
