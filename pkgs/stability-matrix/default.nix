@@ -33,6 +33,8 @@ in appimageTools.wrapType2 rec {
 
   src = "${srcZipped}/${pname}.AppImage";
 
+  extraPkgs = pkgs:
+    (appimageTools.defaultFhsEnvArgs.multiPkgs pkgs) ++ [ dotnet-runtime_7 ];
   extraInstallCommands = ''
       install -m 444 -D ${appimageContents}/zone.lykos.stabilitymatrix.desktop -t $out/share/applications/${pname}.desktop
 
