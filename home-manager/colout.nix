@@ -21,9 +21,9 @@
     statix
     fzf
     nixfmt
-    markdown_inline
     clang_format
-    terraform
+ vimPlugins.nvim-treesitter-parsers.markdown_inline
+ terraform
     terraform_validate
     fd
     # end nvim stuff
