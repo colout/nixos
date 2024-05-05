@@ -82,7 +82,7 @@
 
   writeShellScriptBin "theProgram" ''
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${pkgs.libxcrypt}/lib
-    exec ${pkgs.appimage-run}/bin/theProgram
+    exec ${appimage-run}/bin/theProgram
   ''
   ];
 
