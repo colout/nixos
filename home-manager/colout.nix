@@ -21,6 +21,11 @@
     statix
     fzf
     nixfmt
+    markdown_inline
+    clang_format
+    terraform
+    terraform_validate
+    fd
     # end nvim stuff
     git
     fzf
