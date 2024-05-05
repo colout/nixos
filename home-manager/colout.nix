@@ -23,8 +23,8 @@
     nixfmt
     clang_format
  vimPlugins.nvim-treesitter-parsers.markdown_inline
- terraform
-    terraform_validate
+vimPlugins.nvim-treesitter-parsers.terraform
+
     fd
     # end nvim stuff
     git
