@@ -21,7 +21,6 @@
     statix
     fzf
     nixfmt
-    clang_format
  vimPlugins.nvim-treesitter-parsers.markdown_inline
 vimPlugins.nvim-treesitter-parsers.terraform
 
