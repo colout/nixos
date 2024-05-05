@@ -28,7 +28,7 @@ let
 
   libs = [ ];
 in appimageTools.wrapType2 rec {
-  inherit pname version appimageContents meta;
+  inherit pname version meta;
 
   src = "${srcZipped}/${pname}.AppImage";
 
