@@ -1,43 +1,41 @@
-{ appimageTools, lib, fetchzip, makeWrapper, dotnet-runtime, icu, }:
-let
-  pname = "StabilityMatrix";
+{ lib, buildDotnetModule, dotnetCorePackages, fetchFromGitHub }:
 
+buildDotnetModule rec {
+  pname = "stability-matrix";
   version = "2.10.2";
 
-  srcZipped = fetchzip {
-    url =
-      "https://github.com/LykosAI/${pname}/releases/download/v${version}/${pname}-linux-x64.zip";
-    hash = "sha256-gFdiuamvrHVq19Y/ChNOBrb+AD668LcBfNnyyVnHubo=";
+  src = fetchFromGitHub {
+    owner = "LykosAI";
+    repo = "StabilityMatrix";
+    rev = "v${version}";
+    hash = "sha256-5gpwB4x2/JAaNtPQrlgFwh7om3rTJE0/mGr/Kn4qIIw=";
   };
 
-  appimageContents = appimageTools.extractType2 {
-    inherit pname;
-    name = "${pname}";
-    src = "${srcZipped}/${pname}.AppImage";
+  projectFile = "CarCareTracker.sln";
+  nugetDeps =
+    ./deps.nix; # File generated with `nix-build -A package.passthru.fetch-deps`.
+
+  dotnet-sdk = dotnetCorePackages.sdk_8_0;
+  dotnet-runtime = dotnetCorePackages.aspnetcore_8_0;
+
+  makeWrapperArgs =
+    [ "--set DOTNET_CONTENTROOT ${placeholder "out"}/lib/lubelogger" ];
+
+  executables =
+    [ "CarCareTracker" ]; # This wraps "$out/lib/$pname/foo" to `$out/bin/foo`.
+
+  meta = with lib; {
+    description = "A vehicle service records and maintainence tracker";
+    longDescription = ''
+      A self-hosted, open-source, unconventionally-named vehicle maintenance records and fuel mileage tracker.
+
+      LubeLogger by Hargata Softworks is licensed under the MIT License for individual and personal use. Commercial users and/or corporate entities are required to maintain an active subscription in order to continue using LubeLogger.
+    '';
+    homepage = "https://lubelogger.com";
+    changelog = "https://github.com/hargata/lubelog/releases/tag/v${version}";
+    license = licenses.unfree;
+    maintainers = with maintainers; [ samasaur ];
+    mainProgram = "CarCareTracker";
+    platforms = platforms.all;
   };
-
-  meta = {
-    description =
-      "Multi-Platform Package Manager and Inference UI for Stable Diffusion";
-    homepage = "https://github.com/LykosAI/StabilityMatrix";
-    license = lib.licenses.gpl3Only;
-    mainProgram = "Stability Matrix";
-    maintainers = with lib.maintainers; [ NotAShelf ];
-    platforms = [ "x86_64-linux" ];
-  };
-
-in appimageTools.wrapType2 rec {
-  inherit pname version meta;
-
-  src = "${srcZipped}/${pname}.AppImage";
-
-  extraInstallCommands = ''
-      install -m 444 -D ${appimageContents}/zone.lykos.stabilitymatrix.desktop -t $out/share/applications/${pname}.desktop
-
-    source "${makeWrapper}/nix-support/setup-hook"
-    makeWrapper $out/bin/${pname}-${version} $out/bin/${pname} \
-      --unset APPIMAGE \
-      --unset APPDIR \
-      --prefix LD_LIBRARY_PATH : ${lib.makeLibraryPath [ dotnet-runtime icu ]}
-  '';
 }
