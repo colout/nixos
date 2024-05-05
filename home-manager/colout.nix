@@ -21,10 +21,8 @@
     statix
     fzf
     nixfmt
- vimPlugins.nvim-treesitter-parsers.markdown_inline
-vimPlugins.nvim-treesitter-parsers.terraform
 
-vimPlugins.vim-clang-format
+clang-tools
     fd
     # end nvim stuff
     git
