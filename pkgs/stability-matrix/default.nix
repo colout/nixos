@@ -8,7 +8,7 @@ buildDotnetModule rec {
     owner = "LykosAI";
     repo = "StabilityMatrix";
     rev = "v${version}";
-    hash = "sha256-5gpwB4x2/JAaNtPQrlgFwh7om3rTJE0/mGr/Kn4qIIw=";
+    hash = "sha256-+C+gFXNFcLg7lXj4S/qnwGoLn8Z8HFbiaEGIDyBpjBY=";
   };
 
   projectFile = "src/project.sln";
