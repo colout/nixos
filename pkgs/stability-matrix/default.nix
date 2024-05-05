@@ -26,7 +26,8 @@ let
     platforms = [ "x86_64-linux" ];
   };
 
-  libs = [ dotnet-sdk ];
+  libs = [ dotnet ];
+
 in appimageTools.wrapType2 rec {
   inherit pname version meta;
 
