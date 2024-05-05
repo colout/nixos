@@ -1,4 +1,4 @@
-{ lib, fetchFromGitHub, buildDotnetModule, dotnetCorePackages, ffmpeg }:
+{ fetchFromGitHub, buildDotnetModule, dotnetCorePackages, ffmpeg }:
 
 let
   referencedProject = import ../../bar { # ...
@@ -17,7 +17,7 @@ in buildDotnetModule rec {
   projectFile = "src/project.sln";
   # File generated with `nix-build -A package.passthru.fetch-deps`.
   # To run fetch-deps when this file does not yet exist, set nugetDeps to null
-  #nugetDeps = null;
+  nugetDeps = null;
 
   projectReferences = [
     referencedProject
@@ -28,7 +28,8 @@ in buildDotnetModule rec {
 
   executables = [ "foo" ]; # This wraps "$out/lib/$pname/foo" to `$out/bin/foo`.
 
-  #packNupkg = true; # This packs the project as "foo-0.1.nupkg" at `$out/share`.
+  packNupkg =
+    false; # This packs the project as "foo-0.1.nupkg" at `$out/share`.
 
   runtimeDeps =
     [ ffmpeg ]; # This will wrap ffmpeg's library path into `LD_LIBRARY_PATH`.
