@@ -1,4 +1,4 @@
-{ lib, buildDotnetModule, dotnetCorePackages, ffmpeg }:
+{ fetchFromGitHub, buildDotnetModule, dotnetCorePackages, ffmpeg }:
 
 let
   referencedProject = import ../../bar { # ...
