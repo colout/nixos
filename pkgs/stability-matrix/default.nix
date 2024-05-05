@@ -39,7 +39,7 @@ in appimageTools.wrapType2 rec {
 
     source "${makeWrapper}/nix-support/setup-hook"
     makeWrapper $out/bin/${pname}-${version} $out/bin/${pname} \
-    #  --unset APPIMAGE \
-    #  --unset APPDIR
+      --unset APPIMAGE \
+      --unset APPDIR
   '';
 }
