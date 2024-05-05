@@ -2,9 +2,8 @@
 
 let
   stability-matrix = pkgs.writeShellScriptBin "stability-matrix" ''
-    echo $1
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${pkgs.libxcrypt}/lib
+    exec ${pkgs.appimage-run}
   '';
 
-in {
-  environment.systemPackages = [ stability-matrix ];
-}
+in { environment.systemPackages = [ stability-matrix ]; }
