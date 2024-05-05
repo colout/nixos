@@ -16,8 +16,13 @@
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   home.packages = with pkgs; [
+    # nvim stuff
+    gcc
+    fzf
+    # end nvim stuff
     git
     fzf
+
     gnumake
     tree-sitter
     unzip
