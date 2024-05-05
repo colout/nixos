@@ -35,7 +35,7 @@ in appimageTools.wrapType2 rec {
   multiPkgs = null;
   extraPkgs = p: (appimageTools.defaultFhsEnvArgs.multiPkgs p) ++ libs;
   extraInstallCommands = ''
-    touch /tmp/hi
+
     #makeWrapper $out/bin/${pname}-${version} $out/bin/${pname} \
     #  --unset APPIMAGE \
     #  --unset APPDIR
