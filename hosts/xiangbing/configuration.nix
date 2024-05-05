@@ -9,6 +9,7 @@
     ../../modules/nixos/wm/kde.nix
     ../../modules/nixos/hardware/nvidia-drm.nix
     ../../modules/nixos/boot/grub.nix
+    ../../modules/appimage-run-wrapper.nix
     #../../modules/nixos/hardware/nvidia-nvk.nix
   ];
 
