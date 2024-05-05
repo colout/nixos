@@ -27,7 +27,6 @@ in buildDotnetModule rec {
   dotnet-runtime = dotnetCorePackages.runtime_6_0;
 
   executables = [ "foo" ]; # This wraps "$out/lib/$pname/foo" to `$out/bin/foo`.
-  executables = [ ]; # Don't install any executables.
 
   packNupkg = true; # This packs the project as "foo-0.1.nupkg" at `$out/share`.
 
