@@ -17,7 +17,7 @@ in buildDotnetModule rec {
   projectFile = "src/project.sln";
   # File generated with `nix-build -A package.passthru.fetch-deps`.
   # To run fetch-deps when this file does not yet exist, set nugetDeps to null
-  nugetDeps = ./deps.nix;
+  nugetDeps = null;
 
   projectReferences = [
     referencedProject
