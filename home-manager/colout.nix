@@ -80,10 +80,6 @@
     blender
     vivaldi
 
-  writeShellScriptBin "theProgram" ''
-    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${pkgs.libxcrypt}/lib
-    exec ${appimage-run}/bin/theProgram
-  ''
   ];
 
   # Let Home Manager install and manage itself.
