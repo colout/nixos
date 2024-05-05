@@ -25,6 +25,7 @@
  vimPlugins.nvim-treesitter-parsers.markdown_inline
 vimPlugins.nvim-treesitter-parsers.terraform
 
+vimPlugins.vim-clang-format
     fd
     # end nvim stuff
     git
