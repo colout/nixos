@@ -31,12 +31,13 @@ let
 in appimageTools.wrapType2 rec {
   inherit pname version meta;
 
+  runtimeDeps = [
+    dotnet-runtime_7 # this doesn't work -> "$out/bin/"
+  ];
+
   runtimeLibs = lib.makeLibraryPath ([ dotnet-runtime_7 ]);
   src = "${srcZipped}/${pname}.AppImage";
 
-  multiPkgs = null;
-
-  extraPkgs = p: (appimageTools.defaultFhsEnvArgs.multiPkgs p) ++ libs;
   extraInstallCommands = ''
       install -m 444 -D ${appimageContents}/zone.lykos.stabilitymatrix.desktop -t $out/share/applications/${pname}.desktop
 
