@@ -1,4 +1,4 @@
-{ fetchFromGitHub, buildDotnetModule, dotnetCorePackages, ffmpeg }:
+{ lib, fetchFromGitHub, buildDotnetModule, dotnetCorePackages, ffmpeg }:
 
 let
   referencedProject = import ../../bar { # ...
@@ -17,7 +17,7 @@ in buildDotnetModule rec {
   projectFile = "src/project.sln";
   # File generated with `nix-build -A package.passthru.fetch-deps`.
   # To run fetch-deps when this file does not yet exist, set nugetDeps to null
-  nugetDeps = null;
+  #nugetDeps = null;
 
   projectReferences = [
     referencedProject
