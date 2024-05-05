@@ -16,10 +16,6 @@
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
 
-  a = pkgs.writeShellScriptBin "theProgram" ''
-    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${pkgs.libxcrypt}/lib
-    exec ${pkgs.theProgram}/bin/theProgram
-  '';
 
 
   home.packages = with pkgs; [
@@ -83,6 +79,11 @@
     godot_4
     blender
     vivaldi
+
+  writeShellScriptBin "theProgram" ''
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${pkgs.libxcrypt}/lib
+    exec ${pkgs.theProgram}/bin/theProgram
+  ''
   ];
 
   # Let Home Manager install and manage itself.
