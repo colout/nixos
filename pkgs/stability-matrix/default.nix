@@ -34,6 +34,8 @@ in appimageTools.wrapType2 rec {
   src = "${srcZipped}/${pname}.AppImage";
 
   multiPkgs = null;
+  nativeBuildInputs = [ makeWrapper ];
+
   extraPkgs = p: (appimageTools.defaultFhsEnvArgs.multiPkgs p) ++ libs;
   extraInstallCommands = ''
       install -m 444 -D ${appimageContents}/zone.lykos.stabilitymatrix.desktop -t $out/share/applications/${pname}.desktop
