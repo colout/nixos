@@ -29,8 +29,6 @@ let
 in appimageTools.wrapType2 rec {
   inherit pname version meta;
 
-  runtimeDeps = [ dotnet-runtime_7 ];
-
   src = "${srcZipped}/${pname}.AppImage";
 
   extraPkgs = pkgs:
