@@ -43,6 +43,7 @@
       hdrop
       jq # for my drop term script
       hyprcursor
+      hyprcursor-phinger.packages.${pkgs.system}.hyprcursor-phinger
       libsForQt5.qt5.qtwayland
       libsForQt5.qt5ct
       qt6.qtwayland
