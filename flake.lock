@@ -221,7 +221,7 @@
         "type": "github"
       }
     },
-    "hyprcursor-phiger": {
+    "hyprcursor-phinger": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -509,7 +509,7 @@
       "inputs": {
         "home-manager": "home-manager",
         "hycov": "hycov",
-        "hyprcursor-phiger": "hyprcursor-phiger",
+        "hyprcursor-phinger": "hyprcursor-phinger",
         "hyprland": "hyprland",
         "hyprland-plugins": "hyprland-plugins",
         "nixpkgs": "nixpkgs_2",

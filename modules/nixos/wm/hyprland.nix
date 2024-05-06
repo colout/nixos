@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, hyprcursor-phinger, ... }: {
   services.xserver = {
     enable = true;
     displayManager = {
