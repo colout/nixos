@@ -9,7 +9,8 @@ let
 
     echo  ${pkgs.cacert}/etc/ssl/certs
     env
-    exec ${pkgs.appimage-run}/bin/appimage-run ~/Downloads/StabilityMatrix.AppImage
+    zsh
+    #exec ${pkgs.appimage-run}/bin/appimage-run ~/Downloads/StabilityMatrix.AppImage
   '';
 
 in { environment.systemPackages = [ stability-matrix ]; }
