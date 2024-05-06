@@ -43,6 +43,7 @@
       hdrop
       jq # for my drop term script
       hyprcursor
+      xcur2png
       libsForQt5.qt5.qtwayland
       libsForQt5.qt5ct
       qt6.qtwayland
