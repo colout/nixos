@@ -36,10 +36,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, hyprcursor-phinger, ... }@inputs:
     let
       inherit (self) outputs;
       system = "x86_64-linux";
