@@ -30,6 +30,13 @@
       url = "github:DreamMaoMao/hycov";
       inputs.hyprland.follows = "hyprland";
     };
+
+    hyprcursor-phiger = {
+      url = "github:Jappie3/hyprcursor-phinger";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+
   };
 
   outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs:
