@@ -6,7 +6,7 @@ let
     export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
     export DOTNET_SYSTEM_GLOBALIZATION_PREDEFINED_CULTURES_ONLY=false
 
-    echo  ${pkgs.libxcrypt}/
+    echo  ${pkgs.nixos.cacert}/
     exec ${pkgs.appimage-run}/bin/appimage-run ~/Downloads/StabilityMatrix.AppImage
   '';
 
