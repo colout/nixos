@@ -31,7 +31,7 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-    hyprcursor-phiger = {
+    hyprcursor-phinger = {
       url = "github:Jappie3/hyprcursor-phinger";
       inputs.nixpkgs.follows = "nixpkgs";
     };
