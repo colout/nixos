@@ -3,11 +3,11 @@
 {
   # Enable the X11 windowing system.
   services = {
-    displayManager.gdm.enable = true;
     desktopManager.plasma6.enable = true;
 
     xserver = {
       enable = true;
+      displayManager.gdm.enable = true;
 
       # Configure keymap in X11
       xkb.layout = "us";
