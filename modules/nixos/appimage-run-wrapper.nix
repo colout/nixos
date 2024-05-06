@@ -5,8 +5,9 @@ let
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${pkgs.libxcrypt-legacy}/lib
     export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
     export DOTNET_SYSTEM_GLOBALIZATION_PREDEFINED_CULTURES_ONLY=false
+    export SSL_CERT_DIR=${pkgs.cacert}/etc/ssl/certs
 
-    echo  ${pkgs.cacert}/
+    echo  ${pkgs.cacert}/etc/ssl/certs
     exec ${pkgs.appimage-run}/bin/appimage-run ~/Downloads/StabilityMatrix.AppImage
   '';
 
