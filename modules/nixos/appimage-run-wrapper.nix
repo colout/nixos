@@ -6,6 +6,7 @@ let
     export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
     export DOTNET_SYSTEM_GLOBALIZATION_PREDEFINED_CULTURES_ONLY=false
     export SSL_CERT_DIR=${pkgs.cacert}/etc/ssl/certs
+    export SSL_CERT_FILE=${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt
 
     echo  ${pkgs.cacert}/etc/ssl/certs
     env
