@@ -29,7 +29,7 @@
     clang-tools
     terraform
     statix
-    nixfmt
+    nixfmt-classic
     gcc
 
     # end nvim stuff
