@@ -9,9 +9,9 @@ let
     export SSL_CERT_FILE=${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt
 
     echo  ${pkgs.cacert}/etc/ssl/certs
-    env
-    zsh
-    #exec ${pkgs.appimage-run}/bin/appimage-run ~/Downloads/StabilityMatrix.AppImage
+    #env
+    #zsh
+    exec ${pkgs.appimage-run}/bin/appimage-run ~/Downloads/StabilityMatrix.AppImage
   '';
 
 in { environment.systemPackages = [ stability-matrix ]; }
