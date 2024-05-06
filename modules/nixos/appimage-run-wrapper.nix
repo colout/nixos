@@ -8,6 +8,7 @@ let
     export SSL_CERT_DIR=${pkgs.cacert}/etc/ssl/certs
 
     echo  ${pkgs.cacert}/etc/ssl/certs
+    env
     exec ${pkgs.appimage-run}/bin/appimage-run ~/Downloads/StabilityMatrix.AppImage
   '';
 
