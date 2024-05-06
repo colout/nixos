@@ -1,11 +1,13 @@
 { pkgs, ... }: {
-  services.xserver = {
-    enable = true;
-    displayManager = {
-      defaultSession = "hyprland";
-      gdm = {
-        wayland = true;
-        enable = true;
+  services = {
+    displayManager.defaultSession = "hyprland";
+    xserver = {
+      enable = true;
+      displayManager = {
+        gdm = {
+          wayland = true;
+          enable = true;
+        };
       };
     };
   };
