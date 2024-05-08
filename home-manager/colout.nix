@@ -65,7 +65,7 @@
     kate
     qpwgraph
     wl-clipboard
-    font-manager
+    #font-manager
     zsh
     thefuck
     cartridges
