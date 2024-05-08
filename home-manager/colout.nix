@@ -28,7 +28,6 @@
     statix
     nixfmt-classic
     gcc
-    jsonlint
     nodePackages.jsonlint
     sqlfluff
 
