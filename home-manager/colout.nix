@@ -31,6 +31,7 @@
     statix
     nixfmt-classic
     gcc
+    jsonlint
 
     # end nvim stuff
 
