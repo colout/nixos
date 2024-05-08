@@ -15,9 +15,6 @@
   home.homeDirectory = "/home/colout";
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
-
-
-
   home.packages = with pkgs; [
     # nvim stuff
 
@@ -31,7 +28,9 @@
     statix
     nixfmt-classic
     gcc
-nodePackages.jsonlint
+    jsonlint
+    nodePackages.jsonlint
+    sqlfluff
 
     # end nvim stuff
 
