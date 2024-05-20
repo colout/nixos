@@ -45,7 +45,7 @@
     firefox
     jellyfin-media-player
     vlc
-    gimp-with-plugins
+    #gimp-with-plugins
     libreoffice-qt
     tor-browser
     audacity
