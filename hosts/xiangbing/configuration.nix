@@ -17,8 +17,8 @@
   boot.kernelPackages =
     #pkgs.unstable.linuxPackages;
     #pkgs.stable.linuxPackages; # use stable when nvidia drivers get borked
-    #pkgs.stable.linuxPackages_6_8; # use stable when nvidia drivers get borked
-    pkgs.unstable.linuxPackages;
+    pkgs.stable.linuxPackages_6_9; # use stable when nvidia drivers get borked
+    #pkgs.unstable.linuxPackages;
 
   system.stateVersion = "23.11";
 
