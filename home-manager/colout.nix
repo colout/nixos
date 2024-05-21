@@ -31,6 +31,7 @@
     nodePackages.jsonlint
     sqlfluff
     python3
+    gopls
 
     # end nvim stuff
 
