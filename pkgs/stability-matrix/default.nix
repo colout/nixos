@@ -3,7 +3,7 @@
 
 buildDotnetModule rec {
   pname = "stability-matrix";
-  version = "2.10.3";
+  version = "2.10.2";
 
   src = fetchFromGitHub {
     owner = "LykosAI";
