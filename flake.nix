@@ -58,7 +58,7 @@
             }
           ];
         };
+      stability-matrix = pkgs.callPackage ./pkgs/stability-matrix { };
       };
-      stability-matrix = pkgs.callPackage ./pkgs/stability-matrix/default.nix { };
     };
 }
