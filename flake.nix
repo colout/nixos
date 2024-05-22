@@ -48,6 +48,7 @@
           modules = [
             ./hosts/xiangbing/configuration.nix
             ./hosts/xiangbing/hardware-configuration.nix
+            ./pkgs/stability-matrix/default.nix
 
             home-manager.nixosModules.home-manager
             {
