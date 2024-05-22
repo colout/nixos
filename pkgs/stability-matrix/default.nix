@@ -3,7 +3,7 @@ with import <nixpkgs> { };
 
 buildDotnetModule rec {
   pname = "stability-matrix";
-  version = "2.10.9";
+  version = "2.10.3";
 
   src = fetchFromGitHub {
     owner = "LykosAI";
