@@ -109,7 +109,6 @@
     devenv
   ];
 
-  stability-matrix = pkgs.callPackage ../../pkgs/stability-matrix/default.nix { };
 
   console = {
     #packages = [pkgs.terminus_font];
@@ -124,6 +123,7 @@
       noto-fonts-emoji
       font-awesome
       (nerdfonts.override { fonts = [ "Meslo" ]; })
+      (callPackage ../../pkgs/stability-matrix/default.nis { })
     ];
     fontconfig = {
       enable = true;
