@@ -45,7 +45,7 @@
         xiangbing = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit inputs outputs; };
-      stability-matrix = pkgs.callPackage (import ./pkgs/stability-matrix) { };
+
           modules = [
             ./hosts/xiangbing/configuration.nix
             ./hosts/xiangbing/hardware-configuration.nix

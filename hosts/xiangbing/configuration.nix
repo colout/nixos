@@ -18,7 +18,7 @@
     #pkgs.unstable.linuxPackages;
     #pkgs.stable.linuxPackages; # use stable when nvidia drivers get borked
     pkgs.stable.linuxPackages_6_9; # use stable when nvidia drivers get borked
-    #pkgs.unstable.linuxPackages;
+  #pkgs.unstable.linuxPackages;
 
   system.stateVersion = "23.11";
 
@@ -94,6 +94,8 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+
+  stability-matrix = pkgs.callPackage (import ./pkgs/stability-matrix) { };
 
   programs.zsh.enable = true;
   environment.systemPackages = with pkgs; [
