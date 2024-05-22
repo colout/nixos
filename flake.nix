@@ -37,8 +37,8 @@
       inherit (self) outputs;
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
+    in rec {
       localPackages = import ./pkgs { inherit system; };
-    in {
       overlays = import ./overlays { inherit inputs; };
 
       # Machine configs
