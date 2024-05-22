@@ -82,7 +82,6 @@
     godot_4
     blender
     vivaldi
-    stabilty-matrix
   ];
 
   # Let Home Manager install and manage itself.
