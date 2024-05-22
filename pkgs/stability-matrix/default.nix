@@ -1,5 +1,12 @@
-{ fetchFromGitHub, buildDotnetModule, dotnetCorePackages, ffmpeg, }:
+#{ fetchFromGitHub, buildDotnetModule, dotnetCorePackages, ffmpeg, }:
 # with import <nixpkgs> { };
+
+{ pkgs ? import <nixpkgs> { system = builtins.currentSystem; },
+fetchFromGitHub ? pkgs.fetchFromGitHub,
+buildDotnetModule ? pkgs.buildDotnetModule,
+dotnetCorePackages ? pkgs.dotnetCorePackages,
+ffmpeg ? pkgs.ffmpeg, 
+}:
 
 buildDotnetModule rec {
   pname = "stability-matrix";
@@ -14,6 +21,9 @@ buildDotnetModule rec {
 
   projectFile = "StabilityMatrix.sln";
   nugetDeps = ./deps.nix;
+
+  # to update deps, run :
+  # nix-build -A passthru.fetch-deps ./pkgs/stability-matrix
 
   dotnet-sdk = dotnetCorePackages.sdk_7_0;
   dotnet-runtime = dotnetCorePackages.runtime_7_0;
