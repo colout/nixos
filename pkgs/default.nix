@@ -1,5 +1,1 @@
-{ pkgs }:
-
-pkgs.lib.makeScope pkgs.newScope (self:
-  let callPackage = self.callPackage;
-  in { stablilty-matrix = callPackage ./stability-matrix { }; })
+{ pkgs }: { stablilty-matrix = pkgs.callPackage ./stability-matrix { }; }
