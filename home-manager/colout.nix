@@ -3,6 +3,7 @@
 {
   nixpkgs.config.allowUnfreePredicate = _: true;
 
+
   imports = [
     ./modules/zsh.nix
     ./modules/kitty.nix
@@ -77,10 +78,10 @@
     floorp
     chromium
     htop
+    obsidian
     godot_4
     blender
     vivaldi
-
   ];
 
   # Let Home Manager install and manage itself.
