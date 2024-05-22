@@ -113,7 +113,7 @@ outputs.overlays.additions
     zip
     devenv
 
-    additions.stability-matrix
+    stability-matrix
   ];
 
   console = {
