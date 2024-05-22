@@ -37,10 +37,7 @@
       inherit (self) outputs;
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
-
-      localPackages = forAllSystems (system:
-        let pkgs = nixpkgs.legacyPackages.${system};
-        in import ./pkgs { inherit pkgs; });
+      localPackages = import ./pkgs { inherit system; };
     in {
       overlays = import ./overlays { inherit inputs; };
 
