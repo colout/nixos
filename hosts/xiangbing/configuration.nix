@@ -95,7 +95,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  stabilty-matrix = localPackages.stability-matrix;
+  stabilty-matrix = localPackages.x86_64-linux.stability-matrix;
 
   programs.zsh.enable = true;
   environment.systemPackages = with pkgs; [
