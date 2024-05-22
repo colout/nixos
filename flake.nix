@@ -41,7 +41,6 @@
       overlays = import ./overlays { inherit inputs; };
 
       # Machine configs
-      stability-matrix = pkgs.callPackage ./pkgs/stability-matrix { };
       nixosConfigurations = {
         xiangbing = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";

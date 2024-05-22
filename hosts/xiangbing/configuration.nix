@@ -109,6 +109,8 @@
     devenv
   ];
 
+  stability-matrix = .callPackage ./pkgs/stability-matrix { };
+
   console = {
     #packages = [pkgs.terminus_font];
     #font = "${pkgs.terminus_font}/share/consolefonts/ter-i22b.psf.gz";
