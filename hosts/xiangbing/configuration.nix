@@ -108,6 +108,8 @@
     inotify-tools
     zip
     devenv
+
+    localPackages.stability-matrix
   ];
 
   console = {
