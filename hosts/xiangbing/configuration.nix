@@ -123,7 +123,7 @@
       noto-fonts-emoji
       font-awesome
       (nerdfonts.override { fonts = [ "Meslo" ]; })
-      (callPackage ../../pkgs/stability-matrix/default.nis { })
+      (callPackage ../../pkgs/stability-matrix { })
     ];
     fontconfig = {
       enable = true;
