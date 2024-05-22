@@ -59,5 +59,6 @@
           ];
         };
       };
+      #stability-matrix = pkgs.callPackage ./pkgs/stability-matrix { };
     };
 }

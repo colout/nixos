@@ -109,7 +109,6 @@
     devenv
   ];
 
-
   console = {
     #packages = [pkgs.terminus_font];
     #font = "${pkgs.terminus_font}/share/consolefonts/ter-i22b.psf.gz";
@@ -123,7 +122,6 @@
       noto-fonts-emoji
       font-awesome
       (nerdfonts.override { fonts = [ "Meslo" ]; })
-      (callPackage ../../pkgs/stability-matrix { })
     ];
     fontconfig = {
       enable = true;
