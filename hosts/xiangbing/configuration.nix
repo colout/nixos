@@ -95,7 +95,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-
+  stabilty-matrix = localPackages.stability-matrix
   programs.zsh.enable = true;
   environment.systemPackages = with pkgs; [
     neovim
@@ -109,7 +109,6 @@
     zip
     devenv
 
-    localPackages.stability-matrix
   ];
 
   console = {
