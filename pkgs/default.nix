@@ -1,1 +1,1 @@
-{ pkgs }: { stablilty-matrix = pkgs.callPackage ./stability-matrix { }; }
+{ pkgs }: { stablity-matrix = pkgs.callPackage ./stability-matrix { }; }

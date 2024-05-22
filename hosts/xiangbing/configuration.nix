@@ -112,8 +112,7 @@ outputs.overlays.additions
     inotify-tools
     zip
     devenv
-
-    stability-matrix
+stablity-matrix
   ];
 
   console = {
