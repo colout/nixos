@@ -109,6 +109,7 @@
     zip
     devenv
 
+    stability-matrix
   ];
 
   console = {
