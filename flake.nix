@@ -38,6 +38,7 @@
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
     in {
+  stability-matrix = pkgs.callPackage (import ./pkgs/stability-matrix) { };
       overlays = import ./overlays { inherit inputs; };
 
       # Machine configs

@@ -95,7 +95,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  stability-matrix = pkgs.callPackage (import ./pkgs/stability-matrix) { };
 
   programs.zsh.enable = true;
   environment.systemPackages = with pkgs; [
