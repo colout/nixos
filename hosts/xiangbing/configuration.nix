@@ -1,7 +1,11 @@
 { pkgs, localPackages, outputs, ... }: {
   # Enable overlays
   nixpkgs.overlays =
-    [ outputs.overlays.packages-stable outputs.overlays.packages-unstable ];
+    [ 
+    outputs.overlays.packages-stable
+    outputs.overlays.packages-unstable
+outputs.overlays.attitions
+    ];
 
   imports = [
     ../../modules/nixos/wm/hyprland.nix
