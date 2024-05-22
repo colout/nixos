@@ -1,4 +1,4 @@
-{ pkgs, outputs, ... }: {
+{ pkgs, localPackages, outputs, ... }: {
   # Enable overlays
   nixpkgs.overlays =
     [ outputs.overlays.packages-stable outputs.overlays.packages-unstable ];
