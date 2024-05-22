@@ -109,7 +109,7 @@
     devenv
   ];
 
-  stability-matrix = pkgs.callPackage ./pkgs/stability-matrix { };
+  stability-matrix = pkgs.callPackage ../../pkgs/stability-matrix { };
 
   console = {
     #packages = [pkgs.terminus_font];
