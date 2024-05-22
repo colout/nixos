@@ -4,7 +4,7 @@
     [ 
     outputs.overlays.packages-stable
     outputs.overlays.packages-unstable
-outputs.overlays.attitions
+outputs.overlays.additions
     ];
 
   imports = [
