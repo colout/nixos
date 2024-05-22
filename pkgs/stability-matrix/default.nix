@@ -1,4 +1,4 @@
-{ fetchFromGitHub, buildDotnetModule, dotnetCorePackages, ffmpeg }:
+{ fetchFromGitHub, buildDotnetModule, dotnetCorePackages, ffmpeg, ... }:
 # with import <nixpkgs> { };
 
 buildDotnetModule rec {
