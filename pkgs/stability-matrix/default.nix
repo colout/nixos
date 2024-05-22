@@ -1,5 +1,5 @@
-# { fetchFromGitHub, buildDotnetModule, dotnetCorePackages, ffmpeg }:
-with import <nixpkgs> { };
+{ fetchFromGitHub, buildDotnetModule, dotnetCorePackages, ffmpeg }:
+# with import <nixpkgs> { };
 
 buildDotnetModule rec {
   pname = "stability-matrix";
