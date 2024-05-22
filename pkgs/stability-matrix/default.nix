@@ -1,6 +1,4 @@
 # { fetchFromGitHub, buildDotnetModule, dotnetCorePackages, ffmpeg }:
-
-rsttsr
 with import <nixpkgs> { };
 
 buildDotnetModule rec {
