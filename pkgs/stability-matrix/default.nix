@@ -1,5 +1,8 @@
-#{ fetchFromGitHub, buildDotnetModule, dotnetCorePackages, ffmpeg, }:
-# with import <nixpkgs> { };
+# to update deps, run:
+# nix-build -A passthru.fetch-deps ./pkgs/stability-matrix
+# ... then run the resulting script in the output
+# 
+# might need to bump the sdk number to match nuget?
 
 { pkgs ? import <nixpkgs> { system = builtins.currentSystem; },
 fetchFromGitHub ? pkgs.fetchFromGitHub,
@@ -10,7 +13,7 @@ ffmpeg ? pkgs.ffmpeg,
 
 buildDotnetModule rec {
   pname = "stability-matrix";
-  version = "2.10.2";
+  version = "2.10.3";
 
   src = fetchFromGitHub {
     owner = "LykosAI";
@@ -22,11 +25,9 @@ buildDotnetModule rec {
   projectFile = "StabilityMatrix.sln";
   nugetDeps = ./deps.nix;
 
-  # to update deps, run :
-  # nix-build -A passthru.fetch-deps ./pkgs/stability-matrix
 
-  dotnet-sdk = dotnetCorePackages.sdk_7_0;
-  dotnet-runtime = dotnetCorePackages.runtime_7_0;
+  dotnet-sdk = dotnetCorePackages.sdk_8_0;
+  dotnet-runtime = dotnetCorePackages.runtime_8_0;
 
   runtimeDeps =
     [ ffmpeg ]; # This will wrap ffmpeg's library path into `LD_LIBRARY_PATH`.
