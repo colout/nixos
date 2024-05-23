@@ -111,7 +111,6 @@
     inotify-tools
     zip
     devenv
-    stablity-matrix
   ];
 
   console = {
