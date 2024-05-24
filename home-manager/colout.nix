@@ -29,6 +29,7 @@
 
     # nvim lsp
     stylua
+    lua-language-server
     luarocks
     clang-tools
     terraform
