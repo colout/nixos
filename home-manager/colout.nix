@@ -1,13 +1,17 @@
-{ inputs, hycov, config, pkgs, lib, ... }:
-
 {
+  inputs,
+  hycov,
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   nixpkgs.config.allowUnfreePredicate = _: true;
-
 
   imports = [
     ./modules/zsh.nix
     ./modules/kitty.nix
-    #./modules/nvim 
+    #./modules/nvim
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -29,7 +33,8 @@
     clang-tools
     terraform
     alejandra
-    pg_format
+    pgformatter
+    prettierd
     statix
     nixfmt-classic
     gcc
@@ -91,10 +96,12 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  home.file.".local/share/rofi/themes".source = builtins.fetchGit {
-    url = "https://github.com/newmanls/rofi-themes-collection.git";
-    rev = "5bc150394bf785b2751711e3050ca425c662938e";
-  } + "/themes";
+  home.file.".local/share/rofi/themes".source =
+    builtins.fetchGit {
+      url = "https://github.com/newmanls/rofi-themes-collection.git";
+      rev = "5bc150394bf785b2751711e3050ca425c662938e";
+    }
+    + "/themes";
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
