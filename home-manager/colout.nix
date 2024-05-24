@@ -29,6 +29,7 @@
 
     # nvim lsp
     stylua
+    nil
     lua-language-server
     luarocks
     clang-tools
