@@ -28,6 +28,7 @@
     luarocks
     clang-tools
     terraform
+    alejandra
     statix
     nixfmt-classic
     gcc
