@@ -29,6 +29,7 @@
     clang-tools
     terraform
     alejandra
+    pg_format
     statix
     nixfmt-classic
     gcc
