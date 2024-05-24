@@ -25,6 +25,7 @@
 
     # nvim lsp
     stylua
+    luarocks
     clang-tools
     terraform
     statix
