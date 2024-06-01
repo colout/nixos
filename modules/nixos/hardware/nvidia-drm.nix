@@ -22,7 +22,9 @@
       modesetting.enable = true;
       powerManagement.enable = false;
 
-      package = config.boot.kernelPackages.nvidiaPackages.production;
+      #package = config.boot.kernelPackages.nvidiaPackages.production;
+
+      package = config.boot.kernelPackages.nvidiaPackages.beta;
       #package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
 
       #      # Special config to load the latest (535 or 550) driver for the support of the 4070 SUPER
