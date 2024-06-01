@@ -1,10 +1,14 @@
-{ pkgs, localPackages, outputs, ... }: {
+{
+  pkgs,
+  localPackages,
+  outputs,
+  ...
+}: {
   # Enable overlays
-  nixpkgs.overlays =
-    [ 
+  nixpkgs.overlays = [
     outputs.overlays.packages-stable
     outputs.overlays.packages-unstable
-    ];
+  ];
 
   imports = [
     ../../modules/nixos/wm/hyprland.nix
@@ -59,7 +63,7 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -92,16 +96,16 @@
   users.users.colout = {
     isNormalUser = true;
     description = "colout";
-    extraGroups = [ "networkmanager" "wheel" "storage" ];
+    extraGroups = ["networkmanager" "wheel" "storage"];
     shell = pkgs.zsh;
   };
 
   nixpkgs.config.allowUnfree = true;
 
-
   programs.zsh.enable = true;
   environment.systemPackages = with pkgs; [
     neovim
+    tmux
     wget
     ksystemlog
     zsh
@@ -125,14 +129,14 @@
       noto-fonts-cjk
       noto-fonts-emoji
       font-awesome
-      (nerdfonts.override { fonts = [ "Meslo" ]; })
+      (nerdfonts.override {fonts = ["Meslo"];})
     ];
     fontconfig = {
       enable = true;
       defaultFonts = {
-        monospace = [ "Meslo LG M Regular Nerd Font Complete Mono" ];
-        serif = [ "Noto Serif" ];
-        sansSerif = [ "Noto Sans" ];
+        monospace = ["Meslo LG M Regular Nerd Font Complete Mono"];
+        serif = ["Noto Serif"];
+        sansSerif = ["Noto Sans"];
       };
     };
   };
@@ -142,31 +146,30 @@
     fsType = "cifs";
     options = let
       # this line prevents hanging on network split
-      automount_opts =
-        "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
-
-    in [ "${automount_opts},credentials=/etc/nixos/smb-secrets,rw,uid=1000" ];
+      automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+    in ["${automount_opts},credentials=/etc/nixos/smb-secrets,rw,uid=1000"];
   };
 
   # cachix requires you to be a trusted user
 
-  nix.settings.trusted-users = [ "root" "colout" ];
+  nix.settings.trusted-users = ["root" "colout"];
 
   # realtime group for gamemode to choose sane values
-  security.pam.loginLimits = [{
-    domain = "@wheel";
-    type = "-";
-    item = "nice";
-    value = -20;
-  }];
+  security.pam.loginLimits = [
+    {
+      domain = "@wheel";
+      type = "-";
+      item = "nice";
+      value = -20;
+    }
+  ];
 
   # ntfs
-  boot.supportedFilesystems = [ "ntfs" ];
+  boot.supportedFilesystems = ["ntfs"];
 
   fileSystems."/mnt/ntfs" = {
     device = "/dev/disk/by-uuid/A21677F91677CD33";
     fsType = "ntfs-3g";
-    options = [ "r" "uid=1000" ];
+    options = ["r" "uid=1000"];
   };
-
 }
