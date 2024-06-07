@@ -30,32 +30,39 @@
       url = "github:DreamMaoMao/hycov";
       inputs.hyprland.follows = "hyprland";
     };
+
+    swayfx.url = "github:WillPower3309/swayfxh";
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs:
-    let
-      inherit (self) outputs;
-    in {
-      overlays = import ./overlays { inherit inputs; };
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    hyprland,
+    ...
+  } @ inputs: let
+    inherit (self) outputs;
+  in {
+    overlays = import ./overlays {inherit inputs;};
 
-      # Machine configs
-      nixosConfigurations = {
-        xiangbing = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
+    # Machine configs
+    nixosConfigurations = {
+      xiangbing = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
 
-          modules = [
-            ./hosts/xiangbing/configuration.nix
-            ./hosts/xiangbing/hardware-configuration.nix
+        modules = [
+          ./hosts/xiangbing/configuration.nix
+          ./hosts/xiangbing/hardware-configuration.nix
 
-            home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                extraSpecialArgs = { inherit inputs; };
-                users = { "colout" = import ./home-manager/colout.nix; };
-              };
-            }
-          ];
-        };
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              extraSpecialArgs = {inherit inputs;};
+              users = {"colout" = import ./home-manager/colout.nix;};
+            };
+          }
+        ];
       };
     };
+  };
 }
