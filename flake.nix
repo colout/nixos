@@ -31,7 +31,7 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-    swayfx.url = "github:WillPower3309/swayfxh";
+    swayfx.url = "github:WillPower3309/swayfx";
   };
 
   outputs = {
