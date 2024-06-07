@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   services = {
     displayManager.defaultSession = "hyprland";
     xserver = {
@@ -28,8 +28,9 @@
     systemPackages = with pkgs.unstable; [
       waybar
       (pkgs.waybar.overrideAttrs (oldAttrs: {
-        mesonFlags = oldAttrs.mesonFlags
-          ++ [ "-Dexperimental=true" ]; # workspaces fix
+        mesonFlags =
+          oldAttrs.mesonFlags
+          ++ ["-Dexperimental=true"]; # workspaces fix
       }))
 
       swww # wallpaper
@@ -60,12 +61,12 @@
     ];
   };
 
-  programs.gamescope = { enable = true; };
+  programs.gamescope = {enable = true;};
 
   # Desktop portals allow communucation between programs (link/file opening)
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.wlr.enable = true;
+  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
-  programs.dconf = { enable = true; };
-
+  programs.dconf = {enable = true;};
 }
