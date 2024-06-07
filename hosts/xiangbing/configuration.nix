@@ -12,6 +12,7 @@
 
   imports = [
     ../../modules/nixos/wm/hyprland.nix
+    ../../modules/nixos/wm/sway.nix
     ../../modules/nixos/games.nix
     ../../modules/nixos/wm/kde.nix
     ../../modules/nixos/hardware/nvidia-drm.nix
