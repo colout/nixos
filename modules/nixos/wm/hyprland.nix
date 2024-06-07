@@ -65,7 +65,6 @@
 
   # Desktop portals allow communucation between programs (link/file opening)
   xdg.portal.enable = true;
-  xdg.portal.wlr.enable = true;
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
   programs.dconf = {enable = true;};
