@@ -7,6 +7,7 @@
     package = pkgs.unstable.hyprland;
     enable = true;
     xwayland.enable = true;
+    portalPackage = pkgs.xdg-desktop-portal-wlr;
   };
 
   environment = {
