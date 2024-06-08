@@ -28,7 +28,7 @@
   #pkgs.stable.linuxPackages_6_9; # use stable when nvidia drivers get borked
   #pkgs.unstable.linuxPackages;
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
 
   # Bootloader.
   #boot.loader.systemd-boot.enable = true;
