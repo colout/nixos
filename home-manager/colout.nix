@@ -116,6 +116,7 @@
   };
 
   wayland.windowManager.sway = {
+    checkConfig = false;
     enable = true;
     wrapperFeatures.gtk = true; # so that gtk works properly
     package = pkgs.swayfx;
