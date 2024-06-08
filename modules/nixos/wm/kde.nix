@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   # Enable the X11 windowing system.
   services = {
     desktopManager.plasma6.enable = true;
@@ -15,6 +13,7 @@
     };
   };
 
+  programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.gnome.ksshaskpass.out}/bin/esshaskpass";
   environment.systemPackages = with pkgs.unstable; [
     libsForQt5.dolphin
     kdePackages.dolphin
