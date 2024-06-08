@@ -1,16 +1,7 @@
-{
-  pkgs,
-  swayfx,
-  ...
-}: {
+{pkgs, ...}: {
   environment.systemPackages = with pkgs;
     [
-      sway
-      swayidle
-      swaylock
-      swaybg
-      swaylock-effects
-      sway-launcher-desktop
+      swayfx
     ]
     ++ pkgs.sway.extraPackages;
 }
