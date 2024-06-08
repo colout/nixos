@@ -23,7 +23,7 @@
       export SDL_VIDEODRIVER=wayland
       #export WLR_RENDERER=vulkan
       export WLR_NO_HARDWARE_CURSORS=1
-      export XWAYLAND_NO_GLAMOR=1
+      #export XWAYLAND_NO_GLAMOR=1
       export NIXOS_OZONE_WL=1
 
       export XCURSOR_SIZE=24
