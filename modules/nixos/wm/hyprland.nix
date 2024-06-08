@@ -13,6 +13,7 @@
   };
 
   programs.hyprland = {
+    wlr.enable = true;
     package = pkgs.unstable.hyprland;
     enable = true;
     xwayland.enable = true;
