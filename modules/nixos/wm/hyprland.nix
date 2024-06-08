@@ -1,15 +1,6 @@
 {pkgs, ...}: {
   services = {
     displayManager.defaultSession = "hyprland";
-    xserver = {
-      enable = true;
-      displayManager = {
-        gdm = {
-          wayland = true;
-          enable = true;
-        };
-      };
-    };
   };
 
   programs.hyprland = {

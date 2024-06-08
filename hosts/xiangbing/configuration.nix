@@ -166,6 +166,16 @@
       value = -20;
     }
   ];
+  # Basic display manager
+  xserver = {
+    enable = true;
+    displayManager = {
+      gdm = {
+        wayland = true;
+        enable = true;
+      };
+    };
+  };
 
   # ntfs
   boot.supportedFilesystems = ["ntfs"];
