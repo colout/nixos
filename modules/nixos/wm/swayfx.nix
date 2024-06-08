@@ -1,6 +1,6 @@
 {pkgs, ...}: {
-  programs.swayfx = {
-    package = pkgs.unstable.swayfx;
+  programs.swayfx-unwrapped = {
+    package = pkgs.unstable.swayfx-unwrapped;
     enable = true;
   };
 }
