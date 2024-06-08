@@ -115,7 +115,7 @@
     };
   };
 
-  services.displayManager.sessionPackages = [pkgs.sway];
+  services.xserver.displayManager.sessionPackages = [pkgs.sway];
 
   wayland.windowManager.sway = {
     checkConfig = false;
