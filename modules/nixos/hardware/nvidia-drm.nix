@@ -50,4 +50,9 @@
   };
 
   environment.systemPackages = with pkgs; [vaapiVdpau egl-wayland];
+
+  boot.kernelParams = [
+    "nvidia-drm.modeset=1"
+    "nvidia-drm.fbdev=1"
+  ];
 }
