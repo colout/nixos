@@ -5,7 +5,7 @@
   ...
 }: {
   services = {
-    displayManager.defaultSession = "hyprland";
+    displayManager.defaultSession = "sway";
   };
   programs.sway = {
     enable = true;
