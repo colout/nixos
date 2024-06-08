@@ -165,6 +165,9 @@
       value = -20;
     }
   ];
+
+  security.polkit.enable = true; # control system-wide privileges.  sway needs this
+
   # Basic display manager
   services.xserver = {
     enable = true;
