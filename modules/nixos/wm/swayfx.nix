@@ -41,6 +41,5 @@ lib.mkIf true {
     systemd.enable = true;
     xwayland = true;
     package = inputs.swayfx.packages.${pkgs.system}.default;
-    };
   };
 }
