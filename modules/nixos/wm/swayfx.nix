@@ -4,6 +4,9 @@
   lib,
   ...
 }: {
+  services = {
+    displayManager.defaultSession = "hyprland";
+  };
   programs.sway = {
     enable = true;
     extraPackages = with pkgs; [
