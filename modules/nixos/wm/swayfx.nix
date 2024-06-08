@@ -18,6 +18,6 @@
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
-    package = pkgs.swayfx-unwrapped;
+    package = pkgs.swayfx;
   };
 }
