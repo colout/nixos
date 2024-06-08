@@ -21,7 +21,7 @@
     extraOptions = ["--unsupported-gpu"];
     extraSessionCommands = ''
       export SDL_VIDEODRIVER=wayland
-      export WLR_RENDERER=vulkan
+      #export WLR_RENDERER=vulkan
       export WLR_NO_HARDWARE_CURSORS=1
       export XWAYLAND_NO_GLAMOR=1
       export NIXOS_OZONE_WL=1
@@ -30,7 +30,6 @@
       export XCURSOR_THEME=phinger-cursors-light
       export HYPRCURSOR_THEME=phinger-cursors-light
       export HYPRCURSOR_SIZE=24
-      export
       export QT_QPA_PLATFORMTHEME=qt6ct
       export WLR_DRM_NO_ATOMIC=1 # remove after kernel 6.8
       export LIBVA_DRIVER_NAME=nvidia
