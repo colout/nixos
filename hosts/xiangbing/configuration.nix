@@ -171,7 +171,7 @@
     displayManager = {
       #gdm = {
       sddm = {
-        wayland = true;
+        wayland.enable = true;
         enable = true;
       };
     };
