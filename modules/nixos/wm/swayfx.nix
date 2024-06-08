@@ -5,7 +5,7 @@
   inputs,
   ...
 }:
-lib.mkIf true {
+lib.mkIf config.modules.swayfx.enable {
   home = {
     packages = with pkgs; [
       autotiling-rs
