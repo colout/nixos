@@ -13,7 +13,8 @@
     };
   };
 
-  programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.gnome.ksshaskpass.out}/bin/esshaskpass";
+  programs.ssh.askPassword = pkgs.lib.mkForce "${pkgs.ksshaskpass.out}/bin/esshaskpass"; # required to coexist with gnome
+
   environment.systemPackages = with pkgs.unstable; [
     libsForQt5.dolphin
     kdePackages.dolphin
