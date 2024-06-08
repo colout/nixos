@@ -5,7 +5,6 @@
 }: {
   services.xserver.excludePackages = [pkgs.xterm];
 
-{
     environment.systempackages = with pkgs; [
       swaybg
       waybar
