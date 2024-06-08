@@ -64,12 +64,14 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  security.polkit.enable = true; # control system-wide privileges.  sway needs this
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
