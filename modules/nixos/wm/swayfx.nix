@@ -7,7 +7,7 @@
 }:
 lib.mkIf true {
   systemd.user.targets.hyprland-session.Unit.Wants = ["xdg-desktop-autostart.target"];
-  wayland.windowManager.sway = with config.colorscheme.palette; {
+  wayland.windowManager.sway = {
     enable = true;
     systemd.enable = true;
     xwayland = true;
