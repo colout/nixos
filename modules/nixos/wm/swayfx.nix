@@ -15,14 +15,10 @@
     brightnessctl
   ];
 
-  programs.swaylock.enable = true;
-  services.swayidle.enable = true;
-  services.swayosd.enable = true;
-
-  wayland.windowManager.sway = {
+  # enable sway window manager
+  programs.sway = {
     enable = true;
-    package = pkgs.swayfx;
     wrapperFeatures.gtk = true;
-    wrapperFeatures.base = true;
+    package = pkgs.swayfx;
   };
 }
