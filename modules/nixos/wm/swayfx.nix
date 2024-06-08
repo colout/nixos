@@ -7,6 +7,10 @@
   services = {
     displayManager.defaultSession = "sway";
   };
+
+  hardware.opengl.extraPackages = with pkgs; [
+    vulkan-validation-layers
+  ];
   programs.sway = {
     enable = true;
     extraPackages = with pkgs; [
