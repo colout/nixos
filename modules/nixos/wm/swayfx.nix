@@ -5,13 +5,8 @@
 }: {
   services.xserver.excludePackages = [pkgs.xterm];
 
-  home-manager.users.jabbu = {
-    pkgs,
-    config,
-    lib,
-    ...
-  }: {
-    home.packages = with pkgs; [
+{
+    environment.systempackages = with pkgs; [
       swaybg
       waybar
       mako
