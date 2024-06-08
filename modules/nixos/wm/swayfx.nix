@@ -13,6 +13,7 @@
       wl-clipboard
       wf-recorder
     ];
+    package = pkgs.swayfx;
     extraOptions = ["--unsupported-gpu"];
     extraSessionCommands = ''
       export SDL_VIDEODRIVER=wayland
