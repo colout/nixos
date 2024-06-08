@@ -118,6 +118,7 @@
   wayland.windowManager.sway = {
     enable = true;
     wrapperFeatures.gtk = true; # so that gtk works properly
+    package = pkgs.sway;
     config = rec {
       modifier = "Mod4";
       # Use kitty as default terminal
