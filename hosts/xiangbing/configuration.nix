@@ -169,8 +169,7 @@
   services.xserver = {
     enable = true;
     displayManager = {
-      #gdm = {
-      sddm = {
+      gdm = {
         wayland.enable = true;
         enable = true;
       };
