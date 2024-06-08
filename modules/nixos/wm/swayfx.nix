@@ -19,5 +19,6 @@
     enable = true;
     wrapperFeatures.gtk = true;
     package = pkgs.swayfx;
+    portalPackage = pkgs.xdg-desktop-portal-wlr;
   };
 }
