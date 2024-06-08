@@ -95,6 +95,7 @@
     godot_4
     blender
     vivaldi
+    wezterm
   ];
 
   # Let Home Manager install and manage itself.
