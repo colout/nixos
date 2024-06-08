@@ -114,18 +114,4 @@
       gtk-theme = "Tokyonight-Dark-BL-LB";
     };
   };
-
-  wayland.windowManager.sway = {
-    enable = true;
-    package = pkgs.swayfx-unwrapped;
-    config = rec {
-      modifier = "Mod4";
-      # Use kitty as default terminal
-      terminal = "kitty";
-      startup = [
-        # Launch Firefox on start
-        {command = "firefox";}
-      ];
-    };
-  };
 }
