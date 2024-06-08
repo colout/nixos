@@ -19,6 +19,9 @@
       # url = "github:nix-community/nixvim/nixos-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hyprland.url = "github:hyprwm/Hyprland";
+
     swayfx.url = "github:WillPower3309/swayfx";
   };
 
