@@ -27,7 +27,6 @@
     self,
     nixpkgs,
     home-manager,
-    hyprland,
     swayfx,
     ...
   } @ inputs: let
