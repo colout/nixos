@@ -13,6 +13,7 @@
       wl-clipboard
       wf-recorder
     ];
+    extraOptions = ["--unsupported-gpu"];
     extraSessionCommands = ''
       export SDL_VIDEODRIVER=wayland
       export QT_QPA_PLATFORM=wayland
