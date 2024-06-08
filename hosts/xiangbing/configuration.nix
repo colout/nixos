@@ -167,7 +167,7 @@
     }
   ];
   # Basic display manager
-  services.displayManager = {
+  services.xserver = {
     enable = true;
     displayManager = {
       gdm = {
