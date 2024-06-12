@@ -42,7 +42,7 @@
     gcc
     nodePackages.jsonlint
     sqlfluff
-    python3.withPackages
+    python3
     julia
     gopls
     go
