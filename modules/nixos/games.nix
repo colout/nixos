@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   programs = {
     steam = {
       enable = true;
@@ -11,7 +11,7 @@
     gamemode = {
       enable = true;
       enableRenice = true;
-      settings = { general = { renice = 19; }; };
+      settings = {general = {renice = 19;};};
     };
   };
 
@@ -33,6 +33,11 @@
       extraLibraries = pkgs: [
         appimage-run # for rcps3
         fuse
+        (wineWowPackages.waylandFull.override {
+          #wineRelease = "staging";
+          wineRelease = "unstable";
+          mingwSupport = true;
+        })
       ];
     })
 
