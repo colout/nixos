@@ -18,7 +18,7 @@
       driSupport = true;
 
       # in https://github.com/lutris/docs/blob/master/InstallingDrivers.md#renderer-configuration-opengl-vulkan
-      hardware.opengl.extraPackages = with pkgs; [
+      extraPackages = with pkgs; [
         rocm-opencl-icd
         rocm-opencl-runtime
       ];
