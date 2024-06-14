@@ -16,6 +16,12 @@
     opengl = {
       enable = true;
       driSupport = true;
+
+      # in https://github.com/lutris/docs/blob/master/InstallingDrivers.md#renderer-configuration-opengl-vulkan
+      hardware.opengl.extraPackages = with pkgs; [
+        rocm-opencl-icd
+        rocm-opencl-runtime
+      ];
     };
 
     nvidia = {
@@ -45,7 +51,10 @@
       #
       #        patches = [ rcu_patch ];
       #      };
-      open = false;
+
+      # Use the NVidia open source kernel module (not to be confused with the
+      # independent third-party "nouveau" open source driver).
+      open = true;
     };
   };
 
