@@ -5,6 +5,9 @@
 }: {
   services.xserver = {videoDrivers = ["nvidia"];};
 
+  boot.initrd.kernelModules = ["nvidia"];
+  boot.blacklistedKernelModules = ["nouveau"];
+
   environment.variables = {
     GBM_BACKEND = "nvidia-drm";
     LIBVA_DRIVER_NAME = "nvidia";
