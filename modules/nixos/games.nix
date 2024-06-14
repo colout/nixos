@@ -33,11 +33,6 @@
       extraLibraries = pkgs: [
         appimage-run # for rcps3
         fuse
-        (wineWowPackages.waylandFull.override {
-          #wineRelease = "staging";
-          wineRelease = "unstable";
-          mingwSupport = true;
-        })
       ];
     })
 
