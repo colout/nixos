@@ -33,6 +33,8 @@
       extraLibraries = pkgs: [
         appimage-run # for rcps3
         fuse
+        # proton-ge-bin
+        protonup-qt
       ];
     })
 

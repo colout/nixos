@@ -90,7 +90,7 @@
     tokyo-night-gtk
     material-cursors
     mc
-    floorp
+    #floorp
     chromium
     htop
     obsidian
