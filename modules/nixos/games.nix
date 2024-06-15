@@ -29,12 +29,12 @@
     winetricks
     discord
     appimage-run
+    protonup-qt
     (lutris.override {
       extraLibraries = pkgs: [
         appimage-run # for rcps3
         fuse
         # proton-ge-bin
-        protonup-qt
       ];
     })
 
