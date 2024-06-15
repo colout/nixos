@@ -34,7 +34,18 @@
       extraLibraries = pkgs: [
         appimage-run # for rcps3
         fuse
-        # proton-ge-bin
+
+        # from https://github.com/NixOS/nixpkgs/issues/162562#issuecomment-1229444338
+        xorg.libXcursor
+        xorg.libXi
+        xorg.libXinerama
+        xorg.libXScrnSaver
+        libpng
+        libpulseaudio
+        libvorbis
+        stdenv.cc.cc.lib
+        libkrb5
+        keyutils # proton-ge-bin
       ];
     })
 
