@@ -23,6 +23,9 @@
         rocm-opencl-runtime
       ];
       enable = true;
+    };
+
+    opengl = {
       driSupport32Bit = true;
     };
 
