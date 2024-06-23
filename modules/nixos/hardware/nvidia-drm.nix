@@ -18,7 +18,6 @@
   hardware = {
     opengl = {
       enable = true;
-      driSupport = true;
       driSupport32Bit = true;
 
       # in https://github.com/lutris/docs/blob/master/InstallingDrivers.md#renderer-configuration-opengl-vulkan
