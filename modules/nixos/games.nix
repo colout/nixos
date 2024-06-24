@@ -15,8 +15,6 @@
     };
   };
 
-  hardware.opengl.driSupport32Bit = true;
-
   environment.systemPackages = with pkgs; [
     (wineWowPackages.waylandFull.override {
       #wineRelease = "staging";
