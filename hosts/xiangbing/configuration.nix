@@ -20,7 +20,6 @@
     ../../modules/nixos/boot/grub.nix
     ../../modules/nixos/appimage-run-wrapper.nix
     #../../modules/nixos/hardware/nvidia-nvk.nix
-    ../../modules/openvpn.nix
   ];
 
   # Kernel
