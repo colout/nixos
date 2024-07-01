@@ -31,6 +31,7 @@
       modesetting.enable = true;
       powerManagement.enable = false;
 
+      # https://discourse.nixos.org/t/advice-on-improving-my-nvidia-nix-file/48110/6
       package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
         version = "555.58";
         sha256_64bit = "sha256-bXvcXkg2kQZuCNKRZM5QoTaTjF4l2TtrsKUvyicj5ew=";
