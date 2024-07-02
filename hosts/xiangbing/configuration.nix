@@ -125,7 +125,7 @@
     devenv
     distrobox
     boxbuddy
-    docker
+    podman
   ];
 
   console = {
