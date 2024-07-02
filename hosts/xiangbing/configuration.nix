@@ -123,6 +123,7 @@
     inotify-tools
     zip
     devenv
+    distrobox
   ];
 
   console = {
