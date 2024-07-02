@@ -125,6 +125,7 @@
     devenv
     distrobox
     boxbuddy
+    docker
   ];
 
   console = {
