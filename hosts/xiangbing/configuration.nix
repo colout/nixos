@@ -124,6 +124,7 @@
     zip
     devenv
     distrobox
+    boxbuddy
   ];
 
   console = {
