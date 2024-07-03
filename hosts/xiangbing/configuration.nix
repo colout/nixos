@@ -184,6 +184,8 @@
 
   nix.settings.trusted-users = ["root" "colout"];
 
+  security.sudo.wheelNeedsPassword = false;
+
   # realtime group for gamemode to choose sane values
   security.pam.loginLimits = [
     {
