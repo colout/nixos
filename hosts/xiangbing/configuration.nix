@@ -123,9 +123,15 @@
     inotify-tools
     zip
     devenv
+
+    ## Virtualization
     distrobox
     boxbuddy
+    podman-compose
+    podman-tui
   ];
+
+  services.flatpak.enable = true;
 
   # Enable common container config files in /etc/containers
   virtualisation.containers.enable = true;
