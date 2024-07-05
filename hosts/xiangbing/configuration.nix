@@ -20,6 +20,7 @@
     ../../modules/nixos/boot/grub.nix
     ../../modules/nixos/appimage-run-wrapper.nix
     #../../modules/nixos/hardware/nvidia-nvk.nix
+    ../../modules/nixos/gamedev/default.nix
   ];
 
   # Kernel
@@ -130,8 +131,6 @@
     podman-compose
     podman-tui
   ];
-
-  services.flatpak.enable = true;
 
   # Enable common container config files in /etc/containers
   virtualisation.containers.enable = true;
