@@ -20,6 +20,10 @@ in {
 
       packages = [
         {
+          appId = "com.obsproject.Studio";
+          origin = "flathub";
+        }
+        {
           appId = "io.github.achetagames.epic_asset_manager";
           origin = "flathub";
         }
