@@ -55,9 +55,10 @@
     #rpcs3
     xemu
 
-    # for remapping gamepads
+    # for remapping gamepads...this is a graveyard
     #input-remapper
     #moltengamepad
-    qjoypad
+    #qjoypad
+    antimicrox
   ];
 }
