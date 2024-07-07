@@ -57,5 +57,6 @@
 
     # for remapping gamepads
     input-remapper
+    polkit_gnome # workaround for polkit error with input-remapper
   ];
 }
