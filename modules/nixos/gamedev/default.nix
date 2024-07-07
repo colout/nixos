@@ -4,7 +4,7 @@
   ...
 }: {
   nixpkgs.overlays = [
-    outputs.overlays.additions
+    #outputs.overlays.additions
     outputs.overlays.packages-stable
   ];
 
