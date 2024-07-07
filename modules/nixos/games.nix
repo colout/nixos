@@ -57,6 +57,7 @@
 
     # for remapping gamepads
     #input-remapper
-    moltengamepad
+    #moltengamepad
+    inputplumber
   ];
 }
