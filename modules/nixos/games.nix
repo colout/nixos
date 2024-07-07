@@ -58,7 +58,4 @@
     # for remapping gamepads
     polkit_gnome # workaround for polkit error with input-remapper
   ];
-
-  # For hosas xbox one emulation
-  hardware.xpadneo.enable = true;
 }
