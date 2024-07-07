@@ -8,7 +8,7 @@
   ];
 
   environment.systemPackages = [
-    pkgs.additions.terraform-graph-beautifier
+    pkgs.modifications.terraform-graph-beautifier
   ];
 
   # for manually installing ue5's epic asset manager with:
