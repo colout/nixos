@@ -54,5 +54,8 @@
     dolphin-emu
     #rpcs3
     xemu
+
+    # for remapping gamepads
+    input-remapper
   ];
 }
