@@ -195,8 +195,7 @@
     }
   ];
 
-  #security.polkit.enable = true; # control system-wide privileges.  sway needs this
-  security.polkit.enable = false; # input remapper fails with polkit
+  security.polkit.enable = true; # control system-wide privileges.  sway needs this
 
   # Basic display manager
   services.xserver = {

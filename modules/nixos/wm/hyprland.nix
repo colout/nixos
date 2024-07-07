@@ -50,6 +50,9 @@
 
       # Themes
       gnome.dconf-editor
+
+      # for polkit authentication https://www.reddit.com/r/NixOS/comments/171mexa/polkit_on_hyprland/
+      lxqt.lxqt-policykit
     ];
   };
 
