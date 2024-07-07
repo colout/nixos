@@ -56,6 +56,7 @@
     xemu
 
     # for remapping gamepads
-    input-remapper
+    #input-remapper
+    moltengamepad
   ];
 }
