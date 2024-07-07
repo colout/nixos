@@ -58,6 +58,6 @@
     # for remapping gamepads
     #input-remapper
     #moltengamepad
-    inputplumber
+    qjoypad
   ];
 }
