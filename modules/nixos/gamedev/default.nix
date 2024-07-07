@@ -4,13 +4,11 @@
   ...
 }: {
   nixpkgs.overlays = [
-    #outputs.overlays.additions
-    outputs.overlays.packages-stable
+    outputs.overlays.additions
   ];
 
   environment.systemPackages = [
-    #pkgs.stable.terraform
-    pkgs.terraform-graph-beautifier
+    pkgs.ue5_4_2
   ];
 
   # for manually installing ue5's epic asset manager with:
