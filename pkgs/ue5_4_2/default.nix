@@ -9,6 +9,7 @@
   which,
   xorg,
   xdg-user-dirs,
+  ...
 }: let
   inherit (stdenv) lib;
   libPath = lib.makeLibraryPath [
