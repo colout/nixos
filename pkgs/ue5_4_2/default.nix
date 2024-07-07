@@ -11,15 +11,6 @@
   xdg-user-dirs,
 }: let
   inherit (stdenv) lib;
-  deps = import ./cdn-deps.nix {inherit fetchurl;};
-  linkDeps = writeScript "link-deps.sh" (lib.concatMapStringsSep "\n" (
-    hash: let
-      prefix = lib.concatStrings (lib.take 2 (lib.stringToCharacters hash));
-    in ''
-      mkdir -p .git/ue4-gitdeps/${prefix}
-      ln -s ${lib.getAttr hash deps} .git/ue4-gitdeps/${prefix}/${hash}
-    ''
-  ) (lib.attrNames deps));
   libPath = lib.makeLibraryPath [
     xorg.libX11
     xorg.libXScrnSaver
@@ -47,8 +38,6 @@ in
       ${unzip}/bin/unzip $src
     '';
     configurePhase = ''
-      ${linkDeps}
-
       # Sometimes mono segfaults and things start downloading instead of being
       # deterministic. Let's just fail in that case.
       export http_proxy="nodownloads"
