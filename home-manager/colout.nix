@@ -92,7 +92,6 @@
     htop
     obsidian
     godot_4
-    blender
     vivaldi
     wezterm
   ];
