@@ -88,12 +88,12 @@
     material-cursors
     mc
     #floorp
-    chromium
+    #chromium
     htop
-    obsidian
-    godot_4
+    #obsidian
+    #godot_4
     vivaldi
-    wezterm
+    #wezterm
   ];
 
   # Let Home Manager install and manage itself.
