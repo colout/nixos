@@ -16,7 +16,7 @@
     #../../modules/nixos/wm/kde.nix
     #../../modules/nixos/wm/gnome.nix
     #../../modules/nixos/hardware/nvidia-drm.nix
-    #../../modules/nixos/boot/grub.nix
+    ../../modules/nixos/boot/grub.nix
     #../../modules/nixos/appimage-run-wrapper.nix
     #../../modules/nixos/hardware/nvidia-nvk.nix
     #../../modules/nixos/gamedev/default.nix
