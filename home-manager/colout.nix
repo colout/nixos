@@ -24,27 +24,27 @@
     # nvim stuff
 
     # nvim telescope
-    fzf
-    fd
-
-    # nvim lsp
-    stylua
-    nil
-    lua-language-server
-    luarocks
-    clang-tools
-    terraform
-    alejandra
-    pgformatter
-    prettierd
-    statix
-    nixfmt-classic
-    gcc
-    nodePackages.jsonlint
-    sqlfluff
-    julia
-    gopls
-    go
+    #    fzf
+    #    fd
+    #
+    #    # nvim lsp
+    #    stylua
+    #    nil
+    #    lua-language-server
+    #    luarocks
+    #    clang-tools
+    #    terraform
+    #    alejandra
+    #    pgformatter
+    #    prettierd
+    #    statix
+    #    nixfmt-classic
+    #    gcc
+    #    nodePackages.jsonlint
+    #    sqlfluff
+    #    julia
+    #    gopls
+    #    go
 
     # end nvim stuff
 
