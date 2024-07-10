@@ -20,7 +20,7 @@
     ../../modules/nixos/boot/grub.nix
     ../../modules/nixos/appimage-run-wrapper.nix
     #../../modules/nixos/hardware/nvidia-nvk.nix
-    ../../modules/nixos/gamedev/default.nix
+    #../../modules/nixos/gamedev/default.nix
   ];
 
   # Kernel
