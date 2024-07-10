@@ -82,7 +82,7 @@
     #font-manager
     zsh
     thefuck
-    cartridges
+    #cartridges
     nightfox-gtk-theme
     tokyo-night-gtk
     material-cursors
