@@ -21,7 +21,7 @@
       wineRelease = "unstable";
       mingwSupport = true;
     })
-    bottles
+    #bottles
 
     mangohud
     winetricks
