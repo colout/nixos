@@ -13,8 +13,8 @@
   imports = [
     ../../modules/nixos/wm/hyprland.nix
     #../../modules/nixos/wm/swayfx.nix
-    #../../modules/nixos/games.nix
-    ../../modules/nixos/wm/kde.nix
+    ../../modules/nixos/games.nix
+    #../../modules/nixos/wm/kde.nix
     #../../modules/nixos/wm/gnome.nix
     ../../modules/nixos/hardware/nvidia-drm.nix
     ../../modules/nixos/boot/grub.nix
