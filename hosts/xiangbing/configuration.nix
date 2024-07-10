@@ -125,10 +125,10 @@
     devenv
 
     ## Virtualization
-    distrobox
-    boxbuddy
-    podman-compose
-    podman-tui
+    #distrobox
+    #boxbuddy
+    #podman-compose
+    #podman-tui
   ];
 
   # Enable common container config files in /etc/containers
