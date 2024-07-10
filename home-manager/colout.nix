@@ -81,7 +81,7 @@
     wl-clipboard
     #font-manager
     zsh
-    thefuck
+    #thefuck
     #cartridges
     nightfox-gtk-theme
     tokyo-night-gtk
