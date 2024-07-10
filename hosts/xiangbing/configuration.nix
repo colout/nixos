@@ -114,106 +114,106 @@
   programs.zsh.enable = true;
   environment.systemPackages = with pkgs; [
     neovim
-#    tmux
-#    wget
-#    ksystemlog
-#    zsh
-#    autofs5
-#    wayvnc
-#    nix-index
-#    inotify-tools
-#    zip
-#    devenv
-#
-#    ## Virtualization
-#    distrobox
-#    boxbuddy
-#    podman-compose
-#    podman-tui
+    #    tmux
+    #    wget
+    #    ksystemlog
+    #    zsh
+    #    autofs5
+    #    wayvnc
+    #    nix-index
+    #    inotify-tools
+    #    zip
+    #    devenv
+    #
+    #    ## Virtualization
+    #    distrobox
+    #    boxbuddy
+    #    podman-compose
+    #    podman-tui
   ];
 
-#  # Enable common container config files in /etc/containers
-#  virtualisation.containers.enable = true;
-#  virtualisation = {
-#    podman = {
-#      enable = true;
-#
-#      # Create a `docker` alias for podman, to use it as a drop-in replacement
-#      dockerCompat = true;
-#
-#      # Required for containers under podman-compose to be able to talk to each other.
-#      defaultNetwork.settings.dns_enabled = true;
-#    };
-#  };
-#
-#  console = {
-#    #packages = [pkgs.terminus_font];
-#    #font = "${pkgs.terminus_font}/share/consolefonts/ter-i22b.psf.gz";
-#    useXkbConfig = true;
-#  };
-#
-#  fonts = {
-#    packages = with pkgs; [
-#      noto-fonts
-#      noto-fonts-cjk
-#      noto-fonts-emoji
-#      font-awesome
-#      (nerdfonts.override {fonts = ["Meslo"];})
-#    ];
-#    fontconfig = {
-#      enable = true;
-#      defaultFonts = {
-#        monospace = ["Meslo LG M Regular Nerd Font Complete Mono"];
-#        serif = ["Noto Serif"];
-#        sansSerif = ["Noto Sans"];
-#      };
-#    };
-#  };
-#
-#  fileSystems."/mnt/media" = {
-#    device = "//192.168.10.10/media";
-#    fsType = "cifs";
-#    options = let
-#      # this line prevents hanging on network split
-#      automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
-#    in ["${automount_opts},credentials=/etc/nixos/smb-secrets,rw,uid=1000"];
-#  };
-#
-#  # cachix requires you to be a trusted user
-#
-#  nix.settings.trusted-users = ["root" "colout"];
-#
-#  security.sudo.wheelNeedsPassword = false;
-#
-#  # realtime group for gamemode to choose sane values
-#  security.pam.loginLimits = [
-#    {
-#      domain = "@wheel";
-#      type = "-";
-#      item = "nice";
-#      value = -20;
-#    }
-#  ];
-#
-#  security.polkit.enable = true; # control system-wide privileges.  sway needs this
-#
-#  # Basic display manager
-#  services.xserver = {
-#    enable = true;
-#    displayManager = {
-#      gdm = {
-#        wayland = true;
-#        enable = true;
-#      };
-#    };
-#  };
-#
-#  # ntfs
-#  boot.supportedFilesystems = ["ntfs"];
-#
-#  fileSystems."/mnt/ntfs" = {
-#    device = "/dev/disk/by-uuid/A21677F91677CD33";
-#    fsType = "ntfs-3g";
-#    options = ["r" "uid=1000"];
-#  };
-#}
+  #  # Enable common container config files in /etc/containers
+  #  virtualisation.containers.enable = true;
+  #  virtualisation = {
+  #    podman = {
+  #      enable = true;
+  #
+  #      # Create a `docker` alias for podman, to use it as a drop-in replacement
+  #      dockerCompat = true;
+  #
+  #      # Required for containers under podman-compose to be able to talk to each other.
+  #      defaultNetwork.settings.dns_enabled = true;
+  #    };
+  #  };
+  #
+  #  console = {
+  #    #packages = [pkgs.terminus_font];
+  #    #font = "${pkgs.terminus_font}/share/consolefonts/ter-i22b.psf.gz";
+  #    useXkbConfig = true;
+  #  };
+  #
+  #  fonts = {
+  #    packages = with pkgs; [
+  #      noto-fonts
+  #      noto-fonts-cjk
+  #      noto-fonts-emoji
+  #      font-awesome
+  #      (nerdfonts.override {fonts = ["Meslo"];})
+  #    ];
+  #    fontconfig = {
+  #      enable = true;
+  #      defaultFonts = {
+  #        monospace = ["Meslo LG M Regular Nerd Font Complete Mono"];
+  #        serif = ["Noto Serif"];
+  #        sansSerif = ["Noto Sans"];
+  #      };
+  #    };
+  #  };
+  #
+  #  fileSystems."/mnt/media" = {
+  #    device = "//192.168.10.10/media";
+  #    fsType = "cifs";
+  #    options = let
+  #      # this line prevents hanging on network split
+  #      automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+  #    in ["${automount_opts},credentials=/etc/nixos/smb-secrets,rw,uid=1000"];
+  #  };
+  #
+  #  # cachix requires you to be a trusted user
+  #
+  #  nix.settings.trusted-users = ["root" "colout"];
+  #
+  #  security.sudo.wheelNeedsPassword = false;
+  #
+  #  # realtime group for gamemode to choose sane values
+  #  security.pam.loginLimits = [
+  #    {
+  #      domain = "@wheel";
+  #      type = "-";
+  #      item = "nice";
+  #      value = -20;
+  #    }
+  #  ];
+  #
+  #  security.polkit.enable = true; # control system-wide privileges.  sway needs this
+  #
+  #  # Basic display manager
+  #  services.xserver = {
+  #    enable = true;
+  #    displayManager = {
+  #      gdm = {
+  #        wayland = true;
+  #        enable = true;
+  #      };
+  #    };
+  #  };
+  #
+  #  # ntfs
+  #  boot.supportedFilesystems = ["ntfs"];
+  #
+  #  fileSystems."/mnt/ntfs" = {
+  #    device = "/dev/disk/by-uuid/A21677F91677CD33";
+  #    fsType = "ntfs-3g";
+  #    options = ["r" "uid=1000"];
+  #  };
+}
