@@ -12,12 +12,12 @@
 
   imports = [
     ../../modules/nixos/wm/hyprland.nix
-    ../../modules/nixos/games.nix
-    ../../modules/nixos/wm/kde.nix
+    #../../modules/nixos/games.nix
+    #../../modules/nixos/wm/kde.nix
     #../../modules/nixos/wm/gnome.nix
     ../../modules/nixos/hardware/nvidia-drm.nix
     ../../modules/nixos/boot/grub.nix
-    ../../modules/nixos/appimage-run-wrapper.nix
+    #../../modules/nixos/appimage-run-wrapper.nix
     #../../modules/nixos/hardware/nvidia-nvk.nix
     #../../modules/nixos/gamedev/default.nix
   ];
@@ -125,25 +125,25 @@
     devenv
 
     ## Virtualization
-    #distrobox
-    #boxbuddy
-    #podman-compose
-    #podman-tui
+    distrobox
+    boxbuddy
+    podman-compose
+    podman-tui
   ];
 
   # Enable common container config files in /etc/containers
-  #virtualisation.containers.enable = true;
-  #virtualisation = {
-  #  podman = {
-  #    enable = true;
+  virtualisation.containers.enable = true;
+  virtualisation = {
+    podman = {
+      enable = true;
 
-  #    # Create a `docker` alias for podman, to use it as a drop-in replacement
-  #    dockerCompat = true;
+      # Create a `docker` alias for podman, to use it as a drop-in replacement
+      dockerCompat = true;
 
-  #    # Required for containers under podman-compose to be able to talk to each other.
-  #    defaultNetwork.settings.dns_enabled = true;
-  #  };
-  #};
+      # Required for containers under podman-compose to be able to talk to each other.
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  };
 
   console = {
     #packages = [pkgs.terminus_font];
