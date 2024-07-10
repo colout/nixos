@@ -13,14 +13,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      # url = "github:nix-community/nixvim/nixos-23.11";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    swayfx.url = "github:WillPower3309/swayfx";
+    #swayfx.url = "github:WillPower3309/swayfx";
   };
 
   outputs = {
