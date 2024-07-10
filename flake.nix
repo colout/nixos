@@ -13,14 +13,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    #swayfx.url = "github:WillPower3309/swayfx";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
-    swayfx,
     ...
   } @ inputs: let
     inherit (self) outputs;
