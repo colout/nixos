@@ -47,7 +47,7 @@
       ];
     })
 
-    dwarf-fortress-packages.dwarf-fortress-full
+    #dwarf-fortress-packages.dwarf-fortress-full
     superTux
     superTuxKart
     freeciv
