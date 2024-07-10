@@ -118,12 +118,12 @@
     wget
     ksystemlog
     zsh
-    autofs5
+    #autofs5
     wayvnc
     nix-index
     inotify-tools
     zip
-    devenv
+    #devenv
 
     ## Virtualization
     distrobox
