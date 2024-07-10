@@ -114,22 +114,22 @@
   programs.zsh.enable = true;
   environment.systemPackages = with pkgs; [
     neovim
-    #    tmux
-    #    wget
-    #    ksystemlog
-    #    zsh
-    #    autofs5
-    #    wayvnc
-    #    nix-index
-    #    inotify-tools
-    #    zip
-    #    devenv
-    #
-    #    ## Virtualization
-    #    distrobox
-    #    boxbuddy
-    #    podman-compose
-    #    podman-tui
+    tmux
+    wget
+    ksystemlog
+    zsh
+    autofs5
+    wayvnc
+    nix-index
+    inotify-tools
+    zip
+    devenv
+
+    ## Virtualization
+    distrobox
+    boxbuddy
+    podman-compose
+    podman-tui
   ];
 
   # Enable common container config files in /etc/containers
