@@ -24,6 +24,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
 
+  boot.kernelPackages = pkgs.stable.linuxPackages_6_9; # use stable when nvidia drivers get borked
 
   networking.hostName = "minilab01"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
