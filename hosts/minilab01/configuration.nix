@@ -5,6 +5,12 @@
 { config, pkgs, ... }:
 
 {
+  # Enable overlays
+  nixpkgs.overlays = [
+    outputs.overlays.packages-stable
+    outputs.overlays.packages-unstable
+  ];
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -13,6 +19,10 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  boot.kernelPackages =
+    pkgs.stable.linuxPackages_6_9; # use stable when nvidia drivers get borked
+
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
