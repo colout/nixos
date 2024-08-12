@@ -117,6 +117,7 @@
     #packages = [pkgs.terminus_font];
     #font = "${pkgs.terminus_font}/share/consolefonts/ter-i22b.psf.gz";
     useXkbConfig = true;
+  };
 
   system.stateVersion = "24.05"; # Did you read the comment?
 
