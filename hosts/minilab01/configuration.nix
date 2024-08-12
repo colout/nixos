@@ -24,7 +24,7 @@
     pkgs.stable.linuxPackages_6_9; # use stable when nvidia drivers get borked
 
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "minilab01"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
