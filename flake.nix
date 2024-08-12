@@ -54,7 +54,7 @@
           {
             home-manager = {
               extraSpecialArgs = {inherit inputs;};
-              users = {"colout" = import ./home-manager/colout.nix;};
+              users = {"colout" = import ./home-manager/colout-minimal.nix;};
             };
           }
         ];
