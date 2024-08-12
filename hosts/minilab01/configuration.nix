@@ -5,11 +5,6 @@
 { config, pkgs, ... }:
 
 {
-  # Enable overlays
-  nixpkgs.overlays = [
-    outputs.overlays.packages-stable
-    outputs.overlays.packages-unstable
-  ];
 
   imports =
     [ # Include the results of the hardware scan.
