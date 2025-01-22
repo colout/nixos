@@ -17,7 +17,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      #../../modules/nixos/hardware/amd-gpu.nix
+      ../../modules/nixos/hardware/amd-gpu.nix
     ];
 
   # Bootloader.
@@ -99,7 +99,7 @@
 
   services.ollama = {
     enable = true;
-    acceleration = "rocm";
+    #acceleration = "rocm";
   };
 
   # Enable common container config files in /etc/containers
