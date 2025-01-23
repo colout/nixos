@@ -100,7 +100,7 @@
   ];
 
   services.ollama = {
-    package = pkgs.stable.ollama;
+    package = pkgs.stable.ollama; # TODO: shouldn't be stable but rocm build temporarily broken it seems
     enable = true;
     acceleration = "rocm";
   };
