@@ -98,10 +98,10 @@
   ];
 
   services.ollama = {
-    package = pkgs.stable.ollama; # TODO: shouldn't be stable but rocm build temporarily broken it seems
     enable = true;
     host = "0.0.0.0";
-    acceleration = "rocm";
+    #acceleration = "rocm";
+    #package = pkgs.stable.ollama; # TODO: shouldn't be stable but rocm build temporarily broken it seems
   };
 
   # Enable common container config files in /etc/containers
