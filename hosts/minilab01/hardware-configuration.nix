@@ -32,6 +32,8 @@
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
   networking.interfaces.enp1s0.useDHCP = lib.mkDefault true;
+  networking.enableIPv6 = false;
+
 
   # networking.interfaces.enp1s0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp2s0.useDHCP = lib.mkDefault true;
