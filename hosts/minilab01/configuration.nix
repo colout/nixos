@@ -46,6 +46,8 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.enableIPv6  = false;
+
 
   # Set your time zone.
   time.timeZone = "America/New_York";
