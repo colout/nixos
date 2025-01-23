@@ -91,6 +91,7 @@
     zsh
     nix-index
     zip
+    atop
 
     ## Virtualization
     podman-compose
@@ -100,8 +101,6 @@
   services.ollama = {
     enable = true;
     host = "0.0.0.0";
-    #acceleration = "rocm";
-    #package = pkgs.stable.ollama; # TODO: shouldn't be stable but rocm build temporarily broken it seems
   };
 
   # Enable common container config files in /etc/containers
