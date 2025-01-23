@@ -101,7 +101,7 @@
 
   services.ollama = {
     enable = true;
-    #acceleration = "rocm";
+    acceleration = "rocm";
   };
 
   # Enable common container config files in /etc/containers
