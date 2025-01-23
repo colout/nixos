@@ -47,6 +47,7 @@
   # Enable networking
   networking.networkmanager.enable = true;
   networking.enableIPv6  = false;
+  boot.kernel.sysctl."net.ipv6.conf.enp1s0.disable_ipv6" = true; # Disable ipv6 for a single interface
 
 
   # Set your time zone.
