@@ -12,6 +12,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
+  boot.kernelParams = ["ipv6.disable=1"];
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/e9fd2aca-4967-4270-9070-c0623a0c8a04";
@@ -33,6 +34,7 @@
   networking.useDHCP = lib.mkDefault true;
   networking.interfaces.enp1s0.useDHCP = lib.mkDefault true;
   networking.enableIPv6 = false;
+
 
 
   # networking.interfaces.enp1s0.useDHCP = lib.mkDefault true;
