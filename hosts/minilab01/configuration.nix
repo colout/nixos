@@ -100,7 +100,7 @@
   ];
 
   services.ollama = {
-    package = pkgs.ollama;
+    package = pkgs.stable.ollama;
     enable = true;
     acceleration = "rocm";
   };
