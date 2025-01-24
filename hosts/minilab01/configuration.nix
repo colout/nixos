@@ -117,6 +117,9 @@
     host = "0.0.0.0";
     acceleration = "rocm";
     rocmOverrideGfx = "11.0.3";
+    environmentVariables = {
+      HCC_AMDGPU_TARGET = "gfx1103"; # used to be necessary, but doesn't seem to anymore
+    };
     package = pkgs.stable.ollama; # TODO: shouldn't be stable but rocm build temporarily broken it seems
   };
 
