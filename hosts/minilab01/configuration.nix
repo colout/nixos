@@ -93,7 +93,7 @@
     zip
     atop
     htop
-    pkgs-stable.rocmPackages.rocminfo
+    rocmPackages.rocminfo
 
     ## Virtualization
     podman-compose
