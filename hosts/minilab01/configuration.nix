@@ -1,7 +1,6 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
 {
   pkgs,
   localPackages,
@@ -14,11 +13,11 @@
     outputs.overlays.packages-unstable
   ];
 
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../../modules/nixos/hardware/amd-gpu.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../../modules/nixos/hardware/amd-gpu.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -98,7 +97,7 @@
     podman-compose
     podman-tui
 
-    # vim stuff
+    # nvim stuff
     alejandra
     black
     hadolint
@@ -106,6 +105,7 @@
     stylua
     sql-formatter
     terraform
+    luarocks-nix
   ];
 
   services.ollama = {
@@ -151,6 +151,5 @@
 
   security.sudo.wheelNeedsPassword = false;
 
-  networking.firewall.enable  = false;
-  
+  networking.firewall.enable = false;
 }
