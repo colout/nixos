@@ -111,6 +111,7 @@
     lazygit
     nil
     yamllint
+    yaml-language-server
   ];
 
   #  services.ollama = {
