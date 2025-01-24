@@ -106,6 +106,7 @@
     sql-formatter
     terraform
     luarocks-nix
+    lazygit
   ];
 
   services.ollama = {
