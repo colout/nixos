@@ -38,7 +38,8 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  boot.kernelPackages = pkgs.stable.linuxPackages_latest;
+  #boot.kernelPackages = pkgs.stable.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "minilab01"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
