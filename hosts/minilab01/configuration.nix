@@ -119,8 +119,10 @@
     rocmOverrideGfx = "11.0.3";
     environmentVariables = {
       HCC_AMDGPU_TARGET = "gfx1103"; # used to be necessary, but doesn't seem to anymore
+      OLLAMA_FLASH_ATTENTION = "1";
       HSA_OVERRIDE_GFX_VERSION = "11.0.3";
       AMD_SERIALIZE_KERNEL = "3";
+      HSA_ENABLE_SDMA = "0";
     };
     package = pkgs.stable.ollama; # TODO: shouldn't be stable but rocm build temporarily broken it seems
   };
