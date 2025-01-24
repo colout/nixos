@@ -109,9 +109,8 @@
     lua51Packages.luarocks
     lazygit
     nil
-  ] ++ with pkgs-stable; [
-    rocmPackages.rocminfo
-    ];
+    stable.rocmPackages.rocminfo
+  ];
 
   services.ollama = {
     enable = true;
