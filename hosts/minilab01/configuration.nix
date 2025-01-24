@@ -107,6 +107,7 @@
     terraform
     lua51Packages.luarocks
     lazygit
+    nil
   ];
 
   services.ollama = {
