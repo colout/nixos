@@ -92,10 +92,20 @@
     nix-index
     zip
     atop
+    htop
 
     ## Virtualization
     podman-compose
     podman-tui
+
+    # vim stuff
+    alejandra
+    black
+    hadolint
+    prettierd
+    stylua
+    sql-formatter
+    terraform
   ];
 
   services.ollama = {
