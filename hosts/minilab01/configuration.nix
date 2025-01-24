@@ -117,6 +117,7 @@
     host = "0.0.0.0";
     acceleration = "rocm";
     rocmOverrideGfx = "11.0.3";
+    package = pkgs.stable.ollama; # TODO: shouldn't be stable but rocm build temporarily broken it seems
   };
 
   # Enable common container config files in /etc/containers
