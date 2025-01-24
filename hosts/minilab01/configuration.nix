@@ -110,6 +110,7 @@
     lua51Packages.luarocks
     lazygit
     nil
+    yamllint
   ];
 
   #  services.ollama = {
