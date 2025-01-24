@@ -124,7 +124,7 @@
       AMD_SERIALIZE_KERNEL = "3";
       HSA_ENABLE_SDMA = "0";
     };
-    package = pkgs.stable.ollama; # TODO: shouldn't be stable but rocm build temporarily broken it seems
+    package = pkgs.stable.ollama-rocm; # TODO: shouldn't be stable but rocm build temporarily broken it seems
   };
 
   # Enable common container config files in /etc/containers
