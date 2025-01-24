@@ -105,8 +105,7 @@
     stylua
     sql-formatter
     terraform
-    lua
-    luarocks
+    lua54Packages.luarocks
     lazygit
   ];
 
