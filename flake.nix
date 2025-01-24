@@ -5,7 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     #nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-23.11-darwin";
 
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixpkgs-24.05-darwin";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixpkgs-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
