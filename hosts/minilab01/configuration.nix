@@ -94,6 +94,7 @@
     atop
     htop
     stable.rocmPackages.rocminfo
+    rocm-opencl
 
     ## Virtualization
     podman-compose
