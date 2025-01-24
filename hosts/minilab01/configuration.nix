@@ -93,7 +93,6 @@
     zip
     atop
     htop
-    rocmPackages.rocminfo
 
     ## Virtualization
     podman-compose
@@ -110,7 +109,9 @@
     lua51Packages.luarocks
     lazygit
     nil
-  ];
+  ] ++ with pkgs-stable; [
+    rocmPackages.rocminfo
+    ];
 
   services.ollama = {
     enable = true;
