@@ -75,7 +75,7 @@
   users.users.colout = {
     isNormalUser = true;
     description = "colout";
-    extraGroups = ["networkmanager" "wheel" "storage"];
+    extraGroups = ["networkmanager" "wheel" "storage" "podman"];
     shell = pkgs.zsh;
     packages = with pkgs; [];
   };
