@@ -144,11 +144,10 @@
     };
   };
 
-  {
   systemd.user.services.local-ai-web-stack = {
     description = "Local AI Web Stack";
-    after = [ "network-online.target" ];
-    wants = [ "network-online.target" ];
+    after = ["network-online.target"];
+    wants = ["network-online.target"];
 
     serviceConfig = {
       ExecStart = "${pkgs.podman}/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up -d";
@@ -159,10 +158,9 @@
 
     # Ensure it starts at login for the user
     install = {
-      wantedBy = [ "default.target" ];
+      wantedBy = ["default.target"];
     };
   };
-}
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
