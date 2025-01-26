@@ -159,7 +159,7 @@
 
       # Run the service as colout user (important for rootless Podman)
       User = "colout";
-      Group = "colout";
+      Group = "podman";
     };
   };
 
