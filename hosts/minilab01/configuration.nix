@@ -144,14 +144,23 @@
     };
   };
 
-  systemd.services.local-ai-stack = {
-    script = "docker-compose -f /git/local-ai-web-stack/docker-compose.yaml";
-    wantedBy = ["multi-user.target"];
-    after = ["podman.service" "podman.socket"];
+  systemd.services."local-ai-web-stack" = {
+    description = "Local AI Web Stack Running in Podman";
+    after = ["network.target" "podman.service" "podman.socket"];
+    requires = ["podman.service"];
+
+    # Run as a specific user
     serviceConfig = {
-      WorkingDirectory = "~/git/local-ai-web-stack";
       User = "colout";
+      Group = "colout";
+      ExecStart = "/usr/bin/podman-compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up";
+      ExecStop = "/usr/bin/podman-compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml down";
+      Restart = "always";
+      WorkingDirectory = "/home/colout/git/local-ai-web-stack/";
+      Environment = "PODMAN_USERNS=keep-id";
     };
+
+    wantedBy = ["multi-user.target"];
   };
 
   # Enable the OpenSSH daemon.
