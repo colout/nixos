@@ -144,21 +144,22 @@
     };
   };
 
-  systemd.user.services.local-ai-web-stack = {
-    description = "Local AI Web Stack";
+  systemd.services.local-ai-web-stack = {
+    description = "Local AI Web Stack (Podman Compose)";
     after = ["network-online.target"];
     wants = ["network-online.target"];
+    wantedBy = ["multi-user.target"];
 
+    # Run as the colout user
     serviceConfig = {
       ExecStart = "${pkgs.podman}/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up -d";
       ExecStop = "${pkgs.podman}/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml down";
       Restart = "always";
       WorkingDirectory = "/home/colout/git/local-ai-web-stack";
-    };
 
-    # Ensure it starts at login for the user
-    install = {
-      wantedBy = ["default.target"];
+      # Run the service as colout user (important for rootless Podman)
+      User = "colout";
+      Group = "colout";
     };
   };
 
