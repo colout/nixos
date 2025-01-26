@@ -152,7 +152,7 @@
     # Run as a specific user
     serviceConfig = {
       User = "colout";
-      Group = "colout";
+      Group = "podman";
       ExecStart = "/usr/bin/podman-compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up";
       ExecStop = "/usr/bin/podman-compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml down";
       Restart = "always";
