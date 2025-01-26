@@ -152,7 +152,7 @@
     serviceConfig = {
       Type = "idle";
       User = "colout";
-      ExecStart = ''/run/current-system/sw/bin/podman compose -d -f /home/colout/git/local-ai-web-stack/docker-compose.yaml'';
+      ExecStart = ''/run/current-system/sw/bin/podman-compose -d -f /home/colout/git/local-ai-web-stack/docker-compose.yaml'';
     };
   };
 
