@@ -152,8 +152,8 @@
 
     # Run as the colout user
     serviceConfig = {
-      ExecStart = "${pkgs.podman}/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up -d";
-      ExecStop = "${pkgs.podman}/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml down";
+      ExecStart = "${pkgs.podman-compose}/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up -d";
+      ExecStop = "${pkgs.podman-compose}/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml down";
       Restart = "always";
       WorkingDirectory = "/home/colout/git/local-ai-web-stack";
 
