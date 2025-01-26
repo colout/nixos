@@ -150,7 +150,6 @@
     after = ["podman.service" "podman.socket"];
     serviceConfig = {
       WorkingDirectory = "~/git/local-ai-web-stack";
-      User = "colout";
     };
   };
 
