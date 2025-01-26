@@ -145,6 +145,18 @@
     };
   };
 
+  systemd.services.local-ai-stack = {
+    script = ''
+      docker-compose -f ${~/colout/git/local-ai-web-stack/docker-compose.yaml}
+    '';
+    wantedBy = ["multi-user.target"];
+    after = ["podman.service" "podman.socket"];
+    serviceConfig = {
+      WorkingDirectory = "~/git/local-ai-web-stack";
+      User = "colout";
+    };
+  };
+
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
