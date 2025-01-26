@@ -160,6 +160,10 @@
       # Run the service as colout user (important for rootless Podman)
       User = "colout";
       Group = "podman";
+
+      # Set up the correct environment for rootless podman
+      Environment = "XDG_RUNTIME_DIR=/run/user/%U";
+      Environment = "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%U/bus";
     };
   };
 
