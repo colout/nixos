@@ -146,9 +146,7 @@
   };
 
   systemd.services.local-ai-stack = {
-    script = ''
-      docker-compose -f ${~/colout/git/local-ai-web-stack/docker-compose.yaml}
-    '';
+    script = "docker-compose -f /git/local-ai-web-stack/docker-compose.yaml";
     wantedBy = ["multi-user.target"];
     after = ["podman.service" "podman.socket"];
     serviceConfig = {
