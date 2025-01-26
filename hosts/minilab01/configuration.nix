@@ -153,8 +153,8 @@
     serviceConfig = {
       User = "colout";
       Group = "podman";
-      ExecStart = "/usr/bin/podman-compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up";
-      ExecStop = "/usr/bin/podman-compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml down";
+      ExecStart = "/run/current-system/sw/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up";
+      ExecStop = "/run/current-system/sw/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml down";
       Restart = "always";
       WorkingDirectory = "/home/colout/git/local-ai-web-stack/";
       Environment = "PODMAN_USERNS=keep-id";
