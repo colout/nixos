@@ -93,7 +93,6 @@
     zip
     atop
     htop
-    mtop
     stable.rocmPackages.rocminfo
 
     ## Virtualization
