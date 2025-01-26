@@ -147,12 +147,13 @@
 
   systemd.services.podman-autostart = {
     enable = true;
-    after = ["podman.service"];
+    after = ["podman.service" "podman.socket"];
     wantedBy = ["multi-user.target"];
     serviceConfig = {
       Type = "idle";
       User = "colout";
-      ExecStart = ''/run/current-system/sw/bin/podman-compose -d -f /home/colout/git/local-ai-web-stack/docker-compose.yaml'';
+      ExecStart = ''/run/current-system/sw/bin/podman-compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up'';
+      ExecStop = ''/run/current-system/sw/bin/podman-compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml down'';
     };
   };
 
