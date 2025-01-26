@@ -98,6 +98,7 @@
     ## Virtualization
     podman-compose
     podman-tui
+    podman
 
     # nvim stuff
     alejandra
