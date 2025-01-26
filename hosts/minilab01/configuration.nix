@@ -145,7 +145,8 @@
     };
   };
 
-  systemd.services.podman-autostart = {
+  systemd.services.local-ai-web-stack = {
+    description = "Local AI Web Stack - Podman";
     enable = true;
     after = ["podman.service" "podman.socket"];
     wantedBy = ["multi-user.target"];
