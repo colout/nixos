@@ -154,7 +154,7 @@
       Type = "idle";
       #User = "colout";
       Environment = "PATH=${pkgs.podman}/bin:${pkgs.podman-compose}/bin:/run/current-system/sw/bin";
-      ExecStart = ''/run/current-system/sw/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml pull; /run/current-system/sw/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up'';
+      ExecStart = ''/run/current-system/sw/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up --pull'';
       ExecStop = ''/run/current-system/sw/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml down'';
       WorkingDirectory = ''/home/colout/git/local-ai-web-stack/'';
     };
