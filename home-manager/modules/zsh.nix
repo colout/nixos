@@ -1,16 +1,21 @@
-{ ... }:
-{
+{...}: {
   programs.zsh = {
     enable = true;
     zplug = {
       enable = true;
       plugins = [
-        { name = "zsh-users/zsh-autosuggestions"; }
-        { name = "zsh-users/zsh-completions"; }
-        { name = "zsh-users/zsh-autosuggestions"; }
-        { name = "zsh-users/zsh-syntax-highlighting"; }
-        { name = "themes/robbyrussell"; tags = [ as:theme from:oh-my-zsh ]; }
-        { name = "plugins/dirhistory"; tags = [ from:oh-my-zsh ]; }
+        {name = "zsh-users/zsh-autosuggestions";}
+        {name = "zsh-users/zsh-completions";}
+        {name = "zsh-users/zsh-autosuggestions";}
+        {name = "zsh-users/zsh-syntax-highlighting";}
+        {
+          name = "themes/robbyrussell";
+          tags = [as:theme from:oh-my-zsh];
+        }
+        {
+          name = "plugins/dirhistory";
+          tags = [from:oh-my-zsh];
+        }
       ];
     };
     shellAliases = {
@@ -18,7 +23,7 @@
 
       # NixOS command shortcuts
       napply = "sudo chown -R $USER /etc/nixos; cd /etc/nixos && git -C /etc/nixos add . && git -C /etc/nixos commit -m 'change'; sudo nixos-rebuild switch --flake /etc/nixos";
-      nupdate = "nix flake update /etc/nixos";
+      nupdate = "cd /etc/nixos; nix flake update";
       nedit = "cd /etc/nixos; nvim";
       ngarbage-collect = "nix-collect-garbage -d";
     };
