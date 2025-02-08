@@ -23,7 +23,7 @@
 
       # NixOS command shortcuts
       napply = "sudo chown -R $USER /etc/nixos; cd /etc/nixos && git -C /etc/nixos add . && git -C /etc/nixos commit -m 'change'; sudo nixos-rebuild switch --flake /etc/nixos";
-      nupdate = "sudo nix flake update /etc/nixos";
+      nupdate = "cd /etc/nixos; sudo nix flake update";
       nedit = "cd /etc/nixos; nvim";
       ngarbage-collect = "nix-collect-garbage -d";
     };
