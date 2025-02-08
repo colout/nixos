@@ -147,7 +147,7 @@
 
   systemd.services.my-docker-compose = {
     script = ''
-      podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up
+      /run/current-system/sw/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up
     '';
     wantedBy = ["multi-user.target"];
     after = ["podman.service" "podman.socket"];
