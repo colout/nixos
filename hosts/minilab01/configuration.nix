@@ -145,29 +145,20 @@
     };
   };
 
-  systemd.services.my-docker-compose = {
-    script = ''
-      /run/current-system/sw/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up
-    '';
-    wantedBy = ["multi-user.target"];
+  systemd.services.local-ai-web-stack = {
+    description = "Local AI Web Stack - Podman";
+    enable = true;
     after = ["podman.service" "podman.socket"];
+    wantedBy = ["multi-user.target"];
+    serviceConfig = {
+      Type = "idle";
+      User = "colout";
+      Environment = "PATH=${pkgs.podman}/bin:${pkgs.podman-compose}/bin:/run/current-system/sw/bin";
+      ExecStart = ''/run/current-system/sw/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up'';
+      ExecStop = ''/run/current-system/sw/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml down'';
+      WorkingDirectory = ''/home/colout/git/local-ai-web-stack/'';
+    };
   };
-
-  #  pipelines:
-  # systemd.services.local-ai-web-stack = {
-  #   description = "Local AI Web Stack - Podman";
-  #   enable = true;
-  #   after = ["podman.service" "podman.socket"];
-  #   wantedBy = ["multi-user.target"];
-  #   serviceConfig = {
-  #     Type = "idle";
-  #     User = "colout";
-  #     Environment = "PATH=${pkgs.podman}/bin:${pkgs.podman-compose}/bin:/run/current-system/sw/bin";
-  #     ExecStart = ''/run/current-system/sw/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up'';
-  #     ExecStop = ''/run/current-system/sw/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml down'';
-  #     WorkingDirectory = ''/home/colout/git/local-ai-web-stack/'';
-  #   };
-  # };
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
