@@ -116,11 +116,11 @@
   ];
 
   # Default ollama
-   services.ollama = {
-     enable = true;
-     host = "0.0.0.0";
-     };
-   };
+  services.ollama = {
+    enable = true;
+    host = "0.0.0.0";
+  };
+
   # amd gpu accelerated ollama
   #  services.ollama = {
   #    enable = true;
