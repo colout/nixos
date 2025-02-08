@@ -28,6 +28,13 @@
     "fs.file-max" = 524288;
   };
 
+  # swap 
+  {
+  swapDevices = [{
+    device = "/swapfile";
+    size = 100 * 1024; # 100GB
+  }];
+}
   # Auto mount usb
   services.devmon.enable = true;
   services.gvfs.enable = true;
