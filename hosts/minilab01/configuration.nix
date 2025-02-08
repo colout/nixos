@@ -127,6 +127,10 @@
   services.ollama = {
     enable = true;
     host = "0.0.0.0";
+    environmentVariables = {
+      OLLAMA_KEEP_ALIVE = "1m" # how long to keep model
+      OLLAMA_NUM_PARALLEL = "1"
+      OLLAMA_FLASH_ATTENTION = "1"; # disable if things break
   };
 
   # amd gpu accelerated ollama
