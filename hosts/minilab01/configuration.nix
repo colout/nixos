@@ -142,7 +142,6 @@
 
       # Required for containers under podman-compose to be able to talk to each other.
       defaultNetwork.settings.dns_enabled = true;
-      enableUserNamespaces = true;
     };
   };
 
@@ -153,7 +152,7 @@
     wantedBy = ["multi-user.target"];
     serviceConfig = {
       Type = "idle";
-      User = "colout";
+      #User = "colout";
       Environment = "PATH=${pkgs.podman}/bin:${pkgs.podman-compose}/bin:/run/current-system/sw/bin";
       ExecStart = ''/run/current-system/sw/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up'';
       ExecStop = ''/run/current-system/sw/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml down'';
