@@ -168,8 +168,8 @@
   systemd.services.local-ai-web-stack = {
     description = "Local AI Web Stack - Podman";
     enable = true;
-    after = ["podman.service" "podman.socket", "network-online.target"];
-    wantedBy = ["multi-user.target", "network-online.target"];
+    after = ["podman.service" "podman.socket" "network-online.target"];
+    wantedBy = ["multi-user.target" "network-online.target"];
     serviceConfig = {
       Type = "idle";
       User = "colout";
