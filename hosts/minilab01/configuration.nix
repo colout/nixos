@@ -175,7 +175,7 @@
       User = "colout";
       Group = "podman";
       Environment = "PATH=${pkgs.podman}/bin:${pkgs.podman-compose}/bin:/run/current-system/sw/bin";
-      ExecStart = ''~/.zshrc; /run/current-system/sw/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up'';
+      ExecStart = ''$HOME/.zshrc; /run/current-system/sw/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up'';
       ExecStop = ''/run/current-system/sw/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml down'';
       WorkingDirectory = ''/home/colout/git/local-ai-web-stack/'';
     };
