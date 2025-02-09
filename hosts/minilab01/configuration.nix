@@ -83,7 +83,7 @@
   users.users.colout = {
     isNormalUser = true;
     description = "colout";
-    extraGroups = ["networkmanager" "wheel" "storage" "podman"];
+    extraGroups = ["networkmanager" "wheel" "storage" "docker"];
     shell = pkgs.zsh;
     packages = with pkgs; [];
   };
@@ -104,9 +104,8 @@
     stable.rocmPackages.rocminfo
 
     ## Virtualization
-    podman-compose
-    podman-tui
-    podman
+    docker-compose
+    docker
 
     # nvim stuff
     alejandra
@@ -153,30 +152,32 @@
   # Enable common container config files in /etc/containers
   virtualisation.containers.enable = true;
   virtualisation = {
-    docker = {
-      enable = true;
+    docker.enable = true;
 
-      # Create a `docker` alias for podman, to use it as a drop-in replacement
-      #dockerCompat = true;
-      dockerSocket.enable = true;
+    #podman = {
+    #  enable = true;
 
-      # Required for containers under podman-compose to be able to talk to each other.
-      defaultNetwork.settings.dns_enabled = true;
-    };
+    #  # Create a `docker` alias for podman, to use it as a drop-in replacement
+    #  dockerCompat = true;
+    #  dockerSocket.enable = true;
+
+    #  # Required for containers under podman-compose to be able to talk to each other.
+    #  defaultNetwork.settings.dns_enabled = true;
+    #};
   };
 
   systemd.services.local-ai-web-stack = {
-    description = "Local AI Web Stack - Podman";
+    description = "Local AI Web Stack - docker";
     enable = true;
-    after = ["podman.service" "podman.socket" "network-online.target"];
+    after = ["docker.service" "docker.socket" "network-online.target"];
     wantedBy = ["multi-user.target" "network-online.target"];
     serviceConfig = {
       Type = "idle";
       User = "colout";
-      Group = "podman";
-      Environment = "PATH=${pkgs.podman}/bin:${pkgs.podman-compose}/bin:/run/current-system/sw/bin";
-      ExecStart = ''/run/current-system/sw/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up'';
-      ExecStop = ''/run/current-system/sw/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml down'';
+      Group = "docker";
+      Environment = "PATH=${pkgs.docker}/bin:${pkgs.docker-compose}/bin:/run/current-system/sw/bin";
+      ExecStart = ''/run/current-system/sw/bin/docker compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up'';
+      ExecStop = ''/run/current-system/sw/bin/docker compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml down'';
       WorkingDirectory = ''/home/colout/git/local-ai-web-stack/'';
     };
   };
