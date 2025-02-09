@@ -171,7 +171,7 @@
     after = ["podman.service" "podman.socket" "network-online.target"];
     wantedBy = ["multi-user.target" "network-online.target"];
     serviceConfig = {
-      Type = "simple";
+      Type = "idle";
       User = "colout";
       Group = "podman";
       Environment = "PATH=${pkgs.podman}/bin:${pkgs.podman-compose}/bin:/run/current-system/sw/bin";
