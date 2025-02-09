@@ -168,14 +168,14 @@
   systemd.services.local-ai-web-stack = {
     description = "Local AI Web Stack - Podman";
     enable = true;
-    after = ["podman.service" "podman.socket"];
-    wantedBy = ["multi-user.target"];
+    after = ["podman.service" "podman.socket", "network-online.target"];
+    wantedBy = ["multi-user.target", "network-online.target"];
     serviceConfig = {
       Type = "idle";
       User = "colout";
       Group = "podman";
       Environment = "PATH=${pkgs.podman}/bin:${pkgs.podman-compose}/bin:/run/current-system/sw/bin";
-      ExecStart = ''/run/current-system/sw/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up'';
+      ExecStart = ''source ~/.zshrc; /run/current-system/sw/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up'';
       ExecStop = ''/run/current-system/sw/bin/podman compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml down'';
       WorkingDirectory = ''/home/colout/git/local-ai-web-stack/'';
     };
