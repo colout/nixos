@@ -121,6 +121,7 @@
     nil
     yamllint
     yaml-language-server
+    ninja
   ];
 
   # Default ollama
