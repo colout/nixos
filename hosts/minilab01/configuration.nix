@@ -125,6 +125,7 @@
     # numpy
     ninja
     cargo
+    rustc
   ];
 
   # Default ollama
