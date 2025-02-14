@@ -102,7 +102,7 @@
     atop
     htop
     stable.rocmPackages.rocminfo
-    python14-full
+    python314
 
     ## Virtualization
     docker-compose
