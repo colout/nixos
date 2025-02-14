@@ -121,7 +121,10 @@
     nil
     yamllint
     yaml-language-server
+
+    # numpy
     ninja
+    cargo
   ];
 
   # Default ollama
