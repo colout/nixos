@@ -128,6 +128,7 @@
     rustc
     libffi
     libffi.dev
+    gcc
   ];
 
   # Default ollama
