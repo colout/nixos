@@ -130,6 +130,7 @@
     libffi.dev
     gcc
     python3Packages.cffi
+    gcc-unwrapped
   ];
 
   # Default ollama
