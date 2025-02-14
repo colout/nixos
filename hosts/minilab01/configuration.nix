@@ -126,6 +126,8 @@
     ninja
     cargo
     rustc
+    libffi
+    libffi.dev
   ];
 
   # Default ollama
