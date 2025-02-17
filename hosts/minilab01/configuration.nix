@@ -117,6 +117,7 @@
     sql-formatter
     terraform
     lua51Packages.luarocks
+    marksman
     lazygit
     nil
     yamllint
