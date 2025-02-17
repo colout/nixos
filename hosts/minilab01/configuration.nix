@@ -118,7 +118,7 @@
     terraform
     lua51Packages.luarocks
     marksman
-    markdownlint
+    mdl #markdownlint
     lazygit
     nil
     yamllint
