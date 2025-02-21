@@ -123,7 +123,6 @@
     nil
     yamllint
     yaml-language-server
-    ape
 
     # numpy
     ninja
