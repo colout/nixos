@@ -103,6 +103,7 @@
     htop
     stable.rocmPackages.rocminfo
     python314
+    ctranslate2
 
     ## Virtualization
     docker-compose
