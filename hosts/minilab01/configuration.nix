@@ -201,7 +201,16 @@
   };
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    extraConfig = ''
+      PubkeyAuthentication yes
+      TrustedUserCAKeys /etc/nixos/ssh-key
+      Match User colout
+        AuthorizedPrincipalsCommand /usr/bin/echo %u
+        AuthorizedPrincipalsCommandUser nobody
+    '';
+  };
 
   console = {
     #packages = [pkgs.terminus_font];
@@ -225,16 +234,4 @@
   security.sudo.wheelNeedsPassword = false;
 
   networking.firewall.enable = false;
-
-  # Cloudflared ssh key
-  services.openssh = {
-    enabled = true;
-    extraConfig = ''
-      PubkeyAuthentication yes
-      TrustedUserCAKeys /etc/nixos/ssh-key
-      Match User colout
-        AuthorizedPrincipalsCommand /usr/bin/echo %u
-        AuthorizedPrincipalsCommandUser nobody
-    '';
-  };
 }
