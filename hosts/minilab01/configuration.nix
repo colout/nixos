@@ -203,6 +203,10 @@
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
+    extraConfig = ''
+      PubkeyAuthentication yes
+      MACs hmac-sha2-256,hmac-sha2-512
+    '';
   };
 
   console = {
