@@ -140,14 +140,18 @@
     gcc-unwrapped
   ];
 
-  # Default ollama
   services.ollama = {
     enable = true;
     host = "0.0.0.0";
     environmentVariables = {
-      OLLAMA_KEEP_ALIVE = "5m"; # how long to keep model
-      OLLAMA_NUM_PARALLEL = "2";
-      OLLAMA_FLASH_ATTENTION = "1"; # disable if things break
+      OLLAMA_NEW_ENGINE = "1"; # Enable new engine for performance improvements
+      OLLAMA_KEEP_ALIVE = "10m"; # Keep models in memory longer
+      OLLAMA_MAX_LOADED_MODELS = "3"; # Allow multiple models to stay in memory
+      OLLAMA_NUM_PARALLEL = "2"; # Enable parallel inference
+      OLLAMA_MULTIUSER_CACHE = "1"; # Optimize prompt caching for frequent model switching
+      OLLAMA_LOAD_TIMEOUT = "10m"; # Allow more time for model loading
+      OLLAMA_NOPRUNE = "1"; # Prevent pruning on startup
+      OLLAMA_FLASH_ATTENTION = "1"; # Reduce memory bandwidth usage
     };
   };
 
