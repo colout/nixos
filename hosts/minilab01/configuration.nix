@@ -141,7 +141,7 @@
   ];
 
   services.ollama = {
-    enable = true;
+    enable = false;
     host = "0.0.0.0";
     environmentVariables = {
       OLLAMA_NEW_ENGINE = "1"; # Enable new engine for performance improvements
