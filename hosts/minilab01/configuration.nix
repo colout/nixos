@@ -225,4 +225,16 @@
   security.sudo.wheelNeedsPassword = false;
 
   networking.firewall.enable = false;
+
+  # Cloudflared ssh key
+  services.openssh = {
+    enabled = true;
+    extraConfig = ''
+      PubkeyAuthentication yes
+      TrustedUserCAKeys /etc/nixos/ssh-key
+      Match User colout
+        AuthorizedPrincipalsCommand /usr/bin/echo %u
+        AuthorizedPrincipalsCommandUser nobody
+    '';
+  };
 }
