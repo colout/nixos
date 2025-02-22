@@ -203,13 +203,6 @@
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
-    extraConfig = ''
-      PubkeyAuthentication yes
-      TrustedUserCAKeys /etc/nixos/ssh-key
-      Match User colout
-        AuthorizedPrincipalsCommand /usr/bin/echo %u
-        AuthorizedPrincipalsCommandUser nobody
-    '';
   };
 
   console = {
