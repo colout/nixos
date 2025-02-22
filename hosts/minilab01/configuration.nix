@@ -194,7 +194,7 @@
       User = "colout";
       Group = "docker";
       Environment = "PATH=${pkgs.docker}/bin:${pkgs.docker-compose}/bin:/run/current-system/sw/bin";
-      ExecStart = ''/run/current-system/sw/bin/docker compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml pull; /run/current-system/sw/bin/docker compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up'';
+      ExecStart = ''/run/current-system/sw/bin/docker compose pull -f /home/colout/git/local-ai-web-stack/docker-compose.yaml; /run/current-system/sw/bin/docker compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up'';
       ExecStop = ''/run/current-system/sw/bin/docker compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml down'';
       WorkingDirectory = ''/home/colout/git/local-ai-web-stack/'';
     };
