@@ -18,7 +18,7 @@
         }
       ];
     };
-    initExtra = "mkdir -p ~/git; git pull -C ~/git/dotfiles";
+    initExtra = "mkdir -p ~/git; git -C ~/git/dotfiles pull";
     shellAliases = {
       ll = "ls -l";
 
