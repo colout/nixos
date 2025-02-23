@@ -18,7 +18,7 @@
         }
       ];
     };
-    shellInit = "git -C repo pull ~/git/dotfiles || git clone git@github.com:colout/dotfiles.git";
+    initExtra = "git -C repo pull ~/git/dotfiles || git clone git@github.com:colout/dotfiles.git";
     shellAliases = {
       ll = "ls -l";
 
