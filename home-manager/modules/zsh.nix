@@ -1,23 +1,6 @@
 {...}: {
   programs.zsh = {
     enable = true;
-    zplug = {
-      enable = true;
-      plugins = [
-        {name = "zsh-users/zsh-autosuggestions";}
-        {name = "zsh-users/zsh-completions";}
-        {name = "zsh-users/zsh-autosuggestions";}
-        {name = "zsh-users/zsh-syntax-highlighting";}
-        {
-          name = "themes/robbyrussell";
-          tags = [as:theme from:oh-my-zsh];
-        }
-        {
-          name = "plugins/dirhistory";
-          tags = [from:oh-my-zsh];
-        }
-      ];
-    };
     initExtra = "~/git/dotfiles/.zplugrc.sh";
     shellAliases = {
       ll = "ls -l";
