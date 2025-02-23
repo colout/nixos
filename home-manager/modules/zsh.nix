@@ -18,7 +18,7 @@
         }
       ];
     };
-    initExtra = "mkdir -p $HOME/git; git -C ~/git/dotfiles pull; git clone git@github.com:colout/dotfiles.git ~/git/dotfiles";
+    initExtra = "~/git/dotfiles/.zplugrc.sh";
     shellAliases = {
       ll = "ls -l";
 
