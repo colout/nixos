@@ -1,7 +1,7 @@
 {...}: {
   programs.zsh = {
     enable = true;
-    initExtra = "~/git/dotfiles/.zplugrc.sh";
+    initExtra = "source ~/git/dotfiles/.zplugrc.sh";
     shellAliases = {
       ll = "ls -l";
 
