@@ -18,7 +18,7 @@
   # manage.
   home.username = "colout";
   home.homeDirectory = "/home/colout";
-  home.stateVersion = "24.05"; # Please read the comment before changing.
+  home.stateVersion = "24.11"; # Please read the comment before changing.
 
   home.packages = with pkgs; [
     gcc
