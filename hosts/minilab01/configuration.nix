@@ -108,6 +108,7 @@
     stable.rocmPackages.rocminfo
     python312
     ctranslate2
+    fzy
 
     ## Virtualization
     docker-compose
