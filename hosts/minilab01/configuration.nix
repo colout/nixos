@@ -106,7 +106,7 @@
     atop
     htop
     stable.rocmPackages.rocminfo
-    python314
+    python312
     ctranslate2
 
     ## Virtualization
