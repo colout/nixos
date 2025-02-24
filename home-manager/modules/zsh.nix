@@ -1,7 +1,7 @@
 {...}: {
   programs.zsh = {
     enable = true;
-    initExtra = "source ~/git/dotfiles/.zplugrc.sh; bindkey '^[[1~' beginning-of-line; bindkey '^[[4~' end-of-line";
+    initExtra = "source ~/git/dotfiles/.zplugrc.sh";
     shellAliases = {
       ll = "ls -l";
 

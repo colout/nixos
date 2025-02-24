@@ -50,13 +50,13 @@
           ./hosts/minilab01/configuration.nix
           ./hosts/minilab01/hardware-configuration.nix
 
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              extraSpecialArgs = {inherit inputs;};
-              users = {"colout" = import ./home-manager/colout-minimal.nix;};
-            };
-          }
+          #home-manager.nixosModules.home-manager
+          #{
+          #  home-manager = {
+          #    extraSpecialArgs = {inherit inputs;};
+          #    users = {"colout" = import ./home-manager/colout-minimal.nix;};
+          #  };
+          #}
         ];
       };
     };
