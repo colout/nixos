@@ -10,7 +10,6 @@
 
   imports = [
     ./modules/zsh.nix
-    ./modules/kitty.nix
     #./modules/nvim
   ];
 
