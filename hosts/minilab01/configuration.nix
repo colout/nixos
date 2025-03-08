@@ -190,8 +190,8 @@
     #};
   };
 
-  systemd.services.local-ai-web-stack = {
-    description = "Local AI Web Stack - docker";
+  systemd.services.ollama-docker = {
+    description = "Local Ollama - docker";
     enable = true;
     after = ["docker.service" "docker.socket" "network-online.target"];
     wantedBy = ["multi-user.target" "network-online.target"];
@@ -200,11 +200,27 @@
       User = "colout";
       Group = "docker";
       Environment = "PATH=${pkgs.docker}/bin:${pkgs.docker-compose}/bin:/run/current-system/sw/bin";
-      ExecStart = ''/run/current-system/sw/bin/docker compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up --pull always'';
-      ExecStop = ''/run/current-system/sw/bin/docker compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml down'';
-      WorkingDirectory = ''/home/colout/git/local-ai-web-stack/'';
+      ExecStart = ''/run/current-system/sw/bin/docker compose -f /home/colout/git/ollama-docker/docker-compose.yaml up --pull always'';
+      ExecStop = ''/run/current-system/sw/bin/docker compose -f /home/colout/git/ollama-docker/docker-compose.yaml down'';
+      WorkingDirectory = ''/home/colout/git/ollama-docker/'';
     };
   };
+
+  #systemd.services.local-ai-web-stack = {
+  #  description = "Local AI Web Stack - docker";
+  #  enable = true;
+  #  after = ["docker.service" "docker.socket" "network-online.target"];
+  #  wantedBy = ["multi-user.target" "network-online.target"];
+  #  serviceConfig = {
+  #    Type = "idle";
+  #    User = "colout";
+  #    Group = "docker";
+  #    Environment = "PATH=${pkgs.docker}/bin:${pkgs.docker-compose}/bin:/run/current-system/sw/bin";
+  #    ExecStart = ''/run/current-system/sw/bin/docker compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up --pull always'';
+  #    ExecStop = ''/run/current-system/sw/bin/docker compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml down'';
+  #    WorkingDirectory = ''/home/colout/git/local-ai-web-stack/'';
+  #  };
+  #};
 
   # Enable the OpenSSH daemon.
   services.openssh = {
