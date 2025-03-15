@@ -49,14 +49,14 @@
         modules = [
           ./hosts/minilab01/configuration.nix
           ./hosts/minilab01/hardware-configuration.nix
+        ];
+      };
+      vm01 = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
 
-          #home-manager.nixosModules.home-manager
-          #{
-          #  home-manager = {
-          #    extraSpecialArgs = {inherit inputs;};
-          #    users = {"colout" = import ./home-manager/colout-minimal.nix;};
-          #  };
-          #}
+        modules = [
+          ./hosts/vm01/configuration.nix
+          ./hosts/vm01/hardware-configuration.nix
         ];
       };
     };
