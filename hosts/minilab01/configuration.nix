@@ -245,7 +245,7 @@
   system.stateVersion = "24.05"; # Did you read the comment?
 
   fileSystems."/mnt/media" = {
-    device = "//192.168.10.10/media";
+    device = "//192.168.10.11/media";
     fsType = "cifs";
     options = let
       # this line prevents hanging on network split
