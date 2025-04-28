@@ -102,6 +102,7 @@
     ctranslate2
     fzy
     git
+    mitmproxy
 
     ## Virtualization
     docker-compose
