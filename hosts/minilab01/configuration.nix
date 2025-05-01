@@ -109,6 +109,7 @@
     python312
     ctranslate2
     fzy
+    jq
 
     ## Virtualization
     docker-compose

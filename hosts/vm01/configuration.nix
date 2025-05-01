@@ -51,7 +51,7 @@
   #boot.kernelPackages = pkgs.stable.linuxPackages_latest;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "vm01"; # Define your hostname.
+  networking.hostName = "vm01";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable networking
