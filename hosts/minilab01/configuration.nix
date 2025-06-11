@@ -105,6 +105,8 @@
     zip
     atop
     htop
+    amdgpu_top
+    radeontop
     stable.rocmPackages.rocminfo
     python312
     ctranslate2
