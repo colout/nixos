@@ -32,6 +32,13 @@
     "fs.file-max" = 524288;
   };
 
+  # For iGPU vram increase
+  #  https://www.reddit.com/r/LocalLLaMA/comments/1ks6mlc/what_is_tps_of_qwen3_30ba3b_on_igpu_780m/
+  boot.kernelParams = [
+    "amdgpu.gttsize=49152" # 48 GiB, exactly 50% of 96GB
+    "amdgpu.gpu_recovery=1"
+  ];
+
   # swap
   swapDevices = [
     {
