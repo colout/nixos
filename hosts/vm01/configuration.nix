@@ -124,6 +124,8 @@
     yamllint
     yaml-language-server
     lua-language-server
+    nodejs
+    lm_sensors
 
     # numpy
     ninja
