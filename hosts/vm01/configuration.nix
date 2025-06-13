@@ -103,6 +103,7 @@
     fzy
     git
     mitmproxy
+    codex
 
     ## Virtualization
     docker-compose
