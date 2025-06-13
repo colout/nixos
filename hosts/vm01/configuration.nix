@@ -104,6 +104,7 @@
     git
     mitmproxy
     codex
+    claude-code
 
     ## Virtualization
     docker-compose
