@@ -32,6 +32,26 @@
     "fs.file-max" = 524288;
   };
 
+  # For mlock to work on llama.cpp (default is 8mb)
+  {
+  # Increase memory lock limits for large language models
+  security.pam.loginLimits = [
+    {
+      domain = "*";
+      type = "hard";
+      item = "memlock";
+      value = "unlimited";
+    }
+    {
+      domain = "*";
+      type = "soft"; 
+      item = "memlock";
+      value = "unlimited";
+    }
+  ];
+}
+
+
   # For iGPU vram increase
   #  https://www.reddit.com/r/LocalLLaMA/comments/1ks6mlc/what_is_tps_of_qwen3_30ba3b_on_igpu_780m/
   boot.kernelParams = [
@@ -203,7 +223,7 @@
 
   systemd.services.ollama-docker = {
     description = "Local Ollama - docker";
-    enable = true;
+    enable = false;
     after = ["docker.service" "docker.socket" "network-online.target"];
     wantedBy = ["multi-user.target" "network-online.target"];
     serviceConfig = {
