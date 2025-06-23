@@ -120,7 +120,6 @@
     fzy
     jq
     btop-rocm
-    lact
 
     ## Virtualization
     docker-compose
