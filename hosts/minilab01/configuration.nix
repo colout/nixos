@@ -32,9 +32,7 @@
     "fs.file-max" = 524288;
   };
 
-  # For mlock to work on llama.cpp (default is 8mb)
-  {
-  # Increase memory lock limits for large language models
+  # Increase memory lock limits for large language models (mlock in llama.cpp)
   security.pam.loginLimits = [
     {
       domain = "*";
@@ -44,13 +42,11 @@
     }
     {
       domain = "*";
-      type = "soft"; 
+      type = "soft";
       item = "memlock";
       value = "unlimited";
     }
   ];
-}
-
 
   # For iGPU vram increase
   #  https://www.reddit.com/r/LocalLLaMA/comments/1ks6mlc/what_is_tps_of_qwen3_30ba3b_on_igpu_780m/
