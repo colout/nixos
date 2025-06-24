@@ -137,6 +137,7 @@
     jq
     btop-rocm
     rocmPackages.rocm-smi
+    lm_sensors
 
     ## Virtualization
     docker-compose
@@ -220,7 +221,7 @@
 
   systemd.services.ollama-docker = {
     description = "Local Ollama - docker";
-    enable = true;
+    enable = false;
     after = ["docker.service" "docker.socket" "network-online.target"];
     wantedBy = ["multi-user.target" "network-online.target"];
     serviceConfig = {
