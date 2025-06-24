@@ -136,6 +136,7 @@
     fzy
     jq
     btop-rocm
+    rocm-smi
 
     ## Virtualization
     docker-compose
