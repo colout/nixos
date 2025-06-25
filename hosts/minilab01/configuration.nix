@@ -131,6 +131,7 @@
     amdgpu_top
     radeontop
     stable.rocmPackages.rocminfo
+    python313Packages.huggingface-hub
     python312
     ctranslate2
     fzy
