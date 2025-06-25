@@ -51,7 +51,7 @@
   # For iGPU vram increase
   #  https://www.reddit.com/r/LocalLLaMA/comments/1ks6mlc/what_is_tps_of_qwen3_30ba3b_on_igpu_780m/
   boot.kernelParams = [
-    #"amdgpu.gttsize=49152" # 48 GiB, exactly 50% of 96GB - depricated tho
+    "amdgpu.gttsize=49152" # 48 GiB, exactly 50% of 96GB - depricated tho
     "amdgpu.gpu_recovery=1"
   ];
 
@@ -221,7 +221,7 @@
 
   systemd.services.ollama-docker = {
     description = "Local Ollama - docker";
-    enable = true;
+    enable = false;
     after = ["docker.service" "docker.socket" "network-online.target"];
     wantedBy = ["multi-user.target" "network-online.target"];
     serviceConfig = {
