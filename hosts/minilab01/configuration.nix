@@ -222,7 +222,7 @@
 
   systemd.services.ollama-docker = {
     description = "Local Ollama - docker";
-    enable = false;
+    enable = true;
     after = ["docker.service" "docker.socket" "network-online.target"];
     wantedBy = ["multi-user.target" "network-online.target"];
     serviceConfig = {
