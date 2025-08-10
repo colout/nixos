@@ -1,4 +1,4 @@
-# /etc/nixos/modules/nfs-llm-cache-mount.nix
+# /etc/nixos/nas-cache.nix
 {
   config,
   pkgs,
@@ -25,24 +25,22 @@
     '';
   };
 
-  # Create cache directory AND symlink in ONE definition
+  # Create cache directory
   systemd.tmpfiles.rules = [
     "d /var/cache/fscache 0700 root root -"
-    "L /mnt/llm-models - - - - /mnt/llmmodels"
   ];
 
-  # Mount without dash in the actual mount point
-  fileSystems."/mnt/llmmodels" = {
-    device = "YOUR_NAS_IP:/path/to/models"; # CHANGE THIS!
+  # Mount your NAS WITHOUT automount
+  fileSystems."/mnt/llm-models" = {
+    device = "YOUR_NAS_IP:/path/to/models";
     fsType = "nfs";
     options = [
       "nfsvers=4"
-      "fsc"
+      "fsc" # Still get caching!
       "_netdev"
-      "x-systemd.automount"
-      "x-systemd.idle-timeout=600"
       "uid=1000"
       "gid=1000"
+      # NO automount options
     ];
   };
 }
