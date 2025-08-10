@@ -1,3 +1,4 @@
+#device = "192.168.10.11:/volume1/llm-models";
 # /etc/nixos/nas-cache.nix
 {
   config,
