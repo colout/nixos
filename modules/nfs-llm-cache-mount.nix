@@ -15,8 +15,6 @@
     # Simple percentage-based cache management
     # With 400GB free, this gives you ~200GB cache before culling
     extraConfig = ''
-      dir /var/cache/fscache
-
       # Start culling when free space drops to 25% (~228GB)
       brun 25%
       bcull 30%
