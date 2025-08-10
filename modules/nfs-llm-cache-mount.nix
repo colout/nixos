@@ -27,15 +27,13 @@
     '';
   };
 
-  # Create cache directory and symlink for convenience
+  # Create cache directory
   systemd.tmpfiles.rules = [
     "d /var/cache/fscache 0700 root root -"
-    "L+ /mnt/nas-models - - - - /mnt/nas_models"
   ];
 
   # Mount your NAS with caching enabled
-  # IMPORTANT: Using underscore instead of hyphen in path to avoid systemd
-  # mount unit naming issues where hyphens need \x2d escaping
+  # Using underscore to avoid systemd mount unit naming issues
   fileSystems."/mnt/nas_models" = {
     device = "192.168.10.11:/volume1/llm-models";
     fsType = "nfs";
@@ -45,7 +43,7 @@
       "_netdev"
       "x-systemd.automount"
       "x-systemd.idle-timeout=600"
-      "noatime" # Added for better performance
+      "noatime"
       "nodiratime"
     ];
   };
