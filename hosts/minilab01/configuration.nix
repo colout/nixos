@@ -17,7 +17,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../modules/nixos/hardware/amd-gpu.nix
-    #../../modules/nfs-llm-cache-mount.nix
+    ../../modules/nfs-llm-cache-mount.nix
   ];
 
   # Bootloader.
