@@ -271,6 +271,12 @@
     useXkbConfig = true;
   };
 
+  nix.settings.trusted-users = ["root" "colout"];
+
+  security.sudo.wheelNeedsPassword = false;
+
+  networking.firewall.enable = false;
+
   system.stateVersion = "24.05"; # Did you read the comment?
 
   fileSystems."/mnt/media" = {
@@ -281,10 +287,4 @@
       automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
     in ["${automount_opts},credentials=/etc/nixos/smb-secrets,rw,uid=1000"];
   };
-
-  nix.settings.trusted-users = ["root" "colout"];
-
-  security.sudo.wheelNeedsPassword = false;
-
-  networking.firewall.enable = false;
 }
