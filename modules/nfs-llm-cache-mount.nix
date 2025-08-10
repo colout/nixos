@@ -32,7 +32,7 @@
 
   # Mount your NAS WITHOUT automount
   fileSystems."/mnt/llm-models" = {
-    device = "YOUR_NAS_IP:/path/to/models";
+    device = "192.168.10.11:/volume1/llm-models";
     fsType = "nfs";
     options = [
       "nfsvers=4"
