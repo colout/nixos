@@ -16,14 +16,14 @@
     # With 400GB free, this gives you ~200GB cache before culling
     extraConfig = ''
       # Start culling when free space drops to 25% (~228GB)
-      brun 25%
-      bcull 30%
-      bstop 20%
+      brun 30%   # Resume caching when 30% free space available
+      bcull 25%  # Start culling when free space drops to 25%
+      bstop 20%  # Stop allocating when free space drops to 20%
 
       # File percentage limits
-      frun 10%
-      fcull 15%
-      fstop 5%
+      frun 15%   # Resume when 15% files available
+      fcull 10%  # Start culling when files drop to 10%
+      fstop 5%   # Stop allocating when files drop to 5%
     '';
   };
 
