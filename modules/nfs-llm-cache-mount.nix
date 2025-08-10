@@ -9,6 +9,9 @@
   boot.supportedFilesystems = ["nfs"];
   services.rpcbind.enable = true;
 
+  # load the modules
+  boot.kernelModules = ["fscache" "cachefiles"];
+
   # Enable cachefilesd for local caching
   services.cachefilesd = {
     enable = true;
