@@ -12,18 +12,20 @@
   # Enable cachefilesd for local caching
   services.cachefilesd = {
     enable = true;
-    # NixOS automatically adds "dir /var/cache/fscache" line
-    # Percentages must follow: bstop < bcull < brun < 100%
-    # When free space drops below 7%, culling starts
-    # Culling stops when 10% is available again
-    # No new cache allocation below 3%
+    # Simple percentage-based cache management
+    # With 400GB free, this gives you ~200GB cache before culling
     extraConfig = ''
-      brun 10%
-      bcull 7%
-      bstop 3%
+      dir /var/cache/fscache
+
+      # Start culling when free space drops to 25% (~228GB)
+      brun 25%
+      bcull 30%
+      bstop 20%
+
+      # File percentage limits
       frun 10%
-      fcull 7%
-      fstop 3%
+      fcull 15%
+      fstop 5%
     '';
   };
 
@@ -33,18 +35,15 @@
   ];
 
   # Mount your NAS with caching enabled
-  # Using underscore to avoid systemd mount unit naming issues
-  fileSystems."/mnt/llm_models" = {
-    device = "192.168.10.11:/volume1/llm-models";
+  fileSystems."/mnt/nas-models" = {
+    device = "YOUR_NAS_IP:/path/to/models"; # CHANGE THIS!
     fsType = "nfs";
     options = [
-      "nfsvers=4"
-      "fsc"
-      "_netdev"
-      "x-systemd.automount"
-      "x-systemd.idle-timeout=600"
-      "noatime"
-      "nodiratime"
+      "nfsvers=4" # Use NFSv4
+      "fsc" # Enable FS-Cache (this is the key!)
+      "_netdev" # Network mount
+      "x-systemd.automount" # Mount on first access
+      "x-systemd.idle-timeout=600" # Unmount after 10 min idle
       "uid=1000"
       "gid=1000"
     ];
