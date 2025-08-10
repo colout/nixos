@@ -12,49 +12,43 @@
   # Enable cachefilesd for local caching
   services.cachefilesd = {
     enable = true;
-    # cachefilesd expects percentage as just numbers (without % sign)
-    # or absolute values in blocks/bytes
+    # Use absolute values instead of percentages
+    # With ~900GB total and wanting ~200GB cache
     extraConfig = ''
       dir /var/cache/fscache
-      tag mycache
-
-      # Percentage-based limits (just the number, no % sign)
-      brun 25
-      bcull 20
-      bstop 10
-
-      # File count limits
-      frun 10
-      fcull 7
-      fstop 3
+      brun 204800
+      bcull 153600
+      bstop 102400
+      frun 10%
+      fcull 7%
+      fstop 3%
     '';
   };
 
-  # Create cache directory with proper permissions
+  # Create cache directory
   systemd.tmpfiles.rules = [
     "d /var/cache/fscache 0700 root root -"
   ];
 
   # Mount your NAS with caching enabled
-  fileSystems."/mnt/nas-models" = {
+  # Changed path to avoid hyphen issues with systemd
+  fileSystems."/mnt/nas_models" = {
     device = "192.168.10.11:/volume1/llm-models";
     fsType = "nfs";
     options = [
-      "nfsvers=4" # Use NFSv4
-      "fsc" # Enable FS-Cache
-      "_netdev" # Network mount
-      "x-systemd.automount" # Mount on first access
-      "x-systemd.idle-timeout=600" # Unmount after 10 min idle
-      "rw" # Read-write access
-      "uid=1000" # Set your user's UID here
-      "gid=100" # Set your user's GID here
-      "nofail" # Don't fail boot if mount fails
+      "nfsvers=4"
+      "fsc"
+      "_netdev"
+      "x-systemd.automount"
+      "x-systemd.idle-timeout=600"
+      "noatime" # Added for better performance
+      "nodiratime"
     ];
   };
 
-  # Ensure cachefilesd starts after the cache directory exists
-  systemd.services.cachefilesd = {
-    after = ["systemd-tmpfiles-setup.service"];
-    wants = ["systemd-tmpfiles-setup.service"];
-  };
+  # Create symlink for convenience if you prefer the hyphenated name
+  systemd.tmpfiles.rules = [
+    "d /var/cache/fscache 0700 root root -"
+    "L+ /mnt/nas-models - - - - /mnt/nas_models"
+  ];
 }
