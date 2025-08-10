@@ -44,6 +44,9 @@
       "_netdev" # Network mount
       "x-systemd.automount" # Mount on first access
       "x-systemd.idle-timeout=600" # Unmount after 10 min idle
+      "uid=1000"
+      "gid=1000"
+      "rw"
     ];
   };
 }
