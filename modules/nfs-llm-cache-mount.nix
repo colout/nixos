@@ -45,6 +45,8 @@
       "x-systemd.idle-timeout=600"
       "noatime"
       "nodiratime"
+      "uid=1000"
+      "gid=1000"
     ];
   };
 }
