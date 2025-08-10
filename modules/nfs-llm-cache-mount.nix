@@ -27,9 +27,10 @@
     '';
   };
 
-  # Create cache directory
+  # Create cache directory and symlink for convenience
   systemd.tmpfiles.rules = [
     "d /var/cache/fscache 0700 root root -"
+    "L+ /mnt/nas-models - - - - /mnt/nas_models"
   ];
 
   # Mount your NAS with caching enabled
@@ -48,10 +49,4 @@
       "nodiratime"
     ];
   };
-
-  # Create symlink for convenience if you prefer the hyphenated name
-  systemd.tmpfiles.rules = [
-    "d /var/cache/fscache 0700 root root -"
-    "L+ /mnt/nas-models - - - - /mnt/nas_models"
-  ];
 }
