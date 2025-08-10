@@ -12,13 +12,15 @@
   # Enable cachefilesd for local caching
   services.cachefilesd = {
     enable = true;
-    # Use absolute values instead of percentages
-    # With ~900GB total and wanting ~200GB cache
+    # NixOS automatically adds "dir /var/cache/fscache" line
+    # Percentages must follow: bstop < bcull < brun < 100%
+    # When free space drops below 7%, culling starts
+    # Culling stops when 10% is available again
+    # No new cache allocation below 3%
     extraConfig = ''
-      dir /var/cache/fscache
-      brun 204800
-      bcull 153600
-      bstop 102400
+      brun 10%
+      bcull 7%
+      bstop 3%
       frun 10%
       fcull 7%
       fstop 3%
@@ -31,7 +33,8 @@
   ];
 
   # Mount your NAS with caching enabled
-  # Changed path to avoid hyphen issues with systemd
+  # IMPORTANT: Using underscore instead of hyphen in path to avoid systemd
+  # mount unit naming issues where hyphens need \x2d escaping
   fileSystems."/mnt/nas_models" = {
     device = "192.168.10.11:/volume1/llm-models";
     fsType = "nfs";
