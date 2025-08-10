@@ -1,11 +1,11 @@
-I have this config but i can't add a file with my user:
-
-# /etc/nixos/nas-cache.nix
-{ config, pkgs, lib, ... }:
-
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   # Enable NFS support
-  boot.supportedFilesystems = [ "nfs" ];
+  boot.supportedFilesystems = ["nfs"];
   services.rpcbind.enable = true;
 
   # Enable cachefilesd for local caching
@@ -15,12 +15,12 @@ I have this config but i can't add a file with my user:
     # With 400GB free, this gives you ~200GB cache before culling
     extraConfig = ''
       dir /var/cache/fscache
-      
+
       # Start culling when free space drops to 25% (~228GB)
       brun 25%
       bcull 30%
       bstop 20%
-      
+
       # File percentage limits
       frun 10%
       fcull 15%
@@ -38,11 +38,11 @@ I have this config but i can't add a file with my user:
     device = "192.168.10.11:/volume1/llm-models";
     fsType = "nfs";
     options = [
-      "nfsvers=4"        # Use NFSv4
-      "fsc"              # Enable FS-Cache (this is the key!)
-      "_netdev"          # Network mount
-      "x-systemd.automount"  # Mount on first access
-      "x-systemd.idle-timeout=600"  # Unmount after 10 min idle
+      "nfsvers=4" # Use NFSv4
+      "fsc" # Enable FS-Cache (this is the key!)
+      "_netdev" # Network mount
+      "x-systemd.automount" # Mount on first access
+      "x-systemd.idle-timeout=600" # Unmount after 10 min idle
     ];
   };
 }
