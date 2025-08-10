@@ -35,8 +35,8 @@
   ];
 
   # Mount your NAS with caching enabled
-  fileSystems."/mnt/nas-models" = {
-    device = "YOUR_NAS_IP:/path/to/models"; # CHANGE THIS!
+  fileSystems."/mnt/llm-models" = {
+    device = "192.168.10.11:/volume1/llm-models";
     fsType = "nfs";
     options = [
       "nfsvers=4" # Use NFSv4
