@@ -1,3 +1,4 @@
+# /etc/nixos/nas-cache.nix
 {
   config,
   pkgs,
@@ -11,24 +12,25 @@
   # Enable cachefilesd for local caching
   services.cachefilesd = {
     enable = true;
-    # Simple percentage-based cache management
-    # With 400GB free, this gives you ~200GB cache before culling
+    # cachefilesd expects percentage as just numbers (without % sign)
+    # or absolute values in blocks/bytes
     extraConfig = ''
       dir /var/cache/fscache
+      tag mycache
 
-      # Start culling when free space drops to 25% (~228GB)
-      brun 25%
-      bcull 30%
-      bstop 20%
+      # Percentage-based limits (just the number, no % sign)
+      brun 25
+      bcull 20
+      bstop 10
 
-      # File percentage limits
-      frun 10%
-      fcull 15%
-      fstop 5%
+      # File count limits
+      frun 10
+      fcull 7
+      fstop 3
     '';
   };
 
-  # Create cache directory
+  # Create cache directory with proper permissions
   systemd.tmpfiles.rules = [
     "d /var/cache/fscache 0700 root root -"
   ];
@@ -39,10 +41,20 @@
     fsType = "nfs";
     options = [
       "nfsvers=4" # Use NFSv4
-      "fsc" # Enable FS-Cache (this is the key!)
+      "fsc" # Enable FS-Cache
       "_netdev" # Network mount
       "x-systemd.automount" # Mount on first access
       "x-systemd.idle-timeout=600" # Unmount after 10 min idle
+      "rw" # Read-write access
+      "uid=1000" # Set your user's UID here
+      "gid=100" # Set your user's GID here
+      "nofail" # Don't fail boot if mount fails
     ];
+  };
+
+  # Ensure cachefilesd starts after the cache directory exists
+  systemd.services.cachefilesd = {
+    after = ["systemd-tmpfiles-setup.service"];
+    wants = ["systemd-tmpfiles-setup.service"];
   };
 }
