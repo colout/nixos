@@ -51,6 +51,14 @@
           ./hosts/minilab01/hardware-configuration.nix
         ];
       };
+      minilab02 = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+
+        modules = [
+          ./hosts/minilab02/configuration.nix
+          ./hosts/minilab02/hardware-configuration.nix
+        ];
+      };
       vm01 = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
 
