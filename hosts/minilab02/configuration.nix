@@ -104,8 +104,8 @@
     claude-code
 
     ## Virtualization
-    docker-compose
-    docker
+    #docker-compose
+    #docker
 
     # nvim stuff
     alejandra
