@@ -169,9 +169,9 @@
   #  };
 
   # Enable common container config files in /etc/containers
-  virtualisation.containers.enable = true;
+  virtualisation.containers.enable = false;
   virtualisation = {
-    docker.enable = true;
+    docker.enable = false;
   };
 
   systemd.services.infra-stack = {
