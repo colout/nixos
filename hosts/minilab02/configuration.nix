@@ -104,8 +104,8 @@
     claude-code
 
     ## Virtualization
-    #docker-compose
-    #docker
+    docker-compose
+    docker
 
     # nvim stuff
     alejandra
@@ -169,9 +169,9 @@
   #  };
 
   # Enable common container config files in /etc/containers
-  virtualisation.containers.enable = false;
+  virtualisation.containers.enable = true;
   virtualisation = {
-    docker.enable = false;
+    docker.enable = true;
   };
 
   systemd.services.infra-stack = {
