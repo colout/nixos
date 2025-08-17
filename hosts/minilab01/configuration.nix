@@ -139,6 +139,7 @@
     btop-rocm
     rocmPackages.rocm-smi
     lm_sensors
+    claude-code
 
     ## Virtualization
     docker-compose
