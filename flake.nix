@@ -8,6 +8,11 @@
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    claude-code-nix = {
+      url = "github:sadjow/claude-code-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       #url = "github:nix-community/home-manager/release-23.11";
       url = "github:nix-community/home-manager";
@@ -49,6 +54,14 @@
         modules = [
           ./hosts/minilab01/configuration.nix
           ./hosts/minilab01/hardware-configuration.nix
+        ];
+      };
+      minilab02 = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+
+        modules = [
+          ./hosts/minilab02/configuration.nix
+          ./hosts/minilab02/hardware-configuration.nix
         ];
       };
       vm01 = nixpkgs.lib.nixosSystem {

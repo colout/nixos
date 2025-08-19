@@ -10,6 +10,7 @@
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
+    claude-code = inputs.claude-code-nix.packages."x86_64-linux".default;
   };
 
   packages-unstable = final: prev: { 
