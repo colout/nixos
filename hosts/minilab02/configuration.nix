@@ -11,6 +11,7 @@
   nixpkgs.overlays = [
     outputs.overlays.packages-stable
     outputs.overlays.packages-unstable
+    outputs.overlays.modifications
   ];
 
   imports = [
