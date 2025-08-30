@@ -125,6 +125,7 @@
     yamllint
     nodePackages.jsonlint
     yaml-language-server
+    vscode-json-languageserver
     lua-language-server
     nodejs
     lm_sensors
