@@ -123,6 +123,7 @@
     lazygit
     nil
     yamllint
+    jsonlint
     yaml-language-server
     lua-language-server
     nodejs
