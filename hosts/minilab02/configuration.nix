@@ -141,6 +141,16 @@
     gcc-unwrapped
   ];
 
+  environment.variables = {
+    # For global npm packages to install
+    NPM_CONFIG_PREFIX = "$HOME/.npm-global";
+  }
+  
+  environment.sessionVariables = {
+    PATH = [ "$HOME/.npm-global" ];
+  }
+
+
   services.ollama = {
     enable = false;
     host = "0.0.0.0";
