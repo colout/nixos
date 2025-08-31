@@ -143,7 +143,7 @@
 
   environment.variables = {
     # For global npm packages to install
-    NPM_CONFIG_PREFIX = "$HOME/.npm-global";
+    NPM_PACKAGES = "$HOME/.npm-global";
   };
 
   environment.sessionVariables = {
