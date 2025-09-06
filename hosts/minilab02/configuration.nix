@@ -101,8 +101,7 @@
     fzy
     git
     mitmproxy
-    codex
-    opencode
+    steam-run
 
     ## Virtualization
     docker-compose
