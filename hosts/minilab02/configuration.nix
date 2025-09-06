@@ -86,6 +86,10 @@
   nixpkgs.config.allowUnfree = true;
 
   programs.zsh.enable = true;
+  programs.zsh.shellAliases = {
+    opencode = "steam-run opencode";  # opencode not statically linked yet
+  }
+
   environment.systemPackages = with pkgs; [
     neovim
     tmux
@@ -284,4 +288,5 @@
   security.sudo.wheelNeedsPassword = false;
 
   networking.firewall.enable = false;
+
 }
