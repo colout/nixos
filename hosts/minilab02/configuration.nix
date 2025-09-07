@@ -146,6 +146,7 @@
   environment.variables = {
     # For global npm packages to install
     NPM_PACKAGES = "$HOME/.npm-global";
+    EDITOR="nvim"
   };
 
   environment.sessionVariables = {
