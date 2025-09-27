@@ -51,8 +51,11 @@
   # For iGPU vram increase
   #  https://www.reddit.com/r/LocalLLaMA/comments/1ks6mlc/what_is_tps_of_qwen3_30ba3b_on_igpu_780m/
   boot.kernelParams = [
-    "amdgpu.gttsize=65536" # 64 GiB, exactly 50% of 128GB
-    "amdgpu.gpu_recovery=1"
+    "amdttm.pages_limit=28311552"
+    "amdttm.page_pool_size=28311552"
+    "transparent_hugepage=always"
+    "numa_balancing=disable"
+    "amd_iommu=off" # Only if not using GPU passthrough
   ];
 
   # swap
