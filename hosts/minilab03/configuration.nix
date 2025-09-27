@@ -134,6 +134,7 @@
     python313Packages.huggingface-hub
     python312
     ctranslate2
+    git
     fzy
     jq
     btop-rocm
