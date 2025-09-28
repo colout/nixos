@@ -89,7 +89,7 @@
   programs.zsh.shellAliases = {
     opencode = "steam-run opencode"; # opencode not statically linked yet
     ll = "ls -l";
-    napply = "sudo chown -R $USER /etc/nixos; cd /etc/nixos && git -C /etc/nixos add . && git -C /etc/nixos commit -m 'change' && sudo nixos-rebuild switch --flake /etc/nixos";
+    napply = "sudo chown -R $USER /etc/nixos; cd /etc/nixos; git -C /etc/nixos add .; git -C /etc/nixos commit -m 'change'; sudo nixos-rebuild switch --flake /etc/nixos";
     nedit = "cd /etc/nixos; nvim";
 
     ngarbage-collect = "nix-collect-garbage -d";
