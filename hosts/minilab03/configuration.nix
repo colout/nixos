@@ -216,7 +216,7 @@
     docker = {
       enable = true;
       daemon.settings = {
-        "userns-remap" = "default";
+        "userns-remap" = "colout:users";
       };
     };
 

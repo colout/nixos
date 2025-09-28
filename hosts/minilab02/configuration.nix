@@ -193,7 +193,12 @@
   # Enable common container config files in /etc/containers
   virtualisation.containers.enable = true;
   virtualisation = {
-    docker.enable = true;
+    docker = {
+      enable = true;
+      daemon.settings = {
+        "userns-remap" = "colout:users";
+      };
+    };
   };
 
   systemd.services.infra-stack = {
