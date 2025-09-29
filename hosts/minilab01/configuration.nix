@@ -219,9 +219,9 @@
   virtualisation = {
     docker = {
       enable = true;
-      daemon.settings = {
-        "userns-remap" = "colout:users";
-      };
+      #  daemon.settings = {
+      #    "userns-remap" = "colout:users";
+      #  };
     };
 
     #podman = {
