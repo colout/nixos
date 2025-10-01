@@ -141,7 +141,7 @@
   };
 
   environment.sessionVariables = {
-    PATH = ["$HOME/.npm-global"];
+    PATH = ["$HOME/.npm-global/bin"];
   };
 
   environment.systemPackages = with pkgs; [
