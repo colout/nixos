@@ -154,6 +154,7 @@
     atop
     htop
     amdgpu_top
+    nodejs
     radeontop
     stable.rocmPackages.rocminfo
     python313Packages.huggingface-hub
