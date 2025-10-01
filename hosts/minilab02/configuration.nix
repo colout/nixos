@@ -149,8 +149,8 @@
     gcc-unwrapped
   ];
 
+  # For global npm packages to install (claude code)
   environment.variables = {
-    # For global npm packages to install
     NPM_PACKAGES = "$HOME/.npm-global";
     EDITOR = "nvim";
   };

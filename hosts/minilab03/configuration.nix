@@ -134,6 +134,16 @@
     nupdate = "cd /etc/nixos; sudo nix flake update";
   };
 
+  # For global npm packages to install (claude code)
+  environment.variables = {
+    NPM_PACKAGES = "$HOME/.npm-global";
+    EDITOR = "nvim";
+  };
+
+  environment.sessionVariables = {
+    PATH = ["$HOME/.npm-global"];
+  };
+
   environment.systemPackages = with pkgs; [
     neovim
     tmux
@@ -155,7 +165,6 @@
     btop-rocm
     rocmPackages.rocm-smi
     lm_sensors
-    claude-code
 
     ## Virtualization
     docker-compose
