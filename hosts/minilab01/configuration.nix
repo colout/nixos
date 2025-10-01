@@ -129,6 +129,16 @@
     nupdate = "cd /etc/nixos; sudo nix flake update";
   };
 
+  # For global npm packages to install (claude code)
+  environment.variables = {
+    NPM_PACKAGES = "$HOME/.npm-global";
+    EDITOR = "nvim";
+  };
+
+  environment.sessionVariables = {
+    PATH = ["$HOME/.npm-global/bin"];
+  };
+
   environment.systemPackages = with pkgs; [
     neovim
     tmux
