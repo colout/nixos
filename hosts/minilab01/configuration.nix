@@ -281,6 +281,10 @@
   services.openssh = {
     enable = true;
     settings = {
+      ClientAliveInterval = 60;
+      ClientAliveCountMax = 3;
+      TCPKeepAlive = true;
+
       Macs = [
         "hmac-sha2-512"
         "hmac-sha2-256-etm@openssh.com"
