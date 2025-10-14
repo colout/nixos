@@ -146,6 +146,7 @@
 
   environment.systemPackages = with pkgs; [
     neovim
+    jq
     tmux
     wget
     zsh
