@@ -125,6 +125,7 @@
 
   programs.zsh.enable = true;
   programs.zsh.shellAliases = {
+    specify = "uvx --from git+https://github.com/github/spec-kit.git specify"; # such a hack but it works!
     opencode = "steam-run opencode"; # opencode not statically linked yet
     ll = "ls -l";
     napply = "sudo chown -R $USER /etc/nixos; cd /etc/nixos; git -C /etc/nixos add .; git -C /etc/nixos commit -m 'change'; sudo nixos-rebuild switch --flake /etc/nixos";
@@ -167,6 +168,7 @@
     btop-rocm
     rocmPackages.rocm-smi
     lm_sensors
+    uv
 
     ## Virtualization
     docker-compose
