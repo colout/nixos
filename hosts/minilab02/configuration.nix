@@ -114,6 +114,7 @@
     git
     mitmproxy
     steam-run
+    unixtools.netstat
 
     ## Virtualization
     docker-compose
