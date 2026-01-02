@@ -134,7 +134,7 @@
     lazygit
     nil
     yamllint
-    nodePackages_latest.jsonlint
+    #nodePackages_latest.jsonlint
     yaml-language-server
     vscode-json-languageserver
     lua-language-server
