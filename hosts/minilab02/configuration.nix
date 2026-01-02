@@ -37,7 +37,7 @@
   ];
 
   # Auto mount usb
-  services.devmon.enable = true;
+  #services.devmon.enable = true; # Got an error with nix-unstable on a certain release....cna uncomment this later.  or not
   services.gvfs.enable = true;
   services.udisks2.enable = true;
   services.udev.extraRules = ''
