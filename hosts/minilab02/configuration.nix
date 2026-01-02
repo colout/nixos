@@ -109,7 +109,7 @@
     htop
     stable.rocmPackages.rocminfo
     python312
-    ctranslate2
+    #ctranslate2
     fzy
     git
     mitmproxy
