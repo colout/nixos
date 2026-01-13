@@ -150,6 +150,9 @@
     gcc
     python3Packages.cffi
     gcc-unwrapped
+
+    # fk-it...i'll just install python
+    python313Packages.pipx
   ];
 
   # For global npm packages to install (claude code)
