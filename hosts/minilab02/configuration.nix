@@ -201,6 +201,15 @@
   virtualisation = {
     docker = {
       enable = true;
+      daemon.settings = {
+        default-address-pools = [
+          {
+            base = "10.200.0.0/16";
+            size = 24;
+          }
+        ];
+      };
+
       #  daemon.settings = {
       #    "userns-remap" = "colout:users";
       #  };
