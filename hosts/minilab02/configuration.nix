@@ -226,9 +226,9 @@
       User = "colout";
       Group = "docker";
       Environment = "PATH=${pkgs.docker}/bin:${pkgs.docker-compose}/bin:/run/current-system/sw/bin";
-      ExecStart = ''/run/current-system/sw/bin/docker compose -f /home/colout/git/infra-stack/docker-compose.yaml up --pull always'';
-      ExecStop = ''/run/current-system/sw/bin/docker compose -f /home/colout/git/infra-stack/docker-compose.yaml down'';
-      WorkingDirectory = ''/home/colout/git/infra-stack/'';
+      ExecStart = ''/run/current-system/sw/bin/docker compose -f /home/colout/git/stacks/infra-stack/docker-compose.yaml up --pull always'';
+      ExecStop = ''/run/current-system/sw/bin/docker compose -f /home/colout/git/stacks/infra-stack/docker-compose.yaml down'';
+      WorkingDirectory = ''/home/colout/git/stacks/infra-stack/'';
     };
   };
 
@@ -242,9 +242,9 @@
       User = "colout";
       Group = "docker";
       Environment = "PATH=${pkgs.docker}/bin:${pkgs.docker-compose}/bin:/run/current-system/sw/bin";
-      ExecStart = ''/run/current-system/sw/bin/docker compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml up --pull always'';
-      ExecStop = ''/run/current-system/sw/bin/docker compose -f /home/colout/git/local-ai-web-stack/docker-compose.yaml down'';
-      WorkingDirectory = ''/home/colout/git/local-ai-web-stack/'';
+      ExecStart = ''/run/current-system/sw/bin/docker compose -f /home/colout/git/stacks/local-ai-web-stack/docker-compose.yaml up --pull always'';
+      ExecStop = ''/run/current-system/sw/bin/docker compose -f /home/colout/git/stacks/local-ai-web-stack/docker-compose.yaml down'';
+      WorkingDirectory = ''/home/colout/git/stacks/local-ai-web-stack/'';
     };
   };
 
@@ -258,9 +258,9 @@
       User = "colout";
       Group = "docker";
       Environment = "PATH=${pkgs.docker}/bin:${pkgs.docker-compose}/bin:/run/current-system/sw/bin";
-      ExecStart = ''/run/current-system/sw/bin/docker compose -f /home/colout/git/data-tooling-stack/docker-compose.yaml up --pull always'';
-      ExecStop = ''/run/current-system/sw/bin/docker compose -f /home/colout/git/data-tooling-stack/docker-compose.yaml down'';
-      WorkingDirectory = ''/home/colout/git/data-tooling-stack/'';
+      ExecStart = ''/run/current-system/sw/bin/docker compose -f /home/colout/git/stacks/data-tooling-stack/docker-compose.yaml up --pull always'';
+      ExecStop = ''/run/current-system/sw/bin/docker compose -f /home/colout/git/stacks/data-tooling-stack/docker-compose.yaml down'';
+      WorkingDirectory = ''/home/colout/git/stacks/data-tooling-stack/'';
     };
   };
 
@@ -274,9 +274,9 @@
       User = "colout";
       Group = "docker";
       Environment = "PATH=${pkgs.docker}/bin:${pkgs.docker-compose}/bin:/run/current-system/sw/bin";
-      ExecStart = ''/run/current-system/sw/bin/docker compose -f /home/colout/git/langfuse-stack/docker-compose.yaml up --pull always'';
-      ExecStop = ''/run/current-system/sw/bin/docker compose -f /home/colout/git/langfuse-stack/docker-compose.yaml down'';
-      WorkingDirectory = ''/home/colout/git/langfuse-stack/'';
+      ExecStart = ''/run/current-system/sw/bin/docker compose -f /home/colout/git/stacks/langfuse-stack/docker-compose.yaml up --pull always'';
+      ExecStop = ''/run/current-system/sw/bin/docker compose -f /home/colout/git/stacks/langfuse-stack/docker-compose.yaml down'';
+      WorkingDirectory = ''/home/colout/git/stacks/langfuse-stack/'';
     };
   };
 
