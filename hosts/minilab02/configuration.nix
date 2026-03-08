@@ -111,6 +111,8 @@
     python312
     #ctranslate2
     fzy
+    ripgrep
+    fd
     git
     mitmproxy
     steam-run
